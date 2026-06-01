@@ -398,7 +398,7 @@ export default function GalaxyExperience() {
         <p style={{ fontFamily: 'var(--font-sans)', fontSize: 16, color: 'var(--text-dim)', maxWidth: 560, textAlign: 'center', marginTop: 24, lineHeight: 1.7 }}>
           60% of searches now end without a click. We build websites that work for both human visitors and AI agents.
         </p>
-        <a href="mailto:hello@agentix.ai" style={{ marginTop: 40, padding: '12px 28px', background: 'var(--accent)', color: '#fff', fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.1em', textTransform: 'uppercase', textDecoration: 'none' }}>
+        <a href="mailto:sonamasova@gmail.com" style={{ marginTop: 40, padding: '12px 28px', background: 'var(--accent)', color: '#fff', fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.1em', textTransform: 'uppercase', textDecoration: 'none' }}>
           Book a Call
         </a>
       </div>
@@ -463,7 +463,7 @@ export default function GalaxyExperience() {
             </span>
           ))}
           <a
-            href="mailto:hello@agentix.ai"
+            href="mailto:sonamasova@gmail.com"
             style={{
               fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.1em',
               color: '#0a0a0f', background: '#3b82f6',
@@ -614,7 +614,7 @@ export default function GalaxyExperience() {
           12–18 months before this becomes mainstream.
         </h2>
         <a
-          href="mailto:hello@agentix.ai"
+          href="mailto:sonamasova@gmail.com"
           style={{
             fontFamily: 'var(--font-mono)', fontSize: 15, letterSpacing: '0.12em',
             textTransform: 'uppercase', textDecoration: 'none',
@@ -627,7 +627,7 @@ export default function GalaxyExperience() {
           Book a Free 30-min Call
         </a>
         <p style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: '#6b6b8a', marginTop: 16, letterSpacing: '0.08em' }}>
-          hello@agentix.ai · Bratislava, Slovakia
+          sonamasova@gmail.com · Bratislava, Slovakia
         </p>
       </div>
     </>
