@@ -107,7 +107,7 @@ export default function Home() {
           <h2>Book a free 30-minute call</h2>
           <p>
             Available via Calendly. Based in Bratislava, Slovakia. Serving
-            clients globally. Contact: sonamasova@gmail.com
+            clients globally. Contact: sona.masova23@gmail.com
           </p>
         </section>
       </main>
