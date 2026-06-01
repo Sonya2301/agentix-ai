@@ -1,0 +1,55 @@
+# AGENTIX AI
+
+> AI web studio building websites that work for both human visitors and AI agents.
+
+## About
+
+AGENTIX AI is an AI web studio based in Bratislava, Slovakia, serving clients globally. We build three-layer websites that are fast, AI-powered, and visible to AI search engines like ChatGPT, Perplexity, and Claude.
+
+Founded by a former security consultant (Deloitte, IBM, Takeda) with deep AI development knowledge and design expertise.
+
+## What We Build
+
+### Layer 01 — AI-Built Websites
+Fast, beautiful, custom websites built with AI tools. Delivered in 5–7 days. Starting from €1,200. Includes full SEO setup, GDPR compliance, Vercel deployment, and Layer 03 basics as standard.
+
+### Layer 02 — AI-Powered Websites
+Websites with embedded AI agents that qualify leads, answer questions, book meetings, and handle support 24/7 without a human in the loop. Add-on from €1,500 setup.
+
+### Layer 03 — Agent-Friendly Websites
+Websites structured so AI agents can read, cite, navigate, and transact with them:
+- llms.txt implementation
+- Schema.org JSON-LD structured data
+- AI crawler permissions (GPTBot, ClaudeBot, PerplexityBot, Googlebot)
+- AEO/GEO content optimization
+- MCP server integration (premium tier)
+
+## Pricing
+
+| Tier | Price | Includes |
+|------|-------|----------|
+| Starter | €1,200–€1,500 | AI-built site + Layer 03 basics |
+| Studio | €2,500–€3,500 | Starter + AEO/GEO + strategy session |
+| Premium | €4,000–€6,000 | Studio + custom design + 1 month free maintenance |
+| AI Agent Add-on | +€1,500–€2,500 | Embedded lead qualification agent |
+| MCP Integration | +€2,000–€3,500 | Full MCP server, agent-callable tools |
+| Maintenance | €150–€300/month | Security, updates, AI visibility monitoring |
+
+## Who We Work With
+
+- Marketing agencies and freelancers who need a white-label AI web partner
+- Tech companies and cybersecurity startups with outdated or AI-invisible websites
+- SaaS companies (€500K–€5M ARR) who need websites visible to AI search
+
+## Why This Matters Now
+
+- 60.3% of US Google queries now show an AI Overview — the answer never leaves Google
+- 59% of retail site traffic is already bots and agents, not humans
+- AI search traffic converts at 2× the rate of traditional organic
+- 18% of all organic referral traffic now comes from AI search engines
+
+## Contact
+
+- Email: hello@agentix.ai
+- Location: Bratislava, Slovakia
+- Book a call: hello@agentix.ai (mention Calendly in subject)

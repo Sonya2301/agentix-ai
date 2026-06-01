@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGENTIX AI — Wireframe</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #e8e8e8;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #111;
+      padding: 40px 20px;
+    }
+
+    .wireframe-label {
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #888;
+      margin-bottom: 6px;
+    }
+
+    /* ── PAGE FRAME ── */
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border: 2px solid #aaa;
+    }
+
+    /* ── SECTION CONTAINERS ── */
+    .section {
+      padding: 48px 40px;
+      border-bottom: 2px dashed #ccc;
+      position: relative;
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    .section-tag {
+      display: inline-block;
+      border: 1px solid #999;
+      padding: 3px 10px;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 20px;
+      background: #f0f0f0;
+    }
+
+    .section-note {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 9px;
+      color: #aaa;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── TYPOGRAPHY PLACEHOLDERS ── */
+    .h1 {
+      font-size: 36px;
+      font-weight: 900;
+      line-height: 1.1;
+      color: #111;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .h2 {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.15;
+      color: #111;
+      margin-bottom: 8px;
+    }
+
+    .h3 {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #888;
+      margin-bottom: 16px;
+    }
+
+    .h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 6px;
+    }
+
+    .body-text {
+      font-size: 13px;
+      line-height: 1.65;
+      color: #555;
+      max-width: 600px;
+      margin-bottom: 12px;
+    }
+
+    .lead {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #444;
+      max-width: 580px;
+      margin-bottom: 28px;
+    }
+
+    .divider {
+      height: 1px;
+      background: #ddd;
+      margin: 28px 0;
+    }
+
+    /* ── IMAGE PLACEHOLDER ── */
+    .img-placeholder {
+      background: #d8d8d8;
+      border: 1px dashed #aaa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-size: 11px;
+      text-align: center;
+      position: relative;
+    }
+
+    .img-placeholder::before,
+    .img-placeholder::after {
+      content: '';
+      position: absolute;
+      background: #bbb;
+    }
+
+    .img-placeholder::before {
+      width: 100%;
+      height: 1px;
+      top: 50%;
+      transform: rotate(-5deg);
+    }
+
+    .img-placeholder::after {
+      width: 100%;
+      height: 1px;
+      top: 50%;
+      transform: rotate(5deg);
+    }
+
+    .img-placeholder span { position: relative; z-index: 1; background: #d8d8d8; padding: 2px 6px; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-block;
+      padding: 10px 24px;
+      border: 2px solid #111;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: #111;
+      color: #fff;
+      margin-right: 10px;
+      margin-bottom: 8px;
+      cursor: default;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #111;
+    }
+
+    /* ── GRIDS ── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    .grid-2-1 { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; }
+    .grid-1-2 { display: grid; grid-template-columns: 1fr 2fr; gap: 24px; }
+
+    /* ── CARDS ── */
+    .card {
+      border: 1px solid #ccc;
+      padding: 20px;
+      background: #fafafa;
+    }
+
+    .card-highlight {
+      border: 2px solid #999;
+      background: #f0f0f0;
+    }
+
+    /* ── STAT BOX ── */
+    .stat-box {
+      border: 1px solid #ccc;
+      padding: 16px;
+      text-align: center;
+      background: #fafafa;
+    }
+
+    .stat-value {
+      font-size: 26px;
+      font-weight: 900;
+      color: #111;
+      display: block;
+      margin-bottom: 4px;
+      font-style: italic;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── TAGS ── */
+    .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+
+    .tag {
+      border: 1px solid #bbb;
+      padding: 3px 8px;
+      font-size: 10px;
+      color: #666;
+      background: #f0f0f0;
+    }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-block;
+      border: 1px solid #999;
+      padding: 2px 8px;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #555;
+      margin-bottom: 10px;
+      background: #e8e8e8;
+    }
+
+    /* ── LAYER CARD ── */
+    .layer-card {
+      border: 1px solid #ccc;
+      padding: 24px;
+      margin-bottom: 14px;
+      background: #fafafa;
+      position: relative;
+    }
+
+    .layer-card-active {
+      border: 2px solid #999;
+      background: #f3f3f3;
+    }
+
+    .layer-num-bg {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 48px;
+      font-weight: 900;
+      color: #e0e0e0;
+      line-height: 1;
+    }
+
+    .layer-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    /* ── STEP LIST ── */
+    .step-list { list-style: none; }
+
+    .step-item {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .step-item:last-child { border-bottom: none; }
+
+    .step-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: #999;
+      min-width: 28px;
+      padding-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* ── TABLE ── */
+    .wf-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 16px; }
+
+    .wf-table thead th {
+      background: #e8e8e8;
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      border-bottom: 1px solid #ccc;
+      font-weight: 700;
+    }
+
+    .wf-table tbody td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e8e8e8;
+      color: #444;
+      vertical-align: top;
+    }
+
+    .wf-table tbody tr:last-child td { border-bottom: none; }
+    .wf-table tbody tr:hover td { background: #f5f5f5; }
+
+    .wf-table .highlight-row td {
+      background: #ebebeb;
+      font-weight: 700;
+      color: #111;
+    }
+
+    /* ── QUOTE BLOCK ── */
+    .quote-block {
+      border-left: 3px solid #bbb;
+      padding: 14px 20px;
+      margin: 14px 0;
+      background: #f5f5f5;
+    }
+
+    .quote-block p {
+      font-style: italic;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* ── OFFER STATEMENT ── */
+    .offer-block {
+      border: 2px solid #ccc;
+      padding: 24px;
+      margin: 24px 0;
+      background: #f5f5f5;
+      text-align: center;
+    }
+
+    .offer-block p {
+      font-size: 16px;
+      font-style: italic;
+      color: #333;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 40px;
+      border-bottom: 2px solid #ddd;
+      background: #fafafa;
+    }
+
+    .nav-logo {
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #111;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links li {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #666;
+      border-bottom: 1px dashed #ccc;
+      cursor: default;
+    }
+
+    .nav-cta {
+      display: inline-block;
+      border: 2px solid #111;
+      padding: 7px 16px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: #111;
+      color: #fff;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 40px;
+      background: #f0f0f0;
+      border-top: 2px solid #ddd;
+      text-align: center;
+    }
+
+    /* ── PROOF STATS ROW ── */
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .proof-stat {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+      background: #f0f0f0;
+    }
+
+    .proof-stat-val {
+      font-size: 18px;
+      font-weight: 900;
+      color: #111;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .proof-stat-lbl {
+      font-size: 10px;
+      color: #888;
+      line-height: 1.4;
+    }
+
+    /* ── STACK ROW ── */
+    .stack-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #e8e8e8;
+      font-size: 12px;
+    }
+
+    .stack-row:last-child { border-bottom: none; }
+    .stack-name { font-weight: 700; color: #222; }
+    .stack-desc { font-size: 11px; color: #888; margin-top: 2px; }
+    .stack-cost { font-size: 11px; color: #555; white-space: nowrap; margin-left: 12px; flex-shrink: 0; }
+
+    /* ── CHECKLIST ── */
+    .checklist { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+    .checklist li { font-size: 12px; color: #555; padding-left: 14px; position: relative; }
+    .checklist li::before { content: '—'; position: absolute; left: 0; color: #bbb; }
+  </style>
+</head>
+<body>
+
+<div style="text-align:center; margin-bottom:20px;">
+  <p class="wireframe-label">AGENTIX AI — Website Wireframe — All Sections — No Design</p>
+</div>
+
+<div class="page">
+
+  <!-- ════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════ -->
+  <nav class="nav">
+    <div class="nav-logo">AGENTIX AI</div>
+    <ul class="nav-links">
+      <li>Services</li>
+      <li>How It Works</li>
+      <li>Pricing</li>
+      <li>About</li>
+    </ul>
+    <span class="nav-cta">Book a Call</span>
+  </nav>
+
+  <!-- ════════════════════════════════════
+       SECTION 01 — HERO
+  ════════════════════════════════════ -->
+  <div class="section">
+    <span class="section-note">Section 01 — Hero</span>
+
+    <span class="section-tag">AGENTIX AI · AI Web Studio</span>
+
+    <div class="h1">"ChatGPT can't find<br>your website."</div>
+
+    <p class="lead">60% of searches now end without a click. AI agents skip your homepage entirely and go straight to the data layer. We build websites that work in both worlds — for human visitors and for the AI agents replacing them.</p>
+
+    <div style="margin-bottom: 32px;">
+      <span class="btn">Book a 30-min Call</span>
+      <span class="btn btn-outline">See the Three Layers ↓</span>
+    </div>
+
+    <div class="grid-3">
+      <div class="stat-box">
+        <span class="stat-value">60.3%</span>
+        <span class="stat-label">of searches end without a click</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-value">59%</span>
+        <span class="stat-label">of site traffic is already bots & agents</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-value">2×</span>
+        <span class="stat-label">AI search converts vs traditional organic</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       SECTION 02 — THE SHIFT
+  ════════════════════════════════════ -->
+  <div class="section">
+    <span class="section-note">Section 02 — The Shift</span>
+
+    <span class="section-tag">Context — Why This Exists Now</span>
+    <div class="h2">Websites are breaking.</div>
+    <p class="lead">Not the code. The model. The way websites worked for 30 years is being dismantled by AI agents who skip the entire journey and go straight to the data layer.</p>
+
+    <div class="grid-2" style="margin-bottom: 24px;">
+      <div class="stat-box" style="text-align:left; padding: 20px;">
+        <span class="stat-value">60.3%</span>
+        <p style="font-size:13px; color:#555; margin-top:4px; margin-bottom:6px;">of US Google queries now show an AI Overview — the answer never leaves Google.</p>
+        <span style="font-size:10px; color:#aaa; font-style:italic;">Advanced Web Ranking · Dec 2025</span>
+      </div>
+      <div class="stat-box" style="text-align:left; padding: 20px;">
+        <span class="stat-value">80%</span>
+        <p style="font-size:13px; color:#555; margin-top:4px; margin-bottom:6px;">of consumers rely on zero-click results for at least 40% of their searches.</p>
+        <span style="font-size:10px; color:#aaa; font-style:italic;">Bain · 2025</span>
+      </div>
+      <div class="stat-box" style="text-align:left; padding: 20px;">
+        <span class="stat-value">59%</span>
+        <p style="font-size:13px; color:#555; margin-top:4px; margin-bottom:6px;">of retail site traffic is already bots and agents, not humans.</p>
+        <span style="font-size:10px; color:#aaa; font-style:italic;">Agentic Web Report · 2025</span>
+      </div>
+      <div class="stat-box" style="text-align:left; padding: 20px;">
+        <span class="stat-value">40%+</span>
+        <p style="font-size:13px; color:#555; margin-top:4px; margin-bottom:6px;">of complex web tasks will be agent-mediated by 2028.</p>
+        <span style="font-size:10px; color:#aaa; font-style:italic;">Deepak Gupta · May 2026</span>
+      </div>
+      <div class="stat-box" style="text-align:left; padding: 20px;">
+        <span class="stat-value">18%</span>
+        <p style="font-size:13px; color:#555; margin-top:4px; margin-bottom:6px;">of all organic referral traffic now comes from AI search engines — up from less than 2% in early 2024.</p>
+        <span style="font-size:10px; color:#aaa; font-style:italic;">NeuraPulse Q1 2026</span>
+      </div>
+      <div class="stat-box" style="text-align:left; padding: 20px;">
+        <span class="stat-value">2×</span>
+        <p style="font-size:13px; color:#555; margin-top:4px; margin-bottom:6px;">AI search traffic converts at twice the rate of traditional organic — in one third of the sessions.</p>
+        <span style="font-size:10px; color:#aaa; font-style:italic;">Conductor AEO Handbook · 2026</span>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <p>"We are moving from a world of websites as content to a world of websites as capabilities. An agent can decide in real time which tools to use, how to combine them, and when to call them."</p>
+    </div>
+
+    <div class="quote-block">
+      <p>"The advertising model of the internet is about to face its first existential threat since ad blockers. Except ad blockers were opt-in. Agent browsing is default."</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       SECTION 03 — THREE LAYERS
+  ════════════════════════════════════ -->
+  <div class="section">
+    <span class="section-note">Section 03 — Three Layers (The Product)</span>
+
+    <span class="section-tag">Part 1 of 1 — What We Build</span>
+    <div class="h2">Three layers.<br>One studio.</div>
+    <p class="body-text" style="margin-bottom:28px;">Every engagement starts with Layer 01. Layers 02 and 03 are upsells — each one is a separate invoice, a higher tier of service, and something no other studio offers as part of a website build.</p>
+
+    <!-- LAYER 01 -->
+    <div class="layer-card layer-card-active">
+      <div class="layer-num-bg">01</div>
+      <div class="badge">NOW · Core Product</div>
+      <div class="layer-title">AI-Built Websites</div>
+      <p class="body-text">Fast, beautiful, custom websites built using AI tools. Delivered in 5–7 days instead of the 4–6 weeks a traditional agency takes. At a fraction of the cost.</p>
+      <div class="tag-list">
+        <span class="tag">Claude Code</span>
+        <span class="tag">Figma wireframes</span>
+        <span class="tag">AI copywriting</span>
+        <span class="tag">Vercel deployment</span>
+        <span class="tag">5–7 day delivery</span>
+        <span class="tag">SEO setup</span>
+        <span class="tag">GDPR compliance</span>
+      </div>
+    </div>
+
+    <!-- LAYER 02 -->
+    <div class="layer-card">
+      <div class="layer-num-bg">02</div>
+      <div class="badge">Month 3–6 · Upsell</div>
+      <div class="layer-title">AI-Powered Websites</div>
+      <p class="body-text">Websites with AI agents built inside them. An embedded agent that qualifies leads, answers questions, books meetings, and handles support — 24/7, without a human in the loop.</p>
+      <div class="proof-grid">
+        <div class="proof-stat">
+          <span class="proof-stat-val">250%</span>
+          <span class="proof-stat-lbl">more organic leads · Evocalize B2B SaaS</span>
+        </div>
+        <div class="proof-stat">
+          <span class="proof-stat-val">20×</span>
+          <span class="proof-stat-lbl">ROI · Cloth & Paper e-commerce</span>
+        </div>
+        <div class="proof-stat">
+          <span class="proof-stat-val">587%</span>
+          <span class="proof-stat-lbl">ROI year 2 · Home by NB</span>
+        </div>
+      </div>
+      <div class="tag-list">
+        <span class="tag">Lead qualification agent</span>
+        <span class="tag">Calendly integration</span>
+        <span class="tag">CRM connection</span>
+        <span class="tag">24/7 autonomous</span>
+        <span class="tag">Multilingual</span>
+      </div>
+    </div>
+
+    <!-- LAYER 03 -->
+    <div class="layer-card">
+      <div class="layer-num-bg">03</div>
+      <div class="badge">Month 6–12 · Premium</div>
+      <div class="layer-title">Agent-Friendly Websites</div>
+      <p class="body-text">The future of the web is agents browsing it. Most websites are completely invisible to AI. We build sites that AI agents can read, cite, navigate, and transact with.</p>
+
+      <div style="border: 1px solid #ddd; padding: 16px; margin: 16px 0; background: #f5f5f5;">
+        <div class="h3">The Technical Stack</div>
+        <div class="stack-row">
+          <div><div class="stack-name">llms.txt</div><div class="stack-desc">Markdown file at domain root — tells AI agents what the site is. 30 min to write.</div></div>
+          <div class="stack-cost">30 min</div>
+        </div>
+        <div class="stack-row">
+          <div><div class="stack-name">Schema.org / JSON-LD</div><div class="stack-desc">Structured data — tells AI engines who the business is and what facts to cite.</div></div>
+          <div class="stack-cost">2 days</div>
+        </div>
+        <div class="stack-row">
+          <div><div class="stack-name">AI Crawler Permissions</div><div class="stack-desc">robots.txt with GPTBot, ClaudeBot, PerplexityBot, Googlebot allowed.</div></div>
+          <div class="stack-cost">1 hour</div>
+        </div>
+        <div class="stack-row">
+          <div><div class="stack-name">AEO / GEO Content</div><div class="stack-desc">Content structured so AI engines extract and cite it. 2× conversion rate.</div></div>
+          <div class="stack-cost">1 week</div>
+        </div>
+        <div class="stack-row">
+          <div><div class="stack-name">MCP Server Integration</div><div class="stack-desc">Exposes the website as tools AI agents can call directly.</div></div>
+          <div class="stack-cost">4 weeks</div>
+        </div>
+      </div>
+
+      <div class="tag-list">
+        <span class="tag">llms.txt</span>
+        <span class="tag">Schema.org / JSON-LD</span>
+        <span class="tag">AEO / GEO</span>
+        <span class="tag">AI crawlers</span>
+        <span class="tag">MCP integration</span>
+        <span class="tag">ChatGPT visibility</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       SECTION 04 — HOW IT WORKS
+  ════════════════════════════════════ -->
+  <div class="section">
+    <span class="section-note">Section 04 — How It Works</span>
+
+    <span class="section-tag">Process — 5 Steps</span>
+    <div class="h2">How we work.</div>
+    <p class="body-text" style="margin-bottom:24px;">From briefing call to live website in 5–7 days. Every site ships with Layer 03 basics included as standard — no extra charge.</p>
+
+    <ul class="step-list">
+      <li class="step-item">
+        <span class="step-num">01</span>
+        <div>
+          <div class="h4">Client Briefing</div>
+          <p class="body-text" style="margin:0;">30-min Calendly call + Notion briefing form. We extract brand voice, goals, target audience, competitors, and tone. Every prompt we write comes from here.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">02</span>
+        <div>
+          <div class="h4">AI Copy Generation</div>
+          <p class="body-text" style="margin:0;">AI writes all website text based on the brief — headlines, body copy, CTAs, meta descriptions. Takes 30 minutes. Most freelancers charge €500+ for this alone.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">03</span>
+        <div>
+          <div class="h4">AI-Assisted Build</div>
+          <p class="body-text" style="margin:0;">We build the full website — design, layout, responsive development. A full 5-page site in 3–5 hours. You review, refine, and direct.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">04</span>
+        <div>
+          <div class="h4">Visual Generation</div>
+          <p class="body-text" style="margin:0;">Custom hero images, product visuals, and section backgrounds generated in the client's brand. No generic stock photos. Every visual is unique.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">05</span>
+        <div>
+          <div class="h4">Deploy + Full Setup</div>
+          <p class="body-text" style="margin:0;">Domain setup, Analytics, Search Console, sitemap, schema.org JSON-LD, AI crawler permissions, GDPR banner. Client goes live. Includes a Loom handover video.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ════════════════════════════════════
+       SECTION 05 — WHO IT'S FOR
+  ════════════════════════════════════ -->
+  <div class="section">
+    <span class="section-note">Section 05 — Who It's For (ICP)</span>
+
+    <span class="section-tag">Ideal Clients</span>
+    <div class="h2">Who we work with.</div>
+    <p class="body-text" style="margin-bottom:28px;">Two types of clients. Both get the same three-layer standard. Different entry points, different conversations.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="badge">Phase 1 · Months 1–3</div>
+        <div class="h4">Agencies & Freelancers</div>
+        <p class="body-text">Marketing agencies, design studios, and solo freelancers (2–10 people) who sell websites to clients but outsource the build. 73% of agencies already do this. They need a reliable white-label partner who delivers fast and stays invisible.</p>
+        <div class="divider"></div>
+        <div class="h3">Their Pain</div>
+        <ul class="checklist">
+          <li>Clients demand faster delivery than they can offer</li>
+          <li>In-house developers too expensive for one-off projects</li>
+          <li>Need to upsell AI features but lack the knowledge</li>
+          <li>Losing clients to "AI website" competitors</li>
+        </ul>
+        <div class="tag-list">
+          <span class="tag">nakoduj.to</span>
+          <span class="tag">Pretlak.com</span>
+          <span class="tag">Upwork</span>
+          <span class="tag">LinkedIn</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="badge">Phase 2 · Months 3–6</div>
+        <div class="h4">Tech & Cybersecurity Companies</div>
+        <p class="body-text">Cybersecurity startups, SaaS companies (€500K–€5M ARR), and tech consultancies with outdated or AI-invisible websites. Security background means we speak their language before the first meeting starts.</p>
+        <div class="divider"></div>
+        <div class="h3">Their Pain</div>
+        <ul class="checklist">
+          <li>Outdated website doesn't match the quality of their product</li>
+          <li>Invisible to AI search — ChatGPT can't cite them</li>
+          <li>Previous agencies didn't understand the technical space</li>
+          <li>Need GDPR and compliance-aware implementation</li>
+        </ul>
+        <div class="tag-list">
+          <span class="tag">LinkedIn DMs</span>
+          <span class="tag">Upwork</span>
+          <span class="tag">Cold email</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       SECTION 06 — PRICING
+  ════════════════════════════════════ -->
+  <div class="section">
+    <span class="section-note">Section 06 — Pricing</span>
+
+    <span class="section-tag">Transparent Pricing</span>
+    <div class="h2">Simple, honest pricing.</div>
+    <p class="body-text" style="margin-bottom: 8px;">No hidden fees. No hourly surprises. Every tier includes Layer 03 basics (llms.txt, schema, AI crawlers) as standard.</p>
+
+    <table class="wf-table">
+      <thead>
+        <tr>
+          <th>Tier</th>
+          <th>Who It's For</th>
+          <th>Includes</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Starter</strong></td>
+          <td>Agencies, freelancers</td>
+          <td>All 4 phases + Layer 03 basics (llms.txt, schema, AI crawlers)</td>
+          <td><strong>€1,200–€1,500</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Studio</strong></td>
+          <td>Tech, consultancies</td>
+          <td>Starter + priority delivery + strategy call + full AEO/GEO optimization</td>
+          <td><strong>€2,500–€3,500</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Premium</strong></td>
+          <td>SaaS, funded startups</td>
+          <td>Studio + custom design + 2 extra revisions + 1 month free maintenance</td>
+          <td><strong>€4,000–€6,000</strong></td>
+        </tr>
+        <tr>
+          <td><strong>AI Agent Add-on</strong></td>
+          <td>Any tier · Layer 02</td>
+          <td>Embedded lead qualification agent, trained on client content, CRM integration</td>
+          <td><strong>+€1,500–€2,500</strong></td>
+        </tr>
+        <tr>
+          <td><strong>MCP Integration</strong></td>
+          <td>Tech clients · Layer 03</td>
+          <td>Full MCP server, agent-callable tools, agent.json manifest</td>
+          <td><strong>+€2,000–€3,500</strong></td>
+        </tr>
+        <tr class="highlight-row">
+          <td><strong>Maintenance</strong></td>
+          <td>All tiers · monthly</td>
+          <td>Security patches, backups, updates, SEO + AI visibility monitoring</td>
+          <td><strong>€150–€300/mo</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="offer-block">
+      <p>"We build a fast, beautiful, AI-built website in 5–7 days — complete with embedded AI agent and agent-friendly architecture so it works for both human visitors and AI search — starting at €1,200."</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 24px;">
+      <span class="btn">Get a Quote</span>
+      <span class="btn btn-outline">Book a Free Call</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       SECTION 07 — ABOUT + CTA
+  ════════════════════════════════════ -->
+  <div class="section">
+    <span class="section-note">Section 07 — About + CTA</span>
+
+    <span class="section-tag">Who Is Behind Agentix AI</span>
+    <div class="h2">Built by someone who<br>lives at the intersection.</div>
+
+    <div class="grid-2-1" style="margin-top: 24px; margin-bottom: 32px;">
+      <div>
+        <p class="body-text">Agentix AI is run by a former Security Consultant (Deloitte, IBM, Takeda) who became obsessed with AI, agents, and where the web is going. That combination — security background + AI developer knowledge + design taste — is rare. It's why our clients in the tech and cybersecurity space trust us before the first call ends.</p>
+
+        <p class="body-text">We don't just build websites. We build websites that work in 2026 — where AI agents are already the majority of your traffic, and most of your competitors are still building for a web that no longer exists.</p>
+
+        <div class="divider"></div>
+
+        <div class="grid-2" style="gap: 12px;">
+          <div class="stat-box">
+            <span class="stat-value" style="font-size:18px;">5+</span>
+            <span class="stat-label">Years in IT security & consulting</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-value" style="font-size:18px;">5–7</span>
+            <span class="stat-label">Days to deliver a complete site</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-value" style="font-size:18px;">3</span>
+            <span class="stat-label">Layers — the only studio offering all three</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-value" style="font-size:18px;">€0</span>
+            <span class="stat-label">Extra charge for Layer 03 basics</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="img-placeholder" style="height: 280px; border-radius: 4px;">
+          <span>Photo<br>480 × 560px</span>
+        </div>
+        <p style="font-size:10px; color:#aaa; text-align:center; margin-top:6px; font-style:italic;">Professional portrait — approachable, not corporate</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CTA BLOCK -->
+    <div style="text-align: center; padding: 32px 0;">
+      <div class="h2" style="margin-bottom: 12px;">The window is 12–18 months.</div>
+      <p class="lead" style="max-width: 500px; margin: 0 auto 28px; text-align: center; font-style: italic;">After that, everyone will know about llms.txt, MCP, and AEO. Right now, almost nobody in this market does. That's the window.</p>
+      <span class="btn" style="font-size: 13px; padding: 14px 32px;">Book a Free 30-min Call</span>
+      <p style="font-size:11px; color:#aaa; margin-top:10px;">Via Calendly — pick a time that works for you</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════ -->
+  <div class="footer">
+    <div class="nav-logo" style="margin-bottom: 12px;">AGENTIX AI</div>
+    <p style="font-size: 12px; color: #888; margin-bottom: 16px; font-style:italic;">Websites built for humans. And for AI.</p>
+    <div style="display: flex; justify-content: center; gap: 24px; font-size: 11px; color: #888; margin-bottom: 20px;">
+      <span>Services</span>
+      <span>How It Works</span>
+      <span>Pricing</span>
+      <span>About</span>
+      <span>Book a Call</span>
+    </div>
+    <div class="divider"></div>
+    <p style="font-size:10px; color:#aaa; margin-top: 16px;">© 2026 Agentix AI · Bratislava, Slovakia · hello@agentix.ai</p>
+    <p style="font-size:10px; color:#bbb; margin-top: 6px;">← llms.txt / Schema.org / AI crawlers configured · This site is agent-friendly →</p>
+  </div>
+
+</div><!-- end .page -->
+
+<div style="text-align:center; margin-top: 20px;">
+  <p class="wireframe-label">End of wireframe — 7 sections + Nav + Footer — Ready for design pass</p>
+</div>
+
+</body>
+</html>

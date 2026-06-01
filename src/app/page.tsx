@@ -1,65 +1,123 @@
-import Image from "next/image";
+import GalaxyWrapper from "../components/GalaxyWrapper";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      {/* ── SEO / AEO semantic layer ── */}
+      {/* Invisible to visual users. Fully readable by search engines,
+          AI crawlers (GPTBot, ClaudeBot, PerplexityBot), and screen readers. */}
+      <main className="sr-only">
+        <h1>AGENTIX AI — AI Web Studio</h1>
+        <p>
+          Websites built for humans. And for AI. We build three-layer websites
+          that work for both human visitors and AI search agents.
+        </p>
+
+        <section aria-label="The problem">
+          <h2>ChatGPT can&apos;t find your website.</h2>
+          <p>
+            60% of searches now end without a click. AI agents skip your
+            homepage entirely and go straight to the data layer. We build
+            websites that work in both worlds — for human visitors and for the
+            AI agents replacing them.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+          <ul>
+            <li>60.3% of US Google queries now show an AI Overview — the answer never leaves Google.</li>
+            <li>59% of retail site traffic is already bots and agents, not humans.</li>
+            <li>AI search traffic converts at 2× the rate of traditional organic.</li>
+            <li>18% of all organic referral traffic now comes from AI search engines.</li>
+          </ul>
+        </section>
+
+        <section aria-label="Services — Three Layers">
+          <h2>Three layers. One studio.</h2>
+
+          <article>
+            <h3>Layer 01 — AI-Built Websites</h3>
+            <p>
+              Fast, beautiful, custom websites built using AI tools. Delivered
+              in 5–7 days. Starting from €1,200.
+            </p>
+          </article>
+
+          <article>
+            <h3>Layer 02 — AI-Powered Websites</h3>
+            <p>
+              Websites with embedded AI agents that qualify leads, answer
+              questions, book meetings, and handle support — 24/7, without a
+              human in the loop. Add-on from €1,500.
+            </p>
+          </article>
+
+          <article>
+            <h3>Layer 03 — Agent-Friendly Websites</h3>
+            <p>
+              Sites built with llms.txt, Schema.org JSON-LD, AEO/GEO content
+              optimization, AI crawler permissions, and MCP server integration
+              so AI agents can read, cite, and transact with your website.
+            </p>
+          </article>
+        </section>
+
+        <section aria-label="How it works">
+          <h2>How we work — 5 steps</h2>
+          <ol>
+            <li>Client briefing — 30-min call and brand brief.</li>
+            <li>AI copy generation — all text written by AI from your brief.</li>
+            <li>AI-assisted build — full site designed and developed with AI tools.</li>
+            <li>Visual generation — custom images in your brand, no stock photos.</li>
+            <li>Deploy and setup — domain, Analytics, Search Console, sitemap, schema, AI crawlers, GDPR. Live in 5–7 days.</li>
+          </ol>
+        </section>
+
+        <section aria-label="Pricing">
+          <h2>Pricing</h2>
+          <ul>
+            <li>Starter — Agencies and freelancers — €1,200–€1,500</li>
+            <li>Studio — Tech and consultancies — €2,500–€3,500</li>
+            <li>Premium — SaaS and funded startups — €4,000–€6,000</li>
+            <li>AI Agent Add-on — any tier — +€1,500–€2,500</li>
+            <li>MCP Integration — tech clients — +€2,000–€3,500</li>
+            <li>Monthly Maintenance — all tiers — €150–€300/month</li>
+          </ul>
+        </section>
+
+        <section aria-label="Who we work with">
+          <h2>Who we work with</h2>
+          <p>
+            Marketing agencies and freelancers who need a fast, reliable
+            white-label web partner. Tech companies, cybersecurity startups,
+            and SaaS businesses with €500K–€5M ARR who need websites that
+            match the quality of their product and are visible to AI search.
+          </p>
+        </section>
+
+        <section aria-label="About AGENTIX AI">
+          <h2>About AGENTIX AI</h2>
+          <p>
+            AGENTIX AI is run by a former security consultant (Deloitte, IBM,
+            Takeda) who became obsessed with AI, agents, and where the web is
+            going. Security background combined with AI developer knowledge and
+            design taste — rare in any market, non-existent as a bundled web
+            studio service in Slovakia.
+          </p>
+        </section>
+
+        <section aria-label="Contact">
+          <h2>Book a free 30-minute call</h2>
+          <p>
+            Available via Calendly. Based in Bratislava, Slovakia. Serving
+            clients globally. Contact: hello@agentix.ai
+          </p>
+        </section>
       </main>
-    </div>
+
+      {/* ── Scroll spacer — creates scroll range for Three.js chapters ── */}
+      {/* 600vh = 6 viewport heights of scrollable space for the full journey */}
+      <div aria-hidden="true" style={{ height: "600vh" }} />
+
+      {/* ── Three.js galaxy experience — client-side only ── */}
+      <GalaxyWrapper />
+    </>
   );
 }
