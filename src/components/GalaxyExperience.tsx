@@ -533,9 +533,6 @@ export default function GalaxyExperience() {
         }}>
           Websites built for humans.<br />And for AI.
         </h2>
-        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15, color: '#9898b4', maxWidth: 480, marginBottom: 40, lineHeight: 1.7 }}>
-          Your website exists. For AI, it doesn't — yet.
-        </p>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
           <Stat value="60.3%" label="Zero-click searches" />
           <Stat value="59%"   label="Traffic is bots" />
