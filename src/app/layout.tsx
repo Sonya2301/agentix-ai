@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import CookieBanner from "../components/CookieBanner";
+import AgentWidget from "../components/AgentWidget";
 
 export const metadata: Metadata = {
   title: "AGENTIX AI — AI Web Studio",
@@ -136,6 +137,7 @@ export default function RootLayout({
       <body>
         {children}
         <CookieBanner />
+        <AgentWidget />
       </body>
     </html>
   );
