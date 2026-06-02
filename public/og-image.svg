@@ -1,0 +1,34 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0a0a0f"/>
+
+  <!-- Star particles -->
+  <circle cx="120" cy="80" r="1.5" fill="#3b82f6" opacity="0.6"/>
+  <circle cx="340" cy="150" r="1" fill="#60a5fa" opacity="0.4"/>
+  <circle cx="900" cy="60" r="2" fill="#3b82f6" opacity="0.5"/>
+  <circle cx="1050" cy="200" r="1.5" fill="#93c5fd" opacity="0.3"/>
+  <circle cx="200" cy="500" r="1" fill="#3b82f6" opacity="0.4"/>
+  <circle cx="1100" cy="480" r="2" fill="#60a5fa" opacity="0.5"/>
+  <circle cx="650" cy="100" r="1.5" fill="#93c5fd" opacity="0.3"/>
+  <circle cx="780" cy="520" r="1" fill="#3b82f6" opacity="0.6"/>
+  <circle cx="420" cy="420" r="1.5" fill="#60a5fa" opacity="0.3"/>
+  <circle cx="980" cy="350" r="1" fill="#3b82f6" opacity="0.5"/>
+
+  <!-- Glow orb -->
+  <radialGradient id="glow" cx="50%" cy="70%" r="40%">
+    <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.15"/>
+    <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Eyebrow -->
+  <text x="600" y="220" font-family="monospace" font-size="14" fill="#3b82f6" text-anchor="middle" letter-spacing="4">AI WEB STUDIO</text>
+
+  <!-- Main title -->
+  <text x="600" y="320" font-family="Georgia, serif" font-size="72" fill="#e8e8f0" text-anchor="middle" font-style="italic">Agentix AI</text>
+
+  <!-- Tagline -->
+  <text x="600" y="390" font-family="Georgia, serif" font-size="22" fill="#9898b4" text-anchor="middle" font-style="italic">Websites built for humans. And for AI.</text>
+
+  <!-- URL -->
+  <text x="600" y="530" font-family="monospace" font-size="13" fill="#6b6b8a" text-anchor="middle" letter-spacing="2">agentix-ai-five.vercel.app</text>
+</svg>
