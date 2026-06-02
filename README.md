@@ -2,16 +2,16 @@
 
 > AI web studio building websites that work for both human visitors and AI agents.
 
-Live: [agentix-ai.vercel.app](https://agentix-ai.vercel.app) · Repo: [github.com/Sonya2301/agentix-ai](https://github.com/Sonya2301/agentix-ai)
+Live: [agentix-ai-five.vercel.app](https://agentix-ai-five.vercel.app) · Repo: [github.com/Sonya2301/agentix-ai](https://github.com/Sonya2301/agentix-ai)
 
 ---
 
 ## What This Is
 
-Portfolio and business website for AGENTIX AI — a solo AI web studio based in Bratislava, Slovakia. The site itself is a demonstration of all three service layers:
+Portfolio and business website for AGENTIX AI — a solo AI web studio based in Bratislava, Slovakia. The site itself is a live demonstration of all three service layers:
 
 - **Layer 01** — Built with AI tools (Claude Code), delivered fast
-- **Layer 02** — Book a call via Calendly integration
+- **Layer 02** — AI agent for lead qualification *(in progress)*
 - **Layer 03** — Agent-friendly: `llms.txt`, Schema.org JSON-LD, AI crawler permissions, auto-generated sitemap
 
 ---
@@ -40,7 +40,7 @@ A Three.js scroll-driven galaxy animation with 6 content chapters:
 | Three.js | Galaxy particle animation |
 | Tailwind CSS v4 | Styling |
 | TypeScript | Type safety |
-| Vercel | Hosting + auto-deploy |
+| Vercel | Hosting + auto-deploy from main branch |
 
 ---
 
@@ -67,23 +67,36 @@ Open [http://localhost:3000](http://localhost:3000)
 ```
 src/
 ├── app/
-│   ├── layout.tsx          # Metadata, Schema.org JSON-LD, fonts
-│   ├── page.tsx            # Main page + SEO semantic HTML layer
-│   ├── globals.css         # CSS variables, fonts, animations
-│   └── sitemap.ts          # Auto-generated sitemap
+│   ├── layout.tsx              # Metadata, Schema.org JSON-LD, fonts
+│   ├── page.tsx                # Main page + SEO semantic HTML layer
+│   ├── globals.css             # CSS variables, fonts, animations
+│   ├── sitemap.ts              # Auto-generated sitemap
+│   └── cookies-policy/
+│       └── page.tsx            # GDPR cookies policy page
 ├── components/
-│   ├── GalaxyExperience.tsx  # Three.js galaxy + all scroll chapters
-│   └── GalaxyWrapper.tsx     # Next.js dynamic import wrapper (ssr: false)
+│   ├── GalaxyExperience.tsx    # Three.js galaxy + all scroll chapters
+│   ├── GalaxyWrapper.tsx       # Next.js dynamic import wrapper (ssr: false)
+│   └── CookieBanner.tsx        # GDPR cookie banner + Google Analytics
 public/
-├── llms.txt                # AI agent sitemap (Layer 03)
-└── robots.txt              # AI crawler permissions (Layer 03)
+├── llms.txt                    # AI agent sitemap (Layer 03)
+├── robots.txt                  # AI crawler permissions (Layer 03)
+└── og-image.svg                # Social sharing preview image
 ```
 
 ---
 
-## Layer 03 — AEO/SEO Setup
+## Branch Workflow
 
-This site is built to be visible to both traditional search engines and AI agents.
+```
+dev   ← all development work happens here
+main  ← production branch, auto-deploys to Vercel
+```
+
+To go live: merge `dev` into `main` and push.
+
+---
+
+## Layer 03 — AEO/SEO Setup
 
 | File | Purpose | URL |
 |------|---------|-----|
@@ -91,8 +104,20 @@ This site is built to be visible to both traditional search engines and AI agent
 | `robots.txt` | Explicitly allows GPTBot, ClaudeBot, PerplexityBot | `/robots.txt` |
 | `sitemap.ts` | Auto-generated XML sitemap | `/sitemap.xml` |
 | Schema.org JSON-LD | Organization + Service structured data | In `<head>` |
+| `og-image.svg` | Social preview image for LinkedIn/Twitter | `/og-image.svg` |
 
 **AI crawlers explicitly allowed:** GPTBot, ClaudeBot, PerplexityBot, GoogleExtendedBot, Applebot-Extended, cohere-ai
+
+> **Note:** `noindex` is currently active — site will not be indexed by search engines until ready for public launch.
+
+---
+
+## Analytics & GDPR
+
+- Google Analytics (GA4) — ID: `G-TFRNGLH75Q`
+- Analytics only loads **after user accepts cookies** (GDPR compliant)
+- Cookie consent stored in `localStorage`
+- Cookies policy page at `/cookies-policy`
 
 ---
 
