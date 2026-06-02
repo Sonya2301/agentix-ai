@@ -1,78 +1,173 @@
 import Anthropic from '@anthropic-ai/sdk'
+import { knowledge } from '@/data/agentix-knowledge'
+import { saveLead } from '@/lib/leads'
+import type { AgentAction, LeadData, ChatMessage } from '@/types/agent'
 
 const client = new Anthropic()
 
-const SYSTEM = `You are the embedded AI agent on AGENTIX AI's website — a live demo of Layer 02.
+// ── System prompt ────────────────────────────────────────────────
+const SYSTEM = `You are the AI agent on AGENTIX AI's website — a live demo of Layer 02: AI-Powered Websites.
 
-AGENTIX AI is a web design studio run by Soňa Mášová in Bratislava, Slovakia. It builds three-layer websites:
+AGENTIX AI is a web design studio run by Soňa Mášová (Bratislava, Slovakia). It builds three-layer websites:
+— Layer 01: AI-built custom websites, 5–7 day delivery, starting €1,200
+— Layer 02: Embedded AI agents (what you are), +€1,500–€2,500
+— Layer 03: Agent-friendly sites visible to ChatGPT, Perplexity, Claude. Basics in all tiers.
 
-— Layer 01 — AI-Built Websites
-  Custom websites built with AI tools (Claude Code, Next.js). 5–7 day delivery. €1,200–€6,000.
+Tiers: Starter (€1,200–€1,500 · agencies/freelancers), Studio (€2,500–€3,500 · tech/consultancies), Premium (€4,000–€6,000 · SaaS/startups).
 
-— Layer 02 — AI-Powered Websites
-  Embedded AI agents built into client websites. Qualifies leads, answers questions, books meetings, handles support — 24/7 without a human. Add-on: +€1,500–€2,500.
+YOUR JOB: Qualify the visitor and guide them toward booking a 30-minute call.
 
-— Layer 03 — Agent-Friendly Websites
-  Sites visible to AI search engines (ChatGPT, Perplexity, Claude). Includes: llms.txt, Schema.org JSON-LD, AEO/GEO content optimization, AI crawler permissions, MCP server integration. Basics included in all tiers.
+TOOLS — use autonomously, never announce you're calling them:
+• capture_lead — call when you've naturally gathered name, email, and enough context to understand their project. Do NOT call before you have their email. Do NOT ask "can I capture your details?" — just call the tool when ready.
+• get_booking_link — call when visitor is ready to book. Always call after capture_lead.
+• answer_service_question — call when asked specifically about services, pricing, process, layers, or the studio. Never answer these from memory.
 
-Pricing tiers:
-• Starter — €1,200–€1,500 — agencies, freelancers, fast turnaround
-• Studio — €2,500–€3,500 — tech companies, consultancies, full AEO/GEO
-• Premium — €4,000–€6,000 — SaaS, funded startups, custom design + strategy
-• AI Agent Add-on — +€1,500–€2,500 — Layer 02 for any tier
-• MCP Integration — +€2,000–€3,500 — full Layer 03 (tech clients)
-• Maintenance — €150–€300/month — security patches, AI visibility monitoring
+CONVERSATION RULES:
+— 2–3 sentences per response. Never longer. One question per message.
+— Gather info naturally through conversation. Don't interrogate or collect fields explicitly.
+— Detect language: Slovak → reply in Slovak. Czech → reply in Czech. Otherwise English.
+— First message: greet briefly, say you're a Layer 02 demo, ask what kind of project they have in mind.
+— When you call capture_lead or get_booking_link, don't comment on it — your next text message continues the conversation naturally. The UI shows the result cards automatically.`
 
-About Soňa: former Security Consultant (Deloitte, IBM, Takeda). Deep background in IT security + AI development + design. This combination — rare anywhere, non-existent as a bundled web studio service in Slovakia. Contact: sona.masova23@gmail.com.
-
-Your role: qualify the visitor and guide them toward booking a free 30-minute call.
-
-Conversation flow:
-1. First message: greet briefly and ask what kind of project they have in mind
-2. Understand who they are: agency or freelancer needing white-label? Tech company needing AI visibility? SaaS startup?
-3. Match them to the right layer(s) and tier
-4. When they show interest, share the booking link: https://calendly.com/sona-masova23
-
-Rules:
-— Keep every response to 2–4 sentences. Short, sharp, no filler.
-— Detect language: if they write Slovak, reply in Slovak. If Czech, reply in Czech. Otherwise English.
-— Don't be a generic chatbot. Be direct, confident, warm.
-— You can mention that this chat is itself a demo of Layer 02 if it's relevant.
-— Never invent client names or results you don't know.`
-
-export async function POST(req: Request) {
-  const { messages } = await req.json()
-
-  const stream = await client.messages.create({
-    model: 'claude-haiku-4-5-20251001',
-    max_tokens: 512,
-    system: [
-      {
-        type: 'text',
-        text: SYSTEM,
-        cache_control: { type: 'ephemeral' },
+// ── Tool definitions ─────────────────────────────────────────────
+const TOOLS: Anthropic.Tool[] = [
+  {
+    name: 'capture_lead',
+    description: 'Save a qualified lead. Call when you have: name, email, project type. Autonomously decide timing — do not wait to be asked.',
+    input_schema: {
+      type: 'object' as const,
+      properties: {
+        name:         { type: 'string', description: 'Visitor name' },
+        email:        { type: 'string', description: 'Email address' },
+        company:      { type: 'string', description: 'Company, agency, startup, or context' },
+        project_type: {
+          type: 'string',
+          enum: ['new-site', 'redesign', 'ai-agent-addon', 'layer03-upgrade', 'full-stack'],
+        },
+        tier: {
+          type: 'string',
+          enum: ['starter', 'studio', 'premium', 'unknown'],
+          description: 'Best tier match inferred from conversation',
+        },
+        budget: { type: 'string', description: 'Budget if mentioned or inferable' },
+        notes:  { type: 'string', description: 'Key context: what they need, pain points, timeline' },
       },
-    ],
-    messages,
-    stream: true,
-  })
-
-  const readable = new ReadableStream({
-    async start(controller) {
-      const encoder = new TextEncoder()
-      for await (const event of stream) {
-        if (
-          event.type === 'content_block_delta' &&
-          event.delta.type === 'text_delta'
-        ) {
-          controller.enqueue(encoder.encode(event.delta.text))
-        }
-      }
-      controller.close()
+      required: ['name', 'email', 'project_type', 'tier', 'notes'],
     },
-  })
+  },
+  {
+    name: 'get_booking_link',
+    description: 'Generate a pre-filled Calendly link. Call when visitor is ready to book.',
+    input_schema: {
+      type: 'object' as const,
+      properties: {
+        project_type: { type: 'string' },
+        tier:         { type: 'string' },
+        name:         { type: 'string' },
+        email:        { type: 'string' },
+      },
+      required: ['project_type', 'tier'],
+    },
+  },
+  {
+    name: 'answer_service_question',
+    description: 'Retrieve authoritative answer about AGENTIX AI services, pricing, process, layers, or the studio.',
+    input_schema: {
+      type: 'object' as const,
+      properties: {
+        topic: {
+          type: 'string',
+          enum: ['pricing', 'layer01', 'layer02', 'layer03', 'process', 'about', 'timeline', 'tech-stack'],
+        },
+      },
+      required: ['topic'],
+    },
+  },
+]
 
-  return new Response(readable, {
-    headers: { 'Content-Type': 'text/plain; charset=utf-8' },
-  })
+// ── Tool execution ───────────────────────────────────────────────
+function executeTool(
+  name: string,
+  input: Record<string, unknown>,
+  actions: AgentAction[],
+): string {
+  if (name === 'capture_lead') {
+    const data = input as LeadData
+    saveLead(data).catch(console.error) // fire-and-forget
+    actions.push({ type: 'lead_captured', data })
+    return JSON.stringify({ ok: true, message: 'Lead saved. Soňa has been notified.' })
+  }
+
+  if (name === 'get_booking_link') {
+    const params = new URLSearchParams({
+      utm_source:   'agent',
+      utm_medium:   'layer02',
+      utm_campaign: String(input.tier ?? 'unknown'),
+      utm_content:  String(input.project_type ?? 'general'),
+    })
+    if (input.name)  params.set('name', String(input.name))
+    if (input.email) params.set('email', String(input.email))
+    const url = `https://calendly.com/sona-masova23?${params}`
+    actions.push({ type: 'booking_link', data: { url, tier: String(input.tier ?? 'unknown') } })
+    return JSON.stringify({ ok: true, url, message: 'Booking link generated.' })
+  }
+
+  if (name === 'answer_service_question') {
+    const topic = String(input.topic)
+    return knowledge[topic] ?? 'No information available for this topic.'
+  }
+
+  return 'Unknown tool.'
+}
+
+// ── Route handler ────────────────────────────────────────────────
+export async function POST(req: Request) {
+  const { messages } = (await req.json()) as { messages: ChatMessage[] }
+
+  // Strip client-only fields before sending to Anthropic
+  const apiMessages: Anthropic.MessageParam[] = messages.map(({ role, content }) => ({
+    role,
+    content,
+  }))
+
+  const actions: AgentAction[] = []
+  const agentMessages: Anthropic.MessageParam[] = [...apiMessages]
+
+  // Agentic loop — max 6 iterations to handle multi-tool turns
+  for (let i = 0; i < 6; i++) {
+    const response = await client.messages.create({
+      model: 'claude-sonnet-4-6',
+      max_tokens: 512,
+      system: [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }],
+      tools: TOOLS,
+      messages: agentMessages,
+    })
+
+    // Final text response — done
+    if (response.stop_reason === 'end_turn') {
+      const text = response.content
+        .filter((b): b is Anthropic.TextBlock => b.type === 'text')
+        .map(b => b.text)
+        .join('')
+      return Response.json({ text, actions })
+    }
+
+    // Tool use — execute, feed results back, continue loop
+    if (response.stop_reason === 'tool_use') {
+      const toolBlocks = response.content.filter(
+        (b): b is Anthropic.ToolUseBlock => b.type === 'tool_use',
+      )
+
+      const toolResults: Anthropic.ToolResultBlockParam[] = toolBlocks.map(block => ({
+        type: 'tool_result' as const,
+        tool_use_id: block.id,
+        content: executeTool(block.name, block.input as Record<string, unknown>, actions),
+      }))
+
+      agentMessages.push({ role: 'assistant', content: response.content })
+      agentMessages.push({ role: 'user',      content: toolResults })
+    }
+  }
+
+  return Response.json({ text: 'Something went wrong. Please try again.', actions: [] })
 }
