@@ -56,62 +56,93 @@ export default function CookieBanner() {
       left: '50%',
       transform: 'translateX(-50%)',
       zIndex: 200,
-      width: 'min(560px, calc(100vw - 32px))',
+      width: 'min(680px, calc(100vw - 32px))',
       background: '#111118',
       border: '1px solid #1e1e2e',
-      padding: '20px 24px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      gap: 20,
-      flexWrap: 'wrap',
+      padding: '28px 32px',
       backdropFilter: 'blur(12px)',
     }}>
+      {/* Text */}
       <p style={{
         fontFamily: 'var(--font-sans)',
         fontSize: 13,
         color: '#9898b4',
-        lineHeight: 1.6,
-        flex: 1,
-        minWidth: 200,
-        margin: 0,
+        lineHeight: 1.7,
+        margin: '0 0 20px 0',
       }}>
-        We use cookies to improve your experience. By continuing you agree to our use of cookies.
+        We use first-party and third-party cookies to understand how our website is used and to improve it.
+        We use analytics cookies to measure traffic and understand visitor behaviour.
+        You can accept all cookies, reject non-essential ones, or manage your preferences.
+        For more information please see our{' '}
+        <a
+          href="/cookies-policy"
+          style={{ color: '#3b82f6', textDecoration: 'underline', textUnderlineOffset: 3 }}
+        >
+          Cookies Policy
+        </a>.
       </p>
 
-      <div style={{ display: 'flex', gap: 10, flexShrink: 0 }}>
+      {/* Buttons */}
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        gap: 10,
+      }}>
         <button
           onClick={decline}
           style={{
             fontFamily: 'var(--font-mono)',
             fontSize: 11,
-            letterSpacing: '0.1em',
+            letterSpacing: '0.08em',
             textTransform: 'uppercase',
             background: 'transparent',
-            border: '1px solid #1e1e2e',
+            border: 'none',
             color: '#6b6b8a',
-            padding: '8px 16px',
+            padding: '0',
             cursor: 'pointer',
+            textDecoration: 'underline',
+            textUnderlineOffset: 3,
           }}
         >
-          Decline
+          Cookie Settings
         </button>
-        <button
-          onClick={accept}
-          style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: 11,
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-            background: '#3b82f6',
-            border: '1px solid #3b82f6',
-            color: '#0a0a0f',
-            padding: '8px 16px',
-            cursor: 'pointer',
-          }}
-        >
-          Accept
-        </button>
+
+        <div style={{ display: 'flex', gap: 10 }}>
+          <button
+            onClick={decline}
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: 11,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              background: 'transparent',
+              border: '1px solid #1e1e2e',
+              color: '#9898b4',
+              padding: '10px 20px',
+              cursor: 'pointer',
+            }}
+          >
+            Reject All
+          </button>
+          <button
+            onClick={accept}
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: 11,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              background: '#3b82f6',
+              border: '1px solid #3b82f6',
+              color: '#0a0a0f',
+              padding: '10px 20px',
+              cursor: 'pointer',
+            }}
+          >
+            Accept All Cookies
+          </button>
+        </div>
       </div>
     </div>
   )
