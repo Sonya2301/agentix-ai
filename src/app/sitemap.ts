@@ -1,12 +1,18 @@
-import type { MetadataRoute } from "next";
+import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://agentix-ai-five.vercel.app",
+      url: 'https://agentix-ai-five.vercel.app',
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: 'monthly',
       priority: 1,
     },
-  ];
+    {
+      url: 'https://agentix-ai-five.vercel.app/cookies-policy',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+  ]
 }
