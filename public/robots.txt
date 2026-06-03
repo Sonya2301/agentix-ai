@@ -20,4 +20,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://agentix.ai/sitemap.xml
+Sitemap: https://agentix-ai-five.vercel.app/sitemap.xml

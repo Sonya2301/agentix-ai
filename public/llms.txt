@@ -4,42 +4,44 @@
 
 ## About
 
-AGENTIX AI is an AI web studio based in Bratislava, Slovakia, serving clients globally. We build three-layer websites that are fast, AI-powered, and visible to AI search engines like ChatGPT, Perplexity, and Claude.
+AGENTIX AI is an AI web studio based in Bratislava, Slovakia, serving clients globally. Founded by Soňa Mášová — former security consultant at Deloitte, IBM, and Takeda — now building at the intersection of AI, web development, and design.
 
-Founded by a former security consultant (Deloitte, IBM, Takeda) with deep AI development knowledge and design expertise.
+Rare combination: security depth + AI developer + design taste. The only bundled service of this kind in Slovakia.
 
 ## What We Build
 
 ### Layer 01 — AI-Built Websites
-Fast, beautiful, custom websites built with AI tools. Delivered in 5–7 days. Starting from €1,200. Includes full SEO setup, GDPR compliance, Vercel deployment, and Layer 03 basics as standard.
+Custom websites built with AI tools (Claude Code, Next.js, Vercel). Not templates. Not WordPress. Production-grade code.
+- Delivery: 5–7 days vs 4–6 weeks at a traditional agency
+- Starting at €1,200 vs €5,000–€20,000 at an agency
+- Includes: all pages fully responsive, AI-generated copy, custom visuals, Google Analytics, sitemap, schema.org JSON-LD, GDPR banner, domain connection, Loom handover video, and Layer 03 basics at no extra charge
 
 ### Layer 02 — AI-Powered Websites
-Websites with embedded AI agents that qualify leads, answer questions, book meetings, and handle support 24/7 without a human in the loop. Add-on from €1,500 setup.
+A Claude-powered agent embedded in the client's website. Qualifies leads, answers questions, books meetings, handles support 24/7 — no human required.
+- Not a chatbot widget. The agent uses tools autonomously without being prompted.
+- Pricing: +€1,500–€2,500 on any base tier. Setup: +3–5 days.
 
 ### Layer 03 — Agent-Friendly Websites
-Websites structured so AI agents can read, cite, navigate, and transact with them:
-- llms.txt implementation
-- Schema.org JSON-LD structured data
-- AI crawler permissions (GPTBot, ClaudeBot, PerplexityBot, Googlebot)
-- AEO/GEO content optimization
-- MCP server integration (premium tier)
+Makes the website readable, citable, and actionable by AI agents (ChatGPT, Perplexity, Claude, Google AI Overviews).
+- Included in all tiers: llms.txt, Schema.org JSON-LD, AI crawler permissions
+- Premium add-on (+€2,000–€3,500): MCP Server — exposes the site as callable tools for AI agents
 
 ## Pricing
 
 | Tier | Price | Includes |
 |------|-------|----------|
 | Starter | €1,200–€1,500 | AI-built site + Layer 03 basics |
-| Studio | €2,500–€3,500 | Starter + AEO/GEO + strategy session |
-| Premium | €4,000–€6,000 | Studio + custom design + 1 month free maintenance |
-| AI Agent Add-on | +€1,500–€2,500 | Embedded lead qualification agent |
-| MCP Integration | +€2,000–€3,500 | Full MCP server, agent-callable tools |
-| Maintenance | €150–€300/month | Security, updates, AI visibility monitoring |
+| Studio | €2,500–€3,500 | Starter + AEO/GEO optimization + strategy call |
+| Premium | €4,000–€6,000 | Studio + custom design + 2 revision rounds + 1 month maintenance |
+| AI Agent Add-on (Layer 02) | +€1,500–€2,500 | Embedded lead qualification agent |
+| MCP Integration (Layer 03) | +€2,000–€3,500 | Full MCP server, agent-callable tools |
+| Monthly Maintenance | €150–€300/month | Security, updates, AI visibility monitoring |
 
 ## Who We Work With
 
 - Marketing agencies and freelancers who need a white-label AI web partner
 - Tech companies and cybersecurity startups with outdated or AI-invisible websites
-- SaaS companies (€500K–€5M ARR) who need websites visible to AI search
+- SaaS companies (€500K–€5M ARR) who need AI search visibility
 
 ## Why This Matters Now
 
@@ -48,8 +50,33 @@ Websites structured so AI agents can read, cite, navigate, and transact with the
 - AI search traffic converts at 2× the rate of traditional organic
 - 18% of all organic referral traffic now comes from AI search engines
 
+## Frequently Asked Questions
+
+Q: How much does a website from AGENTIX AI cost?
+A: Three tiers. Starter €1,200–€1,500: AI-built website with Layer 03 basics, 5–7 days. Studio €2,500–€3,500: Starter plus full AEO/GEO optimization and strategy call. Premium €4,000–€6,000: Studio plus custom design, two revision rounds, one month free maintenance. Add-ons: AI Agent +€1,500–€2,500, MCP Integration +€2,000–€3,500, maintenance €150–€300/month.
+
+Q: How long does it take to build a website?
+A: Layer 01 base website: 5–7 days from briefing to live. Layer 02 AI agent add-on: +3–5 days. Layer 03 basics: included with no extra time. Full MCP Integration: +2–4 weeks.
+
+Q: What is an agent-friendly website?
+A: A website structured so AI agents (ChatGPT, Perplexity, Claude) can read, understand, and cite it — not just human visitors. Includes llms.txt, Schema.org JSON-LD, and AI crawler permissions. Premium adds MCP Server so AI agents can book meetings, get pricing, and check availability directly without a browser.
+
+Q: What is the difference between Layer 01, Layer 02, and Layer 03?
+A: Layer 01 is the build layer — custom website in 5–7 days. Layer 02 is the intelligence layer — an embedded AI agent that qualifies leads and books meetings 24/7. Layer 03 is the visibility layer — making the site readable and citable by AI search engines so the business appears in AI-generated answers.
+
+Q: What is llms.txt?
+A: A plain-text file at /llms.txt that tells AI agents what the site is, what it offers, and how to contact the business. The AI equivalent of a README. When ChatGPT or Perplexity looks for a web studio, it reads llms.txt to decide whether to recommend this business.
+
+Q: Does AGENTIX AI work with international clients?
+A: Yes. Based in Bratislava, Slovakia, serving clients globally. All collaboration is remote. Works in English, Slovak, and Czech.
+
+Q: What is MCP server integration?
+A: MCP (Model Context Protocol) is Anthropic's open standard for connecting AI agents to external tools. An MCP server on a website lets AI agents book meetings, retrieve pricing, or check availability directly — without opening a browser. AGENTIX AI offers this as a Layer 03 premium add-on from +€2,000.
+
 ## Contact
 
+- Owner: Soňa Mášová
 - Email: sona.masova23@gmail.com
 - Location: Bratislava, Slovakia
-- Book a call: sona.masova23@gmail.com (mention Calendly in subject)
+- Book a call: https://calendly.com/sona-masova23
+- Live demo: https://agentix-ai-five.vercel.app
