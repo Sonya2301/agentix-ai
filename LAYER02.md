@@ -82,7 +82,7 @@ In `.env.local` (never commit this file):
 
 ```
 ANTHROPIC_API_KEY=sk-ant-...       # Required — Claude API
-RESEND_API_KEY=re_...              # Optional — email notifications to Soňa
+RESEND_API_KEY=re_...              # Required for email — lead notifications to Soňa
 RESEND_FROM=agent@yourdomain.com   # Optional — defaults to onboarding@resend.dev
 ```
 
@@ -118,23 +118,28 @@ The architecture stays identical. Only the content changes.
 
 ---
 
+## Agent Behaviour Rules (system prompt)
+
+- 2–3 sentences per response, one question per message
+- Detects language: Slovak → Slovak, Czech → Czech, otherwise English
+- Never includes URLs, markdown links, or bold formatting in text — plain text only
+- Never announces tool calls — action cards render automatically in the UI
+- For ANY question about AGENTIX AI — always calls `answer_service_question`, never answers from memory
+- If a topic is not in the knowledge base — says "I'm not sure, but you can reach Soňa directly" and fires `get_booking_link`
+
+---
+
 ## Git History
 
 | Commit | What |
 |--------|------|
 | `4b84caa` | Initial chat widget (streaming, no tool use) — replaced |
 | `643d2eb` | Rebuilt as autonomous agent with tool use, action cards, lead storage |
-| next | Fix raw markdown in chat bubble; Resend email confirmed working |
+| `76b271e` | Fix raw markdown in bubble; Resend email confirmed working |
+| `eadf189` | Force agent to always use knowledge base, never answer from memory |
+| `41e69fe` | Fallback to Soňa contact + booking link for unknown questions |
 
-Branch: `dev`
-
-### Fixes applied (2026-06-03)
-
-**Raw markdown in bubble** — Claude was putting `**[Book a call](url)**` in text responses even when the booking card handles it. Fixed two ways:
-1. System prompt updated: "Never include URLs, markdown links, or bold formatting in text. Plain text only."
-2. Post-processing strip in `route.ts` — removes `[text](url)`, `**bold**`, `*italic*` from final text as a safety net.
-
-**Resend email** — `RESEND_API_KEY` added to `.env.local`. Email notifications confirmed working — lead captured → email arrives at `sona.masova23@gmail.com` with full lead table and booking link.
+Branch: `dev` → deployed to Vercel via `main`
 
 ---
 

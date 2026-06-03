@@ -11,7 +11,7 @@ Live: [agentix-ai-five.vercel.app](https://agentix-ai-five.vercel.app) · Repo: 
 Portfolio and business website for AGENTIX AI — a solo AI web studio based in Bratislava, Slovakia. The site itself is a live demonstration of all three service layers:
 
 - **Layer 01** — Built with AI tools (Claude Code), delivered fast
-- **Layer 02** — AI agent for lead qualification *(in progress)*
+- **Layer 02** — Autonomous AI agent: lead qualification, booking, knowledge base *(live)*
 - **Layer 03** — Agent-friendly: `llms.txt`, Schema.org JSON-LD, AI crawler permissions, auto-generated sitemap
 
 ---
@@ -41,6 +41,8 @@ A Three.js scroll-driven galaxy animation with 6 content chapters:
 | Tailwind CSS v4 | Styling |
 | TypeScript | Type safety |
 | Vercel | Hosting + auto-deploy from main branch |
+| Anthropic Claude API | AI agent (Layer 02) |
+| Resend | Lead email notifications (Layer 02) |
 
 ---
 
@@ -54,6 +56,17 @@ cd agentix-ai
 # Install dependencies
 npm install
 
+# Set up environment variables
+cp .env.example .env.local  # then fill in your keys
+```
+
+Required keys in `.env.local`:
+```
+ANTHROPIC_API_KEY=sk-ant-...   # Required — powers the AI agent
+RESEND_API_KEY=re_...          # Required — lead email notifications
+```
+
+```bash
 # Start dev server
 npm run dev
 ```
@@ -67,20 +80,31 @@ Open [http://localhost:3000](http://localhost:3000)
 ```
 src/
 ├── app/
-│   ├── layout.tsx              # Metadata, Schema.org JSON-LD, fonts
+│   ├── layout.tsx              # Metadata, Schema.org JSON-LD, fonts, AgentWidget mount
 │   ├── page.tsx                # Main page + SEO semantic HTML layer
 │   ├── globals.css             # CSS variables, fonts, animations
 │   ├── sitemap.ts              # Auto-generated sitemap
+│   ├── api/chat/
+│   │   └── route.ts            # Layer 02: agentic loop, tool execution
 │   └── cookies-policy/
 │       └── page.tsx            # GDPR cookies policy page
 ├── components/
 │   ├── GalaxyExperience.tsx    # Three.js galaxy + all scroll chapters
 │   ├── GalaxyWrapper.tsx       # Next.js dynamic import wrapper (ssr: false)
-│   └── CookieBanner.tsx        # GDPR cookie banner + Google Analytics
+│   ├── CookieBanner.tsx        # GDPR cookie banner + Google Analytics
+│   └── AgentWidget.tsx         # Layer 02: floating chat UI + action cards
+├── data/
+│   └── agentix-knowledge.ts    # Layer 02: knowledge base (pricing, layers, process)
+├── lib/
+│   └── leads.ts                # Layer 02: saveLead() — file + Resend email
+└── types/
+    └── agent.ts                # Layer 02: shared types
 public/
 ├── llms.txt                    # AI agent sitemap (Layer 03)
 ├── robots.txt                  # AI crawler permissions (Layer 03)
 └── og-image.svg                # Social sharing preview image
+data/
+└── leads.json                  # Local lead storage (dev only)
 ```
 
 ---
