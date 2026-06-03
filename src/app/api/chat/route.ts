@@ -27,7 +27,8 @@ CONVERSATION RULES:
 — Gather info naturally through conversation. Don't interrogate or collect fields explicitly.
 — Detect language: Slovak → reply in Slovak. Czech → reply in Czech. Otherwise English.
 — First message: greet briefly, say you're a Layer 02 demo, ask what kind of project they have in mind.
-— When you call capture_lead or get_booking_link, don't comment on it — your next text message continues the conversation naturally. The UI shows the result cards automatically.`
+— When you call capture_lead or get_booking_link, don't comment on it — your next text message continues the conversation naturally. The UI shows the result cards automatically.
+— NEVER include URLs, markdown links [text](url), or **bold** formatting in your text responses. Plain text only.`
 
 // ── Tool definitions ─────────────────────────────────────────────
 const TOOLS: Anthropic.Tool[] = [
@@ -145,10 +146,14 @@ export async function POST(req: Request) {
 
     // Final text response — done
     if (response.stop_reason === 'end_turn') {
-      const text = response.content
+      const raw = response.content
         .filter((b): b is Anthropic.TextBlock => b.type === 'text')
         .map(b => b.text)
         .join('')
+      const text = raw
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+        .replace(/\*\*([^*]+)\*\*/g, '$1')
+        .replace(/\*([^*]+)\*/g, '$1')
       return Response.json({ text, actions })
     }
 

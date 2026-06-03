@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Jan",
+    "email": "jan@agencytest.sk",
+    "project_type": "new-site",
+    "tier": "starter",
+    "notes": "Runs a small marketing agency, building a new site for a cybersecurity startup client. Needs fast delivery.",
+    "company": "Marketing agency (client: cybersecurity startup)",
+    "timestamp": "2026-06-02T19:25:01.179Z"
+  },
+  {
+    "name": "Jana Novak",
+    "email": "jana@test.com",
+    "project_type": "new-site",
+    "tier": "starter",
+    "budget": "€1,000",
+    "notes": "New website for a bakery. Budget around €1,000 which is slightly below Starter tier. Ready to book a call.",
+    "timestamp": "2026-06-02T19:55:51.377Z"
+  },
+  {
+    "name": "Sona",
+    "email": "sonamasova@gmail.com",
+    "project_type": "new-site",
+    "tier": "starter",
+    "notes": "Wants a new website for a kebab restaurant. Likely a small local business site. Testing the agent flow.",
+    "timestamp": "2026-06-02T19:59:33.761Z"
+  },
+  {
+    "name": "Lukas",
+    "email": "sonamasova@gmail.com",
+    "project_type": "new-site",
+    "tier": "starter",
+    "notes": "Single kebab restaurant in Bratislava. New website needed with menu, location, opening hours, possibly online orders or reservations. Local client.",
+    "timestamp": "2026-06-03T13:23:15.921Z"
+  },
+  {
+    "name": "Lukas",
+    "email": "sonamasova@gmail.com",
+    "project_type": "new-site",
+    "tier": "starter",
+    "notes": "Single kebab restaurant in Bratislava. Needs a brand new website with menu, location, opening hours, possibly online orders or reservations.",
+    "company": "Kebab restaurant, Bratislava",
+    "timestamp": "2026-06-03T13:23:38.514Z"
+  },
+  {
+    "name": "Lukas",
+    "email": "sonamasova@gmail.com",
+    "project_type": "new-site",
+    "tier": "starter",
+    "notes": "Single kebab restaurant in Bratislava. Needs new website with menu, location, contact. Price-sensitive, questioning the €1,200 starter price.",
+    "company": "Kebab restaurant, Bratislava",
+    "timestamp": "2026-06-03T13:24:18.081Z"
+  },
+  {
+    "name": "Laura",
+    "email": "sonamasova@gmail.com",
+    "project_type": "new-site",
+    "tier": "starter",
+    "notes": "Nail salon owner. Wants a new website with animations, brand identity, and logo design. No budget mentioned yet.",
+    "timestamp": "2026-06-03T13:29:44.642Z"
+  }
+]
