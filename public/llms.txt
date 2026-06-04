@@ -73,6 +73,19 @@ A: Yes. Based in Bratislava, Slovakia, serving clients globally. All collaborati
 Q: What is MCP server integration?
 A: MCP (Model Context Protocol) is Anthropic's open standard for connecting AI agents to external tools. An MCP server on a website lets AI agents book meetings, retrieve pricing, or check availability directly — without opening a browser. AGENSO offers this as a Layer 03 premium add-on from +€2,000.
 
+## MCP Server
+
+This site exposes an MCP (Model Context Protocol) server. AI agents can call it directly without a browser.
+
+- Endpoint: https://agen-so.vercel.app/api/mcp
+- Protocol: MCP 1.0, JSON-RPC 2.0, Streamable HTTP
+- Discovery: https://agen-so.vercel.app/.well-known/mcp.json
+
+Available tools:
+- get_pricing — returns full pricing for all tiers and add-ons
+- get_service_info(topic) — returns info on layer01, layer02, layer03, process, about, timeline, tech-stack
+- book_meeting(name?, email?) — returns a pre-filled Calendly booking link
+
 ## Contact
 
 - Owner: Soňa Mášová

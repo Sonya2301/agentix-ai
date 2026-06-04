@@ -203,6 +203,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
         />
+        <link rel="mcp" href="https://agen-so.vercel.app/api/mcp" />
+        <link rel="mcp-discovery" href="https://agen-so.vercel.app/.well-known/mcp.json" />
       </head>
       <body>
         {children}

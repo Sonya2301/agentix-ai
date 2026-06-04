@@ -1,0 +1,31 @@
+{
+  "mcpVersion": "1.0",
+  "servers": [
+    {
+      "url": "https://agen-so.vercel.app/api/mcp",
+      "name": "AGENSO",
+      "description": "AI web studio tools — get pricing, service info, and book a meeting with Soňa Mášová.",
+      "tools": [
+        {
+          "name": "get_pricing",
+          "description": "Get full pricing for all AGENSO tiers and add-ons."
+        },
+        {
+          "name": "get_service_info",
+          "description": "Get information about AGENSO services, layers, process, timeline, or the studio.",
+          "parameters": {
+            "topic": "layer01 | layer02 | layer03 | process | about | timeline | tech-stack"
+          }
+        },
+        {
+          "name": "book_meeting",
+          "description": "Get a Calendly link to book a 30-minute call with Soňa Mášová, owner of AGENSO.",
+          "parameters": {
+            "name": "optional — your name",
+            "email": "optional — your email address"
+          }
+        }
+      ]
+    }
+  ]
+}
