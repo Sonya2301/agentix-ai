@@ -12,7 +12,7 @@ Portfolio and business website for AISOW — a solo AI web studio based in Brati
 
 - **Layer 01** — Built with AI tools (Claude Code), delivered fast
 - **Layer 02** — Autonomous AI agent: lead qualification, booking, knowledge base *(live)*
-- **Layer 03** — Agent-friendly: `llms.txt`, Schema.org JSON-LD, AI crawler permissions, auto-generated sitemap
+- **Layer 03** — Agent-friendly: `llms.txt`, Schema.org JSON-LD, FAQPage schema, AI crawler permissions, sitemap, MCP Server *(live)*
 
 ---
 
@@ -43,6 +43,7 @@ A Three.js scroll-driven galaxy animation with 6 content chapters:
 | Vercel | Hosting + auto-deploy from main branch |
 | Anthropic Claude API | AI agent (Layer 02) |
 | Resend | Lead email notifications (Layer 02) |
+| MCP SDK (`@modelcontextprotocol/sdk`) | MCP Server (Layer 03) |
 
 ---
 
@@ -85,8 +86,11 @@ src/
 │   ├── globals.css             # CSS variables, fonts, animations
 │   ├── sitemap.ts              # Auto-generated sitemap (Layer 03)
 │   ├── robots.ts               # AI crawler permissions (Layer 03)
-│   ├── api/chat/
-│   │   └── route.ts            # Layer 02: agentic loop, tool execution
+│   ├── api/
+│   │   ├── chat/
+│   │   │   └── route.ts        # Layer 02: agentic loop, tool execution
+│   │   └── mcp/
+│   │       └── route.ts        # Layer 03: MCP Server (get_pricing, get_service_info, book_meeting)
 │   └── cookies-policy/
 │       └── page.tsx            # GDPR cookies policy page
 ├── components/
@@ -129,6 +133,7 @@ To go live: merge `dev` into `main` and push.
 | `src/app/sitemap.ts` | Auto-generated XML sitemap | `/sitemap.xml` |
 | Schema.org JSON-LD | Organization + Service + FAQPage structured data | In `<head>` |
 | `og-image.svg` | Social preview image for LinkedIn/Twitter | `/og-image.svg` |
+| `src/app/api/mcp/route.ts` | MCP Server — 3 callable tools for AI agents | `/api/mcp` |
 
 **AI crawlers explicitly allowed:** GPTBot, ClaudeBot, PerplexityBot, GoogleExtendedBot, Applebot-Extended, cohere-ai
 

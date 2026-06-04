@@ -141,6 +141,9 @@ The architecture stays identical. Only the content changes.
 | `98bdf77` | Layer 03 AEO/GEO: FAQPage schema, Q&A llms.txt, robots.txt sitemap fix |
 | `6aec18b` | Fix robots.txt and sitemap — move to src/app/ (Next.js 16 convention) |
 | `f2a0e74` | Rename brand from AGENTIX AI to AISOW across all files |
+| `fdf493f` | Update README and LAYER02 docs |
+| `ccbad99` | Add MCP Server — Layer 03 premium (get_pricing, get_service_info, book_meeting) |
+| `9e11e70` | Update all URLs to aisow.vercel.app |
 
 Branch: `dev` → deployed to Vercel via `main`
 
