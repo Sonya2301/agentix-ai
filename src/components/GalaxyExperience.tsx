@@ -162,7 +162,8 @@ function panelStyle(visible: boolean): React.CSSProperties {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '0 24px',
+    padding: '72px 24px 24px',
+    overflowY: 'auto',
     opacity: visible ? 1 : 0,
     transform: visible ? 'translateY(0px)' : 'translateY(28px)',
     transition: 'opacity 0.9s ease, transform 0.9s ease',
@@ -215,6 +216,15 @@ export default function GalaxyExperience() {
   const [chapter, setChapter]   = useState(0)
   const [booted,  setBooted]    = useState(false)
   const [reduced, setReduced]   = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)')
+    setIsMobile(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
 
   const getChapter = useCallback((p: number) => {
     if (p < 0.13) return 0
@@ -450,7 +460,7 @@ export default function GalaxyExperience() {
         aria-label="Main navigation"
         style={{
           position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
-          padding: '20px 40px',
+          padding: isMobile ? '16px 20px' : '20px 40px',
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
           opacity: booted ? 1 : 0,
           transition: 'opacity 1s ease 0.5s',
@@ -459,8 +469,8 @@ export default function GalaxyExperience() {
         <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13, letterSpacing: '0.16em', color: '#e8e8f0', textTransform: 'uppercase', fontWeight: 500 }}>
           AGENSO
         </span>
-        <div style={{ display: 'flex', gap: 28, alignItems: 'center' }}>
-          {['Services', 'Pricing', 'About'].map(item => (
+        <div style={{ display: 'flex', gap: isMobile ? 12 : 28, alignItems: 'center' }}>
+          {!isMobile && ['Services', 'Pricing', 'About'].map(item => (
             <span key={item} style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.1em', color: '#6b6b8a', textTransform: 'uppercase', cursor: 'default' }}>
               {item}
             </span>
@@ -470,7 +480,7 @@ export default function GalaxyExperience() {
             style={{
               fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.1em',
               color: '#0a0a0f', background: '#3b82f6',
-              padding: '9px 18px', textTransform: 'uppercase', textDecoration: 'none',
+              padding: isMobile ? '8px 14px' : '9px 18px', textTransform: 'uppercase', textDecoration: 'none',
               transition: 'opacity 0.2s',
             }}
           >
@@ -603,7 +613,7 @@ export default function GalaxyExperience() {
 
       {/* ── Chapter 5: MCP Live Demo ── */}
       <div style={panelStyle(chapter === 5)}>
-        <MCPPlayground />
+        <MCPPlayground isMobile={isMobile} />
       </div>
 
       {/* ── Chapter 6: About + CTA ── */}

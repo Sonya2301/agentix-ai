@@ -6,7 +6,7 @@ type Topic = typeof TOPICS[number]
 
 const mono: React.CSSProperties = { fontFamily: 'var(--font-mono)' }
 
-export function MCPPlayground() {
+export function MCPPlayground({ isMobile = false }: { isMobile?: boolean }) {
   const [activeTool, setActiveTool] = useState<string | null>(null)
   const [topic, setTopic] = useState<Topic>('layer01')
   const [requestText, setRequestText] = useState('')
@@ -98,8 +98,8 @@ export function MCPPlayground() {
 
       {/* Two panels */}
       <div style={{ display: 'flex', gap: 12, width: '100%', flexWrap: 'wrap' }}>
-        <Panel label="REQUEST" text={requestText} phase={phase} side="left" />
-        <Panel label="RESPONSE" text={responseText} phase={phase} side="right" />
+        <Panel label="REQUEST" text={requestText} phase={phase} side="left" minHeight={isMobile ? 130 : 200} />
+        <Panel label="RESPONSE" text={responseText} phase={phase} side="right" minHeight={isMobile ? 130 : 200} />
       </div>
     </div>
   )
@@ -122,7 +122,7 @@ function ToolButton({ label, active, phase, onClick }: { label: string; active: 
   )
 }
 
-function Panel({ label, text, phase, side }: { label: string; text: string; phase: string; side: 'left' | 'right' }) {
+function Panel({ label, text, phase, side, minHeight = 200 }: { label: string; text: string; phase: string; side: 'left' | 'right'; minHeight?: number }) {
   const isLeft = side === 'left'
   const showCursor = isLeft
     ? phase === 'typing'
@@ -134,7 +134,7 @@ function Panel({ label, text, phase, side }: { label: string; text: string; phas
 
   return (
     <div style={{
-      flex: '1 1 300px', minHeight: 200,
+      flex: '1 1 300px', minHeight,
       background: 'rgba(10,10,15,0.85)',
       border: '1px solid rgba(59,130,246,0.15)',
       backdropFilter: 'blur(12px)',
