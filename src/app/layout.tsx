@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Soňa Mášová" }],
   creator: "Soňa Mášová",
-  metadataBase: new URL("https://agen-so.vercel.app"),
+  metadataBase: new URL("https://sona-masova.vercel.app"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://agen-so.vercel.app",
+    url: "https://sona-masova.vercel.app",
     siteName: "Soňa Mášová",
     title: "Soňa Mášová — Websites built for humans. And for AI.",
     description:
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     follow: false,
   },
   alternates: {
-    canonical: "https://agen-so.vercel.app",
+    canonical: "https://sona-masova.vercel.app",
   },
 };
 
@@ -61,9 +61,9 @@ const schemaOrg = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://agen-so.vercel.app/#organization",
+      "@id": "https://sona-masova.vercel.app/#organization",
       name: "Soňa Mášová",
-      url: "https://agen-so.vercel.app",
+      url: "https://sona-masova.vercel.app",
       description:
         "AI web studio building three-layer websites: AI-Built, AI-Powered, and Agent-Friendly. Making businesses visible to both human visitors and AI search agents.",
       foundingDate: "2026",
@@ -106,15 +106,15 @@ const schemaOrg = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://agen-so.vercel.app/#website",
-      url: "https://agen-so.vercel.app",
+      "@id": "https://sona-masova.vercel.app/#website",
+      url: "https://sona-masova.vercel.app",
       name: "Soňa Mášová",
-      publisher: { "@id": "https://agen-so.vercel.app/#organization" },
+      publisher: { "@id": "https://sona-masova.vercel.app/#organization" },
     },
     {
       "@type": "Service",
       name: "Three-Layer AI Website Service",
-      provider: { "@id": "https://agen-so.vercel.app/#organization" },
+      provider: { "@id": "https://sona-masova.vercel.app/#organization" },
       description:
         "Layer 01: AI-Built Websites in 5-7 days. Layer 02: AI-Powered with embedded agents. Layer 03: Agent-Friendly with llms.txt, Schema.org, MCP integration.",
       serviceType: "Web Design and Development",
@@ -122,7 +122,7 @@ const schemaOrg = {
     },
     {
       "@type": "FAQPage",
-      "@id": "https://agen-so.vercel.app/#faq",
+      "@id": "https://sona-masova.vercel.app/#faq",
       mainEntity: [
         {
           "@type": "Question",
@@ -203,8 +203,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
         />
-        <link rel="mcp" href="https://agen-so.vercel.app/api/mcp" />
-        <link rel="mcp-discovery" href="https://agen-so.vercel.app/.well-known/mcp.json" />
+        <link rel="mcp" href="https://sona-masova.vercel.app/api/mcp" />
+        <link rel="mcp-discovery" href="https://sona-masova.vercel.app/.well-known/mcp.json" />
       </head>
       <body>
         {children}

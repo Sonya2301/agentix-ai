@@ -144,7 +144,7 @@ The architecture stays identical. Only the content changes.
 | `fdf493f` | Update README and LAYER02 docs |
 | `ccbad99` | Add MCP Server — Layer 03 premium (get_pricing, get_service_info, book_meeting) |
 | `ec48ce0` | Rename brand from AISOW to AGENSO across all files |
-| `41463ef` | Update all URLs to agen-so.vercel.app |
+| `41463ef` | Update all URLs to sona-masova.vercel.app |
 | `8b6a5ff` | Add MCP live demo — interactive playground in Chapter 5 |
 | `70abb82` | Update docs — explain MCP live demo |
 | `ab6ca6c` | Add MCP discoverability — /.well-known/mcp.json, llms.txt MCP section, link tags in head |

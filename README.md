@@ -2,7 +2,7 @@
 
 > Building websites that work for both human visitors and AI agents.
 
-Live: [agen-so.vercel.app](https://agen-so.vercel.app) · Repo: [github.com/Sonya2301/agentix-ai](https://github.com/Sonya2301/agentix-ai)
+Live: [sona-masova.vercel.app](https://sona-masova.vercel.app) · Repo: [github.com/Sonya2301/agentix-ai](https://github.com/Sonya2301/agentix-ai)
 
 ---
 

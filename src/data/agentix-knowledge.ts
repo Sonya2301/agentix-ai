@@ -53,7 +53,7 @@ Premium add-on (+€2,000–€3,500):
 04 — Visual Generation (Day 4–5): Custom images in brand style. No stock photos.
 05 — Deploy + Setup (Day 5–7): Domain, Analytics, Search Console, sitemap, schema, GDPR, AI crawlers. Live. Loom handover.`,
 
-  about: `Soňa Mášová is run by Soňa Mášová, Bratislava, Slovakia. Serving clients globally.
+  about: `Soňa Mášová — AI web studio founded by Soňa Mášová, based in Bratislava, Slovakia. Serving clients globally.
 
 Background: Former Security Consultant at Deloitte, IBM, and Takeda. Now building at the intersection of AI, web development, and design.
 

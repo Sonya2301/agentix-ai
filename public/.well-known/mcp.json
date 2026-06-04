@@ -2,7 +2,7 @@
   "mcpVersion": "1.0",
   "servers": [
     {
-      "url": "https://agen-so.vercel.app/api/mcp",
+      "url": "https://sona-masova.vercel.app/api/mcp",
       "name": "Soňa Mášová",
       "description": "AI web studio tools — get pricing, service info, and book a meeting with Soňa Mášová.",
       "tools": [
