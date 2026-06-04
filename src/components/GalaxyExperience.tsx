@@ -2,14 +2,16 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react'
 import * as THREE from 'three'
+import { MCPPlayground } from './MCPPlayground'
 
 // ── Scroll chapters ──────────────────────────────────────────────
-// 0.00–0.15  Loading → Galaxy formation
-// 0.15–0.35  Galaxy stable   → Brand reveal
-// 0.35–0.55  Galaxy → Explode → The Shift stats
-// 0.55–0.72  Explode → Sphere → Three Layers
-// 0.72–0.87  Sphere stable   → Services + Pricing
-// 0.87–1.00  Sphere compresses → About + CTA
+// 0.00–0.13  Loading → Galaxy formation
+// 0.13–0.27  Galaxy stable   → Brand reveal
+// 0.27–0.43  Galaxy → Explode → The Shift stats
+// 0.43–0.58  Explode → Sphere → Three Layers
+// 0.58–0.72  Sphere stable   → Services + Pricing
+// 0.72–0.86  Sphere stable   → MCP Live Demo
+// 0.86–1.00  Sphere compresses → About + CTA
 
 function easeInOut(t: number): number {
   const c = Math.min(Math.max(t, 0), 1)
@@ -215,12 +217,13 @@ export default function GalaxyExperience() {
   const [reduced, setReduced]   = useState(false)
 
   const getChapter = useCallback((p: number) => {
-    if (p < 0.15) return 0
-    if (p < 0.35) return 1
-    if (p < 0.55) return 2
-    if (p < 0.72) return 3
-    if (p < 0.87) return 4
-    return 5
+    if (p < 0.13) return 0
+    if (p < 0.27) return 1
+    if (p < 0.43) return 2
+    if (p < 0.58) return 3
+    if (p < 0.72) return 4
+    if (p < 0.86) return 5
+    return 6
   }, [])
 
   useEffect(() => {
@@ -598,8 +601,13 @@ export default function GalaxyExperience() {
         </div>
       </div>
 
-      {/* ── Chapter 5: About + CTA ── */}
+      {/* ── Chapter 5: MCP Live Demo ── */}
       <div style={panelStyle(chapter === 5)}>
+        <MCPPlayground />
+      </div>
+
+      {/* ── Chapter 6: About + CTA ── */}
+      <div style={panelStyle(chapter === 6)}>
         <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#3b82f6', marginBottom: 20 }}>
           The window is now
         </span>

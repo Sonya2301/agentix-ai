@@ -38,6 +38,11 @@ body {
   to { transform: rotate(360deg); }
 }
 
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
 @keyframes pulse-glow {
   0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.1); }
   50%       { box-shadow: 0 0 40px rgba(59, 130, 246, 0.8), 0 0 100px rgba(59, 130, 246, 0.2); }

@@ -113,8 +113,8 @@ export default function Home() {
       </main>
 
       {/* ── Scroll spacer — creates scroll range for Three.js chapters ── */}
-      {/* 600vh = 6 viewport heights of scrollable space for the full journey */}
-      <div aria-hidden="true" style={{ height: "600vh" }} />
+      {/* 700vh = 7 viewport heights of scrollable space for the full journey */}
+      <div aria-hidden="true" style={{ height: "700vh" }} />
 
       {/* ── Three.js galaxy experience — client-side only ── */}
       <GalaxyWrapper />
