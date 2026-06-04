@@ -1,13 +1,13 @@
 # Layer 02 — AI-Powered Websites
-## Implementation Notes — AGENSO
+## Implementation Notes — Soňa Mášová AI Web Studio
 
 ---
 
 ## What Was Built
 
-A real autonomous AI agent embedded in the AGENSO website. Not a chatbot widget — an agent that uses tools to act. When a visitor provides their name and email through natural conversation, the agent autonomously captures their lead, saves it, and sends an email notification. When they're ready to book, it generates a pre-filled Calendly link and renders it as a button card.
+A real autonomous AI agent embedded in the Soňa Mášová website. Not a chatbot widget — an agent that uses tools to act. When a visitor provides their name and email through natural conversation, the agent autonomously captures their lead, saves it, and sends an email notification. When they're ready to book, it generates a pre-filled Calendly link and renders it as a button card.
 
-This implementation on the AGENSO site serves as a **live demo** of the Layer 02 product being sold to clients.
+This implementation on the Soňa Mášová site serves as a **live demo** of the Layer 02 product being sold to clients.
 
 ---
 
@@ -90,7 +90,7 @@ RESEND_FROM=agent@yourdomain.com   # Optional — defaults to onboarding@resend.
 
 **On Vercel:** paste the same keys in Project Settings → Environment Variables. The file write won't work on serverless (no persistent filesystem) — Resend becomes the only storage. Add a database (Vercel KV, Postgres, Notion API) for production lead storage.
 
-**Email from address:** defaults to `onboarding@resend.dev` on Resend's free plan. To use your own domain, add it in Resend dashboard and set `RESEND_FROM=agent@aisow.ai`.
+**Email from address:** defaults to `onboarding@resend.dev` on Resend's free plan. To use your own domain, add it in Resend dashboard and set `RESEND_FROM=agent@yourdomain.com`.
 
 ---
 
@@ -124,7 +124,7 @@ The architecture stays identical. Only the content changes.
 - Detects language: Slovak → Slovak, Czech → Czech, otherwise English
 - Never includes URLs, markdown links, or bold formatting in text — plain text only
 - Never announces tool calls — action cards render automatically in the UI
-- For ANY question about AGENSO — always calls `answer_service_question`, never answers from memory
+- For ANY question about Soňa Mášová / the studio — always calls `answer_service_question`, never answers from memory
 - If a topic is not in the knowledge base — says "I'm not sure, but you can reach Soňa directly" and fires `get_booking_link`
 
 ---
@@ -148,6 +148,8 @@ The architecture stays identical. Only the content changes.
 | `8b6a5ff` | Add MCP live demo — interactive playground in Chapter 5 |
 | `70abb82` | Update docs — explain MCP live demo |
 | `ab6ca6c` | Add MCP discoverability — /.well-known/mcp.json, llms.txt MCP section, link tags in head |
+| `b16b546` | Add mobile responsiveness — compact nav, scrollable chapters, smaller MCP panels |
+| `5d3ba99` | Rebrand from AGENSO to Soňa Mášová across all files |
 
 Branch: `dev` → deployed to Vercel via `main`
 
@@ -155,7 +157,7 @@ Branch: `dev` → deployed to Vercel via `main`
 
 ## What This Proves to Potential Clients
 
-A visitor lands on the AGENSO site, talks to the agent naturally, and without clicking "submit lead form" — their information is captured, Soňa is notified, and a pre-filled booking button appears. The client experiencing this IS the pitch for Layer 02.
+A visitor lands on the Soňa Mášová site, talks to the agent naturally, and without clicking "submit lead form" — their information is captured, Soňa is notified, and a pre-filled booking button appears. The client experiencing this IS the pitch for Layer 02.
 
 The gap between this and a chatbot widget:
 - **Chatbot:** responds to messages

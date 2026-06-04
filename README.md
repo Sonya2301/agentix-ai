@@ -1,6 +1,6 @@
-# AGENSO
+# Soňa Mášová — AI Web Studio
 
-> AI web studio building websites that work for both human visitors and AI agents.
+> Building websites that work for both human visitors and AI agents.
 
 Live: [agen-so.vercel.app](https://agen-so.vercel.app) · Repo: [github.com/Sonya2301/agentix-ai](https://github.com/Sonya2301/agentix-ai)
 
@@ -8,7 +8,7 @@ Live: [agen-so.vercel.app](https://agen-so.vercel.app) · Repo: [github.com/Sony
 
 ## What This Is
 
-Portfolio and business website for AGENSO — a solo AI web studio based in Bratislava, Slovakia. The site itself is a live demonstration of all three service layers:
+Portfolio and business website for Soňa Mášová — a solo AI web studio based in Bratislava, Slovakia. The site itself is a live demonstration of all three service layers:
 
 - **Layer 01** — Built with AI tools (Claude Code), delivered fast
 - **Layer 02** — Autonomous AI agent: lead qualification, booking, knowledge base *(live)*
@@ -23,7 +23,7 @@ A Three.js scroll-driven galaxy animation with 7 content chapters:
 | Scroll | Chapter |
 |--------|---------|
 | 0–13% | Loading circle → galaxy spiral forms |
-| 13–27% | Brand reveal — *AGENSO* |
+| 13–27% | Brand reveal — *Soňa Mášová* |
 | 27–43% | The Shift — market stats |
 | 43–58% | Three Layers — the service |
 | 58–72% | Pricing |
