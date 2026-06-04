@@ -90,7 +90,7 @@ RESEND_FROM=agent@yourdomain.com   # Optional — defaults to onboarding@resend.
 
 **On Vercel:** paste the same keys in Project Settings → Environment Variables. The file write won't work on serverless (no persistent filesystem) — Resend becomes the only storage. Add a database (Vercel KV, Postgres, Notion API) for production lead storage.
 
-**Email from address:** defaults to `onboarding@resend.dev` on Resend's free plan. To use your own domain, add it in Resend dashboard and set `RESEND_FROM=agent@agentix.ai`.
+**Email from address:** defaults to `onboarding@resend.dev` on Resend's free plan. To use your own domain, add it in Resend dashboard and set `RESEND_FROM=agent@aisow.ai`.
 
 ---
 
@@ -135,9 +135,12 @@ The architecture stays identical. Only the content changes.
 |--------|------|
 | `4b84caa` | Initial chat widget (streaming, no tool use) — replaced |
 | `643d2eb` | Rebuilt as autonomous agent with tool use, action cards, lead storage |
-| `76b271e` | Fix raw markdown in bubble; Resend email confirmed working |
+| `76b271e` | Fix markdown in agent responses; Resend email confirmed working |
 | `eadf189` | Force agent to always use knowledge base, never answer from memory |
 | `41e69fe` | Fallback to Soňa contact + booking link for unknown questions |
+| `98bdf77` | Layer 03 AEO/GEO: FAQPage schema, Q&A llms.txt, robots.txt sitemap fix |
+| `6aec18b` | Fix robots.txt and sitemap — move to src/app/ (Next.js 16 convention) |
+| `f2a0e74` | Rename brand from AGENTIX AI to AISOW across all files |
 
 Branch: `dev` → deployed to Vercel via `main`
 
@@ -145,7 +148,7 @@ Branch: `dev` → deployed to Vercel via `main`
 
 ## What This Proves to Potential Clients
 
-A visitor lands on agentix.ai, talks to the agent naturally, and without clicking "submit lead form" — their information is captured, Soňa is notified, and a pre-filled booking button appears. The client experiencing this IS the pitch for Layer 02.
+A visitor lands on the AISOW site, talks to the agent naturally, and without clicking "submit lead form" — their information is captured, Soňa is notified, and a pre-filled booking button appears. The client experiencing this IS the pitch for Layer 02.
 
 The gap between this and a chatbot widget:
 - **Chatbot:** responds to messages

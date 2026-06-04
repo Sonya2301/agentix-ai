@@ -23,7 +23,7 @@ A Three.js scroll-driven galaxy animation with 6 content chapters:
 | Scroll | Chapter |
 |--------|---------|
 | 0–15% | Loading circle → galaxy spiral forms |
-| 15–35% | Brand reveal — *Agentix AI* |
+| 15–35% | Brand reveal — *AISOW* |
 | 35–55% | The Shift — market stats |
 | 55–72% | Three Layers — the service |
 | 72–87% | Pricing |
@@ -83,7 +83,8 @@ src/
 │   ├── layout.tsx              # Metadata, Schema.org JSON-LD, fonts, AgentWidget mount
 │   ├── page.tsx                # Main page + SEO semantic HTML layer
 │   ├── globals.css             # CSS variables, fonts, animations
-│   ├── sitemap.ts              # Auto-generated sitemap
+│   ├── sitemap.ts              # Auto-generated sitemap (Layer 03)
+│   ├── robots.ts               # AI crawler permissions (Layer 03)
 │   ├── api/chat/
 │   │   └── route.ts            # Layer 02: agentic loop, tool execution
 │   └── cookies-policy/
@@ -101,7 +102,6 @@ src/
     └── agent.ts                # Layer 02: shared types
 public/
 ├── llms.txt                    # AI agent sitemap (Layer 03)
-├── robots.txt                  # AI crawler permissions (Layer 03)
 └── og-image.svg                # Social sharing preview image
 data/
 └── leads.json                  # Local lead storage (dev only)
@@ -124,10 +124,10 @@ To go live: merge `dev` into `main` and push.
 
 | File | Purpose | URL |
 |------|---------|-----|
-| `llms.txt` | Describes the site for AI agents | `/llms.txt` |
-| `robots.txt` | Explicitly allows GPTBot, ClaudeBot, PerplexityBot | `/robots.txt` |
-| `sitemap.ts` | Auto-generated XML sitemap | `/sitemap.xml` |
-| Schema.org JSON-LD | Organization + Service structured data | In `<head>` |
+| `public/llms.txt` | Describes the site for AI agents (Q&A format) | `/llms.txt` |
+| `src/app/robots.ts` | Explicitly allows GPTBot, ClaudeBot, PerplexityBot | `/robots.txt` |
+| `src/app/sitemap.ts` | Auto-generated XML sitemap | `/sitemap.xml` |
+| Schema.org JSON-LD | Organization + Service + FAQPage structured data | In `<head>` |
 | `og-image.svg` | Social preview image for LinkedIn/Twitter | `/og-image.svg` |
 
 **AI crawlers explicitly allowed:** GPTBot, ClaudeBot, PerplexityBot, GoogleExtendedBot, Applebot-Extended, cohere-ai
