@@ -2,7 +2,7 @@
 
 > AI web studio building websites that work for both human visitors and AI agents.
 
-Live: [agenso.vercel.app](https://agenso.vercel.app) · Repo: [github.com/Sonya2301/agentix-ai](https://github.com/Sonya2301/agentix-ai)
+Live: [agen-so.vercel.app](https://agen-so.vercel.app) · Repo: [github.com/Sonya2301/agentix-ai](https://github.com/Sonya2301/agentix-ai)
 
 ---
 

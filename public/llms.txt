@@ -79,4 +79,4 @@ A: MCP (Model Context Protocol) is Anthropic's open standard for connecting AI a
 - Email: sona.masova23@gmail.com
 - Location: Bratislava, Slovakia
 - Book a call: https://calendly.com/sona-masova23
-- Live demo: https://agenso.vercel.app
+- Live demo: https://agen-so.vercel.app
