@@ -1,13 +1,13 @@
 # Layer 02 — AI-Powered Websites
-## Implementation Notes — AISOW
+## Implementation Notes — AGENSO
 
 ---
 
 ## What Was Built
 
-A real autonomous AI agent embedded in the AISOW website. Not a chatbot widget — an agent that uses tools to act. When a visitor provides their name and email through natural conversation, the agent autonomously captures their lead, saves it, and sends an email notification. When they're ready to book, it generates a pre-filled Calendly link and renders it as a button card.
+A real autonomous AI agent embedded in the AGENSO website. Not a chatbot widget — an agent that uses tools to act. When a visitor provides their name and email through natural conversation, the agent autonomously captures their lead, saves it, and sends an email notification. When they're ready to book, it generates a pre-filled Calendly link and renders it as a button card.
 
-This implementation on the AISOW site serves as a **live demo** of the Layer 02 product being sold to clients.
+This implementation on the AGENSO site serves as a **live demo** of the Layer 02 product being sold to clients.
 
 ---
 
@@ -124,7 +124,7 @@ The architecture stays identical. Only the content changes.
 - Detects language: Slovak → Slovak, Czech → Czech, otherwise English
 - Never includes URLs, markdown links, or bold formatting in text — plain text only
 - Never announces tool calls — action cards render automatically in the UI
-- For ANY question about AISOW — always calls `answer_service_question`, never answers from memory
+- For ANY question about AGENSO — always calls `answer_service_question`, never answers from memory
 - If a topic is not in the knowledge base — says "I'm not sure, but you can reach Soňa directly" and fires `get_booking_link`
 
 ---
@@ -140,7 +140,7 @@ The architecture stays identical. Only the content changes.
 | `41e69fe` | Fallback to Soňa contact + booking link for unknown questions |
 | `98bdf77` | Layer 03 AEO/GEO: FAQPage schema, Q&A llms.txt, robots.txt sitemap fix |
 | `6aec18b` | Fix robots.txt and sitemap — move to src/app/ (Next.js 16 convention) |
-| `f2a0e74` | Rename brand from AGENTIX AI to AISOW across all files |
+| `f2a0e74` | Rename brand from AGENTIX AI to AGENSO across all files |
 | `fdf493f` | Update README and LAYER02 docs |
 | `ccbad99` | Add MCP Server — Layer 03 premium (get_pricing, get_service_info, book_meeting) |
 | `9e11e70` | Update all URLs to aisow.vercel.app |
@@ -151,7 +151,7 @@ Branch: `dev` → deployed to Vercel via `main`
 
 ## What This Proves to Potential Clients
 
-A visitor lands on the AISOW site, talks to the agent naturally, and without clicking "submit lead form" — their information is captured, Soňa is notified, and a pre-filled booking button appears. The client experiencing this IS the pitch for Layer 02.
+A visitor lands on the AGENSO site, talks to the agent naturally, and without clicking "submit lead form" — their information is captured, Soňa is notified, and a pre-filled booking button appears. The client experiencing this IS the pitch for Layer 02.
 
 The gap between this and a chatbot widget:
 - **Chatbot:** responds to messages

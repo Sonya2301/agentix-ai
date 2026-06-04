@@ -144,7 +144,7 @@ function WorkingIndicator() {
 // ── Main widget ──────────────────────────────────────────────────
 const INITIAL: ChatMessage = {
   role: 'assistant',
-  content: "Hi. I'm the AISOW agent — a live demo of Layer 02.\n\nWhat kind of website project are you thinking about?",
+  content: "Hi. I'm the AGENSO agent — a live demo of Layer 02.\n\nWhat kind of website project are you thinking about?",
 }
 
 export default function AgentWidget() {
@@ -215,7 +215,7 @@ export default function AgentWidget() {
       <div
         role="dialog"
         aria-modal="true"
-        aria-label="AISOW chat agent"
+        aria-label="AGENSO chat agent"
         style={{
           position: 'fixed', bottom: 92, right: 28,
           width: 'min(368px, calc(100vw - 40px))',
@@ -244,7 +244,7 @@ export default function AgentWidget() {
               boxShadow: '0 0 8px rgba(16,185,129,0.7)',
             }} />
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#e8e8f0' }}>
-              AISOW · AGENT
+              AGENSO · AGENT
             </span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>

@@ -17,7 +17,7 @@ export default function CookiesPolicy() {
           display: 'inline-block',
           marginBottom: 48,
         }}>
-          ← Back to AISOW
+          ← Back to AGENSO
         </a>
 
         <h1 style={{

@@ -4,7 +4,7 @@ import CookieBanner from "../components/CookieBanner";
 import AgentWidget from "../components/AgentWidget";
 
 export const metadata: Metadata = {
-  title: "AISOW — AI Web Studio",
+  title: "AGENSO — AI Web Studio",
   description:
     "We build websites that work in both worlds — for human visitors and for the AI agents replacing them. Three layers: AI-Built, AI-Powered, and Agent-Friendly. Based in Bratislava. Serving globally.",
   keywords: [
@@ -20,15 +20,15 @@ export const metadata: Metadata = {
     "Next.js agency",
     "web design Slovakia",
   ],
-  authors: [{ name: "AISOW" }],
-  creator: "AISOW",
+  authors: [{ name: "AGENSO" }],
+  creator: "AGENSO",
   metadataBase: new URL("https://aisow.vercel.app"),
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://aisow.vercel.app",
-    siteName: "AISOW",
-    title: "AISOW — Websites built for humans. And for AI.",
+    siteName: "AGENSO",
+    title: "AGENSO — Websites built for humans. And for AI.",
     description:
       "60% of searches now end without a click. AI agents skip your homepage and go straight to the data layer. We build websites that work in both worlds.",
     images: [
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "AISOW — AI Web Studio",
+        alt: "AGENSO — AI Web Studio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AISOW — Websites built for humans. And for AI.",
+    title: "AGENSO — Websites built for humans. And for AI.",
     description:
       "60% of searches now end without a click. We build websites that work for human visitors and AI agents.",
     images: ["/og-image.svg"],
@@ -62,7 +62,7 @@ const schemaOrg = {
     {
       "@type": "Organization",
       "@id": "https://aisow.vercel.app/#organization",
-      name: "AISOW",
+      name: "AGENSO",
       url: "https://aisow.vercel.app",
       description:
         "AI web studio building three-layer websites: AI-Built, AI-Powered, and Agent-Friendly. Making businesses visible to both human visitors and AI search agents.",
@@ -108,7 +108,7 @@ const schemaOrg = {
       "@type": "WebSite",
       "@id": "https://aisow.vercel.app/#website",
       url: "https://aisow.vercel.app",
-      name: "AISOW",
+      name: "AGENSO",
       publisher: { "@id": "https://aisow.vercel.app/#organization" },
     },
     {
@@ -126,15 +126,15 @@ const schemaOrg = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "How much does a website from AISOW cost?",
+          name: "How much does a website from AGENSO cost?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "AISOW has three tiers. Starter is €1,200–€1,500: an AI-built website with Layer 03 basics (llms.txt, schema.org, AI crawler permissions), delivered in 5–7 days. Studio is €2,500–€3,500: everything in Starter plus full AEO/GEO content optimization and a strategy call. Premium is €4,000–€6,000: everything in Studio plus custom design direction, two extra revision rounds, and one month of free maintenance. Add-ons: AI Agent (Layer 02) +€1,500–€2,500; MCP Server Integration (Layer 03 premium) +€2,000–€3,500; monthly maintenance €150–€300.",
+            text: "AGENSO has three tiers. Starter is €1,200–€1,500: an AI-built website with Layer 03 basics (llms.txt, schema.org, AI crawler permissions), delivered in 5–7 days. Studio is €2,500–€3,500: everything in Starter plus full AEO/GEO content optimization and a strategy call. Premium is €4,000–€6,000: everything in Studio plus custom design direction, two extra revision rounds, and one month of free maintenance. Add-ons: AI Agent (Layer 02) +€1,500–€2,500; MCP Server Integration (Layer 03 premium) +€2,000–€3,500; monthly maintenance €150–€300.",
           },
         },
         {
           "@type": "Question",
-          name: "How long does it take AISOW to build a website?",
+          name: "How long does it take AGENSO to build a website?",
           acceptedAnswer: {
             "@type": "Answer",
             text: "Layer 01 (AI-built website): 5–7 days from briefing to live. Layer 02 add-on (embedded AI agent): +3–5 days. Layer 03 basics are included in every Layer 01 build with no extra time. Full MCP Server integration: +2–4 weeks.",
@@ -166,10 +166,10 @@ const schemaOrg = {
         },
         {
           "@type": "Question",
-          name: "Does AISOW work with clients outside Slovakia?",
+          name: "Does AGENSO work with clients outside Slovakia?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. AISOW is based in Bratislava, Slovakia, and serves clients globally. All collaboration is remote. The founder, Soňa Mášová, has a background in security consulting at Deloitte, IBM, and Takeda, and works in English, Slovak, and Czech.",
+            text: "Yes. AGENSO is based in Bratislava, Slovakia, and serves clients globally. All collaboration is remote. The founder, Soňa Mášová, has a background in security consulting at Deloitte, IBM, and Takeda, and works in English, Slovak, and Czech.",
           },
         },
         {
@@ -177,15 +177,15 @@ const schemaOrg = {
           name: "What is MCP server integration?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "MCP (Model Context Protocol) is Anthropic's open standard for connecting AI agents to external tools and data. An MCP server on a website exposes its functionality as callable tools — so an AI agent like Claude can book a meeting, retrieve pricing, or check availability directly, without opening a browser. AISOW offers full MCP integration as a Layer 03 premium add-on starting at +€2,000.",
+            text: "MCP (Model Context Protocol) is Anthropic's open standard for connecting AI agents to external tools and data. An MCP server on a website exposes its functionality as callable tools — so an AI agent like Claude can book a meeting, retrieve pricing, or check availability directly, without opening a browser. AGENSO offers full MCP integration as a Layer 03 premium add-on starting at +€2,000.",
           },
         },
         {
           "@type": "Question",
-          name: "Who is behind AISOW?",
+          name: "Who is behind AGENSO?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "AISOW is run by Soňa Mášová, based in Bratislava, Slovakia. She is a former security consultant with experience at Deloitte, IBM, and Takeda, now building at the intersection of AI, web development, and design. Contact: sona.masova23@gmail.com. Book a call: calendly.com/sona-masova23.",
+            text: "AGENSO is run by Soňa Mášová, based in Bratislava, Slovakia. She is a former security consultant with experience at Deloitte, IBM, and Takeda, now building at the intersection of AI, web development, and design. Contact: sona.masova23@gmail.com. Book a call: calendly.com/sona-masova23.",
           },
         },
       ],

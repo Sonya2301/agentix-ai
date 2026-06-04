@@ -1,4 +1,4 @@
-# AISOW
+# AGENSO
 
 > AI web studio building websites that work for both human visitors and AI agents.
 
@@ -8,7 +8,7 @@ Live: [aisow.vercel.app](https://aisow.vercel.app) · Repo: [github.com/Sonya230
 
 ## What This Is
 
-Portfolio and business website for AISOW — a solo AI web studio based in Bratislava, Slovakia. The site itself is a live demonstration of all three service layers:
+Portfolio and business website for AGENSO — a solo AI web studio based in Bratislava, Slovakia. The site itself is a live demonstration of all three service layers:
 
 - **Layer 01** — Built with AI tools (Claude Code), delivered fast
 - **Layer 02** — Autonomous AI agent: lead qualification, booking, knowledge base *(live)*
@@ -23,7 +23,7 @@ A Three.js scroll-driven galaxy animation with 6 content chapters:
 | Scroll | Chapter |
 |--------|---------|
 | 0–15% | Loading circle → galaxy spiral forms |
-| 15–35% | Brand reveal — *AISOW* |
+| 15–35% | Brand reveal — *AGENSO* |
 | 35–55% | The Shift — market stats |
 | 55–72% | Three Layers — the service |
 | 72–87% | Pricing |

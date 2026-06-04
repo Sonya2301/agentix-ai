@@ -1,5 +1,5 @@
 export const knowledge: Record<string, string> = {
-  pricing: `AISOW pricing:
+  pricing: `AGENSO pricing:
 
 Starter — €1,200–€1,500
 For agencies and freelancers. AI-built website, Layer 03 basics (llms.txt, schema.org, AI crawler config), 5–7 day delivery.
@@ -45,7 +45,7 @@ Included in all tiers at no extra charge:
 Premium add-on (+€2,000–€3,500):
 • MCP Server — exposes the site as callable tools. AI agents can book meetings, get pricing, check availability without a browser.`,
 
-  process: `How AISOW works — 5 steps, 5–7 days:
+  process: `How AGENSO works — 5 steps, 5–7 days:
 
 01 — Client Briefing (Day 1): 30-min call + Notion briefing form. Brand voice, goals, audience, competitors, tone.
 02 — AI Copy Generation (Day 1–2): AI writes all text from the brief. 30 minutes.
@@ -53,7 +53,7 @@ Premium add-on (+€2,000–€3,500):
 04 — Visual Generation (Day 4–5): Custom images in brand style. No stock photos.
 05 — Deploy + Setup (Day 5–7): Domain, Analytics, Search Console, sitemap, schema, GDPR, AI crawlers. Live. Loom handover.`,
 
-  about: `AISOW is run by Soňa Mášová, Bratislava, Slovakia. Serving clients globally.
+  about: `AGENSO is run by Soňa Mášová, Bratislava, Slovakia. Serving clients globally.
 
 Background: Former Security Consultant at Deloitte, IBM, and Takeda. Now building at the intersection of AI, web development, and design.
 

@@ -4,16 +4,16 @@ import { z } from 'zod/v3'
 import { knowledge } from '@/data/agentix-knowledge'
 
 function createServer() {
-  const mcp = new McpServer({ name: 'AISOW', version: '1.0.0' })
+  const mcp = new McpServer({ name: 'AGENSO', version: '1.0.0' })
 
   mcp.registerTool('get_pricing', {
-    description: 'Get full pricing for all AISOW tiers and add-ons.',
+    description: 'Get full pricing for all AGENSO tiers and add-ons.',
   }, async () => ({
     content: [{ type: 'text' as const, text: knowledge.pricing }],
   }))
 
   mcp.registerTool('get_service_info', {
-    description: 'Get information about AISOW services, layers, process, timeline, or the studio.',
+    description: 'Get information about AGENSO services, layers, process, timeline, or the studio.',
     inputSchema: {
       topic: z.enum(['layer01', 'layer02', 'layer03', 'process', 'about', 'timeline', 'tech-stack'])
         .describe('The topic to look up'),
@@ -23,7 +23,7 @@ function createServer() {
   }))
 
   mcp.registerTool('book_meeting', {
-    description: 'Get a Calendly link to book a 30-minute call with Soňa Mášová, owner of AISOW.',
+    description: 'Get a Calendly link to book a 30-minute call with Soňa Mášová, owner of AGENSO.',
     inputSchema: {
       name: z.string().optional().describe('Your name'),
       email: z.string().optional().describe('Your email address'),

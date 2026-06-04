@@ -24,7 +24,7 @@
   <text x="600" y="220" font-family="monospace" font-size="14" fill="#3b82f6" text-anchor="middle" letter-spacing="4">AI WEB STUDIO</text>
 
   <!-- Main title -->
-  <text x="600" y="320" font-family="Georgia, serif" font-size="72" fill="#e8e8f0" text-anchor="middle" font-style="italic">AISOW</text>
+  <text x="600" y="320" font-family="Georgia, serif" font-size="72" fill="#e8e8f0" text-anchor="middle" font-style="italic">AGENSO</text>
 
   <!-- Tagline -->
   <text x="600" y="390" font-family="Georgia, serif" font-size="22" fill="#9898b4" text-anchor="middle" font-style="italic">Websites built for humans. And for AI.</text>
