@@ -130,12 +130,14 @@ To go live: merge `dev` into `main` and push.
 
 | File | Purpose | URL |
 |------|---------|-----|
-| `public/llms.txt` | Describes the site for AI agents (Q&A format) | `/llms.txt` |
+| `public/llms.txt` | Describes the site for AI agents (Q&A format, MCP section) | `/llms.txt` |
 | `src/app/robots.ts` | Explicitly allows GPTBot, ClaudeBot, PerplexityBot | `/robots.txt` |
 | `src/app/sitemap.ts` | Auto-generated XML sitemap | `/sitemap.xml` |
 | Schema.org JSON-LD | Organization + Service + FAQPage structured data | In `<head>` |
 | `og-image.svg` | Social preview image for LinkedIn/Twitter | `/og-image.svg` |
 | `src/app/api/mcp/route.ts` | MCP Server — 3 callable tools for AI agents | `/api/mcp` |
+| `public/.well-known/mcp.json` | MCP discovery endpoint — lists tools and server URL | `/.well-known/mcp.json` |
+| `<link rel="mcp">` in `<head>` | HTML discovery for agents that parse pages | In every page |
 
 **AI crawlers explicitly allowed:** GPTBot, ClaudeBot, PerplexityBot, GoogleExtendedBot, Applebot-Extended, cohere-ai
 
