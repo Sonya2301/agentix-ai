@@ -38,7 +38,7 @@ export async function saveLead(input: LeadData): Promise<void> {
         subject: `New lead — ${lead.name ?? 'Anonymous'} · ${lead.tier} tier`,
         html: `
           <div style="font-family:monospace;max-width:560px">
-            <h2 style="margin-bottom:20px">New Lead — AGENTIX AI Agent</h2>
+            <h2 style="margin-bottom:20px">New Lead — AISOW Agent</h2>
             <table style="border-collapse:collapse;width:100%;font-size:13px">
               <tr><td style="padding:8px 12px;border:1px solid #ddd;color:#888">Name</td><td style="padding:8px 12px;border:1px solid #ddd">${lead.name ?? '—'}</td></tr>
               <tr><td style="padding:8px 12px;border:1px solid #ddd;color:#888">Email</td><td style="padding:8px 12px;border:1px solid #ddd">${lead.email ?? '—'}</td></tr>

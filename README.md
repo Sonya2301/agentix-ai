@@ -1,4 +1,4 @@
-# AGENTIX AI
+# AISOW
 
 > AI web studio building websites that work for both human visitors and AI agents.
 
@@ -8,7 +8,7 @@ Live: [agentix-ai-five.vercel.app](https://agentix-ai-five.vercel.app) · Repo: 
 
 ## What This Is
 
-Portfolio and business website for AGENTIX AI — a solo AI web studio based in Bratislava, Slovakia. The site itself is a live demonstration of all three service layers:
+Portfolio and business website for AISOW — a solo AI web studio based in Bratislava, Slovakia. The site itself is a live demonstration of all three service layers:
 
 - **Layer 01** — Built with AI tools (Claude Code), delivered fast
 - **Layer 02** — Autonomous AI agent: lead qualification, booking, knowledge base *(live)*

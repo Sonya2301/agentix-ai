@@ -1,13 +1,13 @@
 # Layer 02 — AI-Powered Websites
-## Implementation Notes — AGENTIX AI
+## Implementation Notes — AISOW
 
 ---
 
 ## What Was Built
 
-A real autonomous AI agent embedded in the AGENTIX AI website. Not a chatbot widget — an agent that uses tools to act. When a visitor provides their name and email through natural conversation, the agent autonomously captures their lead, saves it, and sends an email notification. When they're ready to book, it generates a pre-filled Calendly link and renders it as a button card.
+A real autonomous AI agent embedded in the AISOW website. Not a chatbot widget — an agent that uses tools to act. When a visitor provides their name and email through natural conversation, the agent autonomously captures their lead, saves it, and sends an email notification. When they're ready to book, it generates a pre-filled Calendly link and renders it as a button card.
 
-This implementation on the AGENTIX AI site serves as a **live demo** of the Layer 02 product being sold to clients.
+This implementation on the AISOW site serves as a **live demo** of the Layer 02 product being sold to clients.
 
 ---
 
@@ -124,7 +124,7 @@ The architecture stays identical. Only the content changes.
 - Detects language: Slovak → Slovak, Czech → Czech, otherwise English
 - Never includes URLs, markdown links, or bold formatting in text — plain text only
 - Never announces tool calls — action cards render automatically in the UI
-- For ANY question about AGENTIX AI — always calls `answer_service_question`, never answers from memory
+- For ANY question about AISOW — always calls `answer_service_question`, never answers from memory
 - If a topic is not in the knowledge base — says "I'm not sure, but you can reach Soňa directly" and fires `get_booking_link`
 
 ---
