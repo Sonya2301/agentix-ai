@@ -18,16 +18,17 @@ Portfolio and business website for AGENSO — a solo AI web studio based in Brat
 
 ## The Experience
 
-A Three.js scroll-driven galaxy animation with 6 content chapters:
+A Three.js scroll-driven galaxy animation with 7 content chapters:
 
 | Scroll | Chapter |
 |--------|---------|
-| 0–15% | Loading circle → galaxy spiral forms |
-| 15–35% | Brand reveal — *AGENSO* |
-| 35–55% | The Shift — market stats |
-| 55–72% | Three Layers — the service |
-| 72–87% | Pricing |
-| 87–100% | CTA — Book a call |
+| 0–13% | Loading circle → galaxy spiral forms |
+| 13–27% | Brand reveal — *AGENSO* |
+| 27–43% | The Shift — market stats |
+| 43–58% | Three Layers — the service |
+| 58–72% | Pricing |
+| 72–86% | MCP Live Demo — interactive playground |
+| 86–100% | CTA — Book a call |
 
 ---
 
@@ -97,7 +98,8 @@ src/
 │   ├── GalaxyExperience.tsx    # Three.js galaxy + all scroll chapters
 │   ├── GalaxyWrapper.tsx       # Next.js dynamic import wrapper (ssr: false)
 │   ├── CookieBanner.tsx        # GDPR cookie banner + Google Analytics
-│   └── AgentWidget.tsx         # Layer 02: floating chat UI + action cards
+│   ├── AgentWidget.tsx         # Layer 02: floating chat UI + action cards
+│   └── MCPPlayground.tsx       # Layer 03: interactive MCP demo (Chapter 5)
 ├── data/
 │   └── agentix-knowledge.ts    # Layer 02: knowledge base (pricing, layers, process)
 ├── lib/
