@@ -4,8 +4,45 @@ import type { LeadData } from '@/types/agent'
 
 export type Lead = LeadData & { timestamp: string }
 
+async function saveToNotion(lead: Lead): Promise<void> {
+  const key = process.env.NOTION_API_KEY
+  const dbId = process.env.NOTION_DATABASE_ID
+  if (!key || !dbId) {
+    console.log('[leads] Notion not configured — skipping')
+    return
+  }
+
+  const res = await fetch('https://api.notion.com/v1/pages', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${key}`,
+      'Content-Type': 'application/json',
+      'Notion-Version': '2022-06-28',
+    },
+    body: JSON.stringify({
+      parent: { database_id: dbId },
+      properties: {
+        Name: { title: [{ text: { content: lead.name ?? 'Anonymous' } }] },
+        Email: { email: lead.email ?? '' },
+        Company: { rich_text: [{ text: { content: lead.company ?? '' } }] },
+        Project: { rich_text: [{ text: { content: lead.project_type } }] },
+        Tier: { select: { name: lead.tier } },
+        Budget: { rich_text: [{ text: { content: lead.budget ?? '' } }] },
+        Notes: { rich_text: [{ text: { content: lead.notes } }] },
+        Status: { status: { name: 'Not started' } },
+      },
+    }),
+  })
+
+  if (!res.ok) console.error('[leads] Notion error:', await res.text())
+  else console.log('[leads] Saved to Notion ✓')
+}
+
 export async function saveLead(input: LeadData): Promise<void> {
   const lead: Lead = { ...input, timestamp: new Date().toISOString() }
+
+  // Save to Notion CRM
+  await saveToNotion(lead)
 
   // Write to local file — dev only, won't persist on Vercel serverless
   try {

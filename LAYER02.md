@@ -84,11 +84,15 @@ In `.env.local` (never commit this file):
 ANTHROPIC_API_KEY=sk-ant-...       # Required — Claude API
 RESEND_API_KEY=re_...              # Required for email — lead notifications to Soňa
 RESEND_FROM=agent@yourdomain.com   # Optional — defaults to onboarding@resend.dev
+NOTION_API_KEY=ntn_...             # Required — saves leads to Notion CRM
+NOTION_DATABASE_ID=...             # Required — Notion leads database ID
 ```
 
 **Without RESEND_API_KEY:** leads still save to `/data/leads.json` locally and log to console. No email sent.
 
-**On Vercel:** paste the same keys in Project Settings → Environment Variables. The file write won't work on serverless (no persistent filesystem) — Resend becomes the only storage. Add a database (Vercel KV, Postgres, Notion API) for production lead storage.
+**Without NOTION_API_KEY:** Notion save is skipped, leads still go to email + local file.
+
+**On Vercel:** paste all keys in Project Settings → Environment Variables. The file write won't work on serverless (no persistent filesystem) — Resend email + Notion are the primary storage.
 
 **Email from address:** defaults to `onboarding@resend.dev` on Resend's free plan. To use your own domain, add it in Resend dashboard and set `RESEND_FROM=agent@yourdomain.com`.
 
@@ -150,6 +154,8 @@ The architecture stays identical. Only the content changes.
 | `ab6ca6c` | Add MCP discoverability — /.well-known/mcp.json, llms.txt MCP section, link tags in head |
 | `b16b546` | Add mobile responsiveness — compact nav, scrollable chapters, smaller MCP panels |
 | `5d3ba99` | Rebrand from AGENSO to Soňa Mášová across all files |
+| `864305a` | Update domain to sona-masova.vercel.app, fix knowledge base about text |
+| `next` | Add Notion CRM integration — leads now save to Notion database |
 
 Branch: `dev` → deployed to Vercel via `main`
 

@@ -44,6 +44,7 @@ A Three.js scroll-driven galaxy animation with 7 content chapters:
 | Vercel | Hosting + auto-deploy from main branch |
 | Anthropic Claude API | AI agent (Layer 02) |
 | Resend | Lead email notifications (Layer 02) |
+| Notion API | Lead CRM storage (Layer 02) |
 | MCP SDK (`@modelcontextprotocol/sdk`) | MCP Server (Layer 03) |
 
 ---
@@ -66,6 +67,8 @@ Required keys in `.env.local`:
 ```
 ANTHROPIC_API_KEY=sk-ant-...   # Required — powers the AI agent
 RESEND_API_KEY=re_...          # Required — lead email notifications
+NOTION_API_KEY=ntn_...         # Required — saves leads to Notion CRM
+NOTION_DATABASE_ID=...         # Required — your Notion leads database ID
 ```
 
 ```bash
