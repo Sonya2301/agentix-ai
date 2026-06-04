@@ -158,3 +158,17 @@ A visitor lands on the AGENSO site, talks to the agent naturally, and without cl
 The gap between this and a chatbot widget:
 - **Chatbot:** responds to messages
 - **This agent:** decides when to act, executes tools, produces outcomes (lead saved, meeting booked)
+
+---
+
+## MCP Live Demo (Layer 03 — Chapter 5)
+
+`src/components/MCPPlayground.tsx` — interactive demo built into the scroll experience to show visitors how the MCP server works.
+
+When a visitor clicks a tool button:
+- **Left panel** shows the JSON request being sent to the server (typed out live)
+- **Right panel** shows the server's response streaming back
+
+This makes the invisible MCP mechanism visible. Instead of explaining what MCP does, the visitor experiences it directly — they become the AI for a moment, sending a real call to a real server and watching real data come back.
+
+Available tools in the demo: `get_pricing`, `book_meeting`, `get_service_info` (topics: layer01, layer02, layer03, process, about).

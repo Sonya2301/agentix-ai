@@ -139,6 +139,18 @@ To go live: merge `dev` into `main` and push.
 
 **AI crawlers explicitly allowed:** GPTBot, ClaudeBot, PerplexityBot, GoogleExtendedBot, Applebot-Extended, cohere-ai
 
+### MCP Live Demo (Chapter 5)
+
+`src/components/MCPPlayground.tsx` — interactive demo embedded in the scroll experience.
+
+Visitors click a tool button and watch two panels update in real time:
+- **Left (REQUEST)** — the JSON message the AI sent to the server, typed out character by character
+- **Right (RESPONSE)** — the data the server returned, streamed back line by line
+
+Three tools to try: `get_pricing`, `book_meeting`, `get_service_info` (with topic pills: layer01, layer02, layer03, process, about).
+
+This makes the invisible MCP mechanism visible — visitors experience exactly what an AI agent does when it calls the site.
+
 > **Note:** `noindex` is currently active — site will not be indexed by search engines until ready for public launch.
 
 ---
