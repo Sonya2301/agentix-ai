@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "AISOW" }],
   creator: "AISOW",
-  metadataBase: new URL("https://agentix-ai-five.vercel.app"),
+  metadataBase: new URL("https://aisow.vercel.app"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://agentix-ai-five.vercel.app",
+    url: "https://aisow.vercel.app",
     siteName: "AISOW",
     title: "AISOW — Websites built for humans. And for AI.",
     description:
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     follow: false,
   },
   alternates: {
-    canonical: "https://agentix-ai-five.vercel.app",
+    canonical: "https://aisow.vercel.app",
   },
 };
 
@@ -61,9 +61,9 @@ const schemaOrg = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://agentix-ai-five.vercel.app/#organization",
+      "@id": "https://aisow.vercel.app/#organization",
       name: "AISOW",
-      url: "https://agentix-ai-five.vercel.app",
+      url: "https://aisow.vercel.app",
       description:
         "AI web studio building three-layer websites: AI-Built, AI-Powered, and Agent-Friendly. Making businesses visible to both human visitors and AI search agents.",
       foundingDate: "2026",
@@ -106,15 +106,15 @@ const schemaOrg = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://agentix-ai-five.vercel.app/#website",
-      url: "https://agentix-ai-five.vercel.app",
+      "@id": "https://aisow.vercel.app/#website",
+      url: "https://aisow.vercel.app",
       name: "AISOW",
-      publisher: { "@id": "https://agentix-ai-five.vercel.app/#organization" },
+      publisher: { "@id": "https://aisow.vercel.app/#organization" },
     },
     {
       "@type": "Service",
       name: "Three-Layer AI Website Service",
-      provider: { "@id": "https://agentix-ai-five.vercel.app/#organization" },
+      provider: { "@id": "https://aisow.vercel.app/#organization" },
       description:
         "Layer 01: AI-Built Websites in 5-7 days. Layer 02: AI-Powered with embedded agents. Layer 03: Agent-Friendly with llms.txt, Schema.org, MCP integration.",
       serviceType: "Web Design and Development",
@@ -122,7 +122,7 @@ const schemaOrg = {
     },
     {
       "@type": "FAQPage",
-      "@id": "https://agentix-ai-five.vercel.app/#faq",
+      "@id": "https://aisow.vercel.app/#faq",
       mainEntity: [
         {
           "@type": "Question",

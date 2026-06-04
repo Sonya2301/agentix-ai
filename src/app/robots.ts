@@ -12,6 +12,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://agentix-ai-five.vercel.app/sitemap.xml',
+    sitemap: 'https://aisow.vercel.app/sitemap.xml',
   }
 }
