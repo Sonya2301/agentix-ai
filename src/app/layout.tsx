@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "AGENSO" }],
   creator: "AGENSO",
-  metadataBase: new URL("https://aisow.vercel.app"),
+  metadataBase: new URL("https://agenso.vercel.app"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://aisow.vercel.app",
+    url: "https://agenso.vercel.app",
     siteName: "AGENSO",
     title: "AGENSO — Websites built for humans. And for AI.",
     description:
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     follow: false,
   },
   alternates: {
-    canonical: "https://aisow.vercel.app",
+    canonical: "https://agenso.vercel.app",
   },
 };
 
@@ -61,9 +61,9 @@ const schemaOrg = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://aisow.vercel.app/#organization",
+      "@id": "https://agenso.vercel.app/#organization",
       name: "AGENSO",
-      url: "https://aisow.vercel.app",
+      url: "https://agenso.vercel.app",
       description:
         "AI web studio building three-layer websites: AI-Built, AI-Powered, and Agent-Friendly. Making businesses visible to both human visitors and AI search agents.",
       foundingDate: "2026",
@@ -106,15 +106,15 @@ const schemaOrg = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://aisow.vercel.app/#website",
-      url: "https://aisow.vercel.app",
+      "@id": "https://agenso.vercel.app/#website",
+      url: "https://agenso.vercel.app",
       name: "AGENSO",
-      publisher: { "@id": "https://aisow.vercel.app/#organization" },
+      publisher: { "@id": "https://agenso.vercel.app/#organization" },
     },
     {
       "@type": "Service",
       name: "Three-Layer AI Website Service",
-      provider: { "@id": "https://aisow.vercel.app/#organization" },
+      provider: { "@id": "https://agenso.vercel.app/#organization" },
       description:
         "Layer 01: AI-Built Websites in 5-7 days. Layer 02: AI-Powered with embedded agents. Layer 03: Agent-Friendly with llms.txt, Schema.org, MCP integration.",
       serviceType: "Web Design and Development",
@@ -122,7 +122,7 @@ const schemaOrg = {
     },
     {
       "@type": "FAQPage",
-      "@id": "https://aisow.vercel.app/#faq",
+      "@id": "https://agenso.vercel.app/#faq",
       mainEntity: [
         {
           "@type": "Question",

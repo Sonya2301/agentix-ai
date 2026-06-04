@@ -3,13 +3,13 @@ import type { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://aisow.vercel.app',
+      url: 'https://agenso.vercel.app',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
-      url: 'https://aisow.vercel.app/cookies-policy',
+      url: 'https://agenso.vercel.app/cookies-policy',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,

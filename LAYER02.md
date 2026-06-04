@@ -143,7 +143,7 @@ The architecture stays identical. Only the content changes.
 | `f2a0e74` | Rename brand from AGENTIX AI to AGENSO across all files |
 | `fdf493f` | Update README and LAYER02 docs |
 | `ccbad99` | Add MCP Server — Layer 03 premium (get_pricing, get_service_info, book_meeting) |
-| `9e11e70` | Update all URLs to aisow.vercel.app |
+| `9e11e70` | Update all URLs to agenso.vercel.app |
 
 Branch: `dev` → deployed to Vercel via `main`
 

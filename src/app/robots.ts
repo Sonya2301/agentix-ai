@@ -12,6 +12,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://aisow.vercel.app/sitemap.xml',
+    sitemap: 'https://agenso.vercel.app/sitemap.xml',
   }
 }
