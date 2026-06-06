@@ -1,5 +1,5 @@
 export const knowledge: Record<string, string> = {
-  pricing: `Soňa Mášová pricing:
+  pricing: `LYVECA AI pricing:
 
 Starter — €1,200–€1,500
 For agencies and freelancers. AI-built website, Layer 03 basics (llms.txt, schema.org, AI crawler config), 5–7 day delivery.
@@ -45,7 +45,7 @@ Included in all tiers at no extra charge:
 Premium add-on (+€2,000–€3,500):
 • MCP Server — exposes the site as callable tools. AI agents can book meetings, get pricing, check availability without a browser.`,
 
-  process: `How Soňa Mášová works — 5 steps, 5–7 days:
+  process: `How LYVECA AI works — 5 steps, 5–7 days:
 
 01 — Client Briefing (Day 1): 30-min call + Notion briefing form. Brand voice, goals, audience, competitors, tone.
 02 — AI Copy Generation (Day 1–2): AI writes all text from the brief. 30 minutes.
@@ -53,9 +53,9 @@ Premium add-on (+€2,000–€3,500):
 04 — Visual Generation (Day 4–5): Custom images in brand style. No stock photos.
 05 — Deploy + Setup (Day 5–7): Domain, Analytics, Search Console, sitemap, schema, GDPR, AI crawlers. Live. Loom handover.`,
 
-  about: `Soňa Mášová — AI web studio founded by Soňa Mášová, based in Bratislava, Slovakia. Serving clients globally.
+  about: `LYVECA AI — AI web studio founded by Soňa Mášová, based in Bratislava, Slovakia. Serving clients globally.
 
-Background: Former Security Consultant at Deloitte, IBM, and Takeda. Now building at the intersection of AI, web development, and design.
+Background: Former Security Consultant at global enterprises. Now building at the intersection of AI, web development, and design.
 
 Rare combination: security depth + AI developer + design taste. Non-existent as a bundled service in Slovakia.
 

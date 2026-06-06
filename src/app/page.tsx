@@ -7,7 +7,7 @@ export default function Home() {
       {/* Invisible to visual users. Fully readable by search engines,
           AI crawlers (GPTBot, ClaudeBot, PerplexityBot), and screen readers. */}
       <main className="sr-only">
-        <h1>Soňa Mášová — AI Web Studio</h1>
+        <h1>LYVECA AI — Websites built for humans. And for AI.</h1>
         <p>
           Websites built for humans. And for AI. We build three-layer websites
           that work for both human visitors and AI search agents.
@@ -92,10 +92,10 @@ export default function Home() {
           </p>
         </section>
 
-        <section aria-label="About Soňa Mášová">
-          <h2>About Soňa Mášová</h2>
+        <section aria-label="About LYVECA AI">
+          <h2>About LYVECA AI</h2>
           <p>
-            Soňa Mášová is run by a former security consultant (Deloitte, IBM,
+            LYVECA AI is run by Soňa Mášová, a former security consultant (Deloitte, IBM,
             Takeda) who became obsessed with AI, agents, and where the web is
             going. Security background combined with AI developer knowledge and
             design taste — rare in any market, non-existent as a bundled web

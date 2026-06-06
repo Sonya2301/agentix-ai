@@ -1,10 +1,10 @@
-# Soňa Mášová
+# LYVECA AI
 
 > AI web studio building websites that work for both human visitors and AI agents.
 
 ## About
 
-Soňa Mášová is an AI web studio founder based in Bratislava, Slovakia, serving clients globally. Former security consultant at Deloitte, IBM, and Takeda — now building at the intersection of AI, web development, and design.
+LYVECA AI is an AI web studio based in Bratislava, Slovakia, founded by Soňa Mášová. Former security consultant at Deloitte, IBM, and Takeda — now building at the intersection of AI, web development, and design.
 
 Rare combination: security depth + AI developer + design taste. The only bundled service of this kind in Slovakia.
 
@@ -52,7 +52,7 @@ Makes the website readable, citable, and actionable by AI agents (ChatGPT, Perpl
 
 ## Frequently Asked Questions
 
-Q: How much does a website from Soňa Mášová cost?
+Q: How much does a website from LYVECA AI cost?
 A: Three tiers. Starter €1,200–€1,500: AI-built website with Layer 03 basics, 5–7 days. Studio €2,500–€3,500: Starter plus full AEO/GEO optimization and strategy call. Premium €4,000–€6,000: Studio plus custom design, two revision rounds, one month free maintenance. Add-ons: AI Agent +€1,500–€2,500, MCP Integration +€2,000–€3,500, maintenance €150–€300/month.
 
 Q: How long does it take to build a website?
@@ -67,11 +67,11 @@ A: Layer 01 is the build layer — custom website in 5–7 days. Layer 02 is the
 Q: What is llms.txt?
 A: A plain-text file at /llms.txt that tells AI agents what the site is, what it offers, and how to contact the business. The AI equivalent of a README. When ChatGPT or Perplexity looks for a web studio, it reads llms.txt to decide whether to recommend this business.
 
-Q: Does Soňa Mášová work with international clients?
+Q: Does LYVECA AI work with international clients?
 A: Yes. Based in Bratislava, Slovakia, serving clients globally. All collaboration is remote. Works in English, Slovak, and Czech.
 
 Q: What is MCP server integration?
-A: MCP (Model Context Protocol) is Anthropic's open standard for connecting AI agents to external tools. An MCP server on a website lets AI agents book meetings, retrieve pricing, or check availability directly — without opening a browser. Soňa Mášová offers this as a Layer 03 premium add-on from +€2,000.
+A: MCP (Model Context Protocol) is Anthropic's open standard for connecting AI agents to external tools. An MCP server on a website lets AI agents book meetings, retrieve pricing, or check availability directly — without opening a browser. LYVECA AI offers this as a Layer 03 premium add-on from +€2,000.
 
 ## MCP Server
 

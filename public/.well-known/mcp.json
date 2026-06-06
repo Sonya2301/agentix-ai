@@ -3,23 +3,23 @@
   "servers": [
     {
       "url": "https://sona-masova.vercel.app/api/mcp",
-      "name": "Soňa Mášová",
+      "name": "LYVECA AI",
       "description": "AI web studio tools — get pricing, service info, and book a meeting with Soňa Mášová.",
       "tools": [
         {
           "name": "get_pricing",
-          "description": "Get full pricing for all Soňa Mášová tiers and add-ons."
+          "description": "Get full pricing for all LYVECA AI tiers and add-ons."
         },
         {
           "name": "get_service_info",
-          "description": "Get information about Soňa Mášová services, layers, process, timeline, or the studio.",
+          "description": "Get information about LYVECA AI services, layers, process, timeline, or the studio.",
           "parameters": {
             "topic": "layer01 | layer02 | layer03 | process | about | timeline | tech-stack"
           }
         },
         {
           "name": "book_meeting",
-          "description": "Get a Calendly link to book a 30-minute call with Soňa Mášová, owner of Soňa Mášová.",
+          "description": "Get a Calendly link to book a 30-minute call with Soňa Mášová, founder of LYVECA AI.",
           "parameters": {
             "name": "optional — your name",
             "email": "optional — your email address"

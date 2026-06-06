@@ -17,7 +17,7 @@ export default function CookiesPolicy() {
           display: 'inline-block',
           marginBottom: 48,
         }}>
-          ← Back to Soňa Mášová
+          ← Back to LYVECA AI
         </a>
 
         <h1 style={{

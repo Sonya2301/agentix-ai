@@ -404,7 +404,7 @@ export default function GalaxyExperience() {
   if (reduced) {
     return (
       <div style={{ position: 'fixed', inset: 0, background: 'var(--bg)', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 40 }}>
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 24 }}>Soňa Mášová</span>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 24 }}>LYVECA AI</span>
         <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(32px,6vw,64px)', fontStyle: 'italic', color: 'var(--text)', textAlign: 'center', lineHeight: 1.1 }}>
           ChatGPT can&apos;t find<br />your website.
         </h1>
@@ -450,7 +450,7 @@ export default function GalaxyExperience() {
           boxShadow: '0 0 24px rgba(59,130,246,0.5)',
         }} />
         <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.12em', color: '#3b82f6' }}>
-          Soňa Mášová
+          LYVECA AI
         </span>
       </div>
 
@@ -467,7 +467,7 @@ export default function GalaxyExperience() {
         }}
       >
         <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13, letterSpacing: '0.06em', color: '#e8e8f0', fontWeight: 500 }}>
-          Soňa Mášová
+          LYVECA AI
         </span>
         <div style={{ display: 'flex', gap: isMobile ? 12 : 28, alignItems: 'center' }}>
           {!isMobile && ['Services', 'Pricing', 'About'].map(item => (
@@ -519,7 +519,7 @@ export default function GalaxyExperience() {
           textAlign: 'center',
           lineHeight: 1,
         }}>
-          Soňa Mášová
+          LYVECA AI
         </h1>
         <span style={{
           fontFamily: 'var(--font-mono)', fontSize: 'clamp(10px, 1.2vw, 13px)',

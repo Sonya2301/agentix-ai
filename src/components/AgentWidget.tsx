@@ -144,7 +144,7 @@ function WorkingIndicator() {
 // ── Main widget ──────────────────────────────────────────────────
 const INITIAL: ChatMessage = {
   role: 'assistant',
-  content: "Hi. I'm the Soňa Mášová agent — a live demo of Layer 02.\n\nWhat kind of website project are you thinking about?",
+  content: "Hi. I'm the LYVECA AI agent — a live demo of Layer 02.\n\nWhat kind of website project are you thinking about?",
 }
 
 export default function AgentWidget() {
@@ -157,10 +157,24 @@ export default function AgentWidget() {
 
   const bottomRef = useRef<HTMLDivElement>(null)
   const inputRef  = useRef<HTMLTextAreaElement>(null)
+  const autoOpened = useRef(false)
+  const dismissed  = useRef(false)
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 2200)
     return () => clearTimeout(t)
+  }, [])
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (autoOpened.current || dismissed.current) return
+      if (window.scrollY > 300) {
+        autoOpened.current = true
+        setOpen(true)
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   useEffect(() => {
@@ -215,7 +229,7 @@ export default function AgentWidget() {
       <div
         role="dialog"
         aria-modal="true"
-        aria-label="Soňa Mášová chat agent"
+        aria-label="LYVECA AI chat agent"
         style={{
           position: 'fixed', bottom: 92, right: 28,
           width: 'min(368px, calc(100vw - 40px))',
@@ -244,7 +258,7 @@ export default function AgentWidget() {
               boxShadow: '0 0 8px rgba(16,185,129,0.7)',
             }} />
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#e8e8f0' }}>
-              Soňa Mášová · AGENT
+              LYVECA AI · AGENT
             </span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -252,7 +266,7 @@ export default function AgentWidget() {
               Layer 02 Demo
             </span>
             <button
-              onClick={() => setOpen(false)}
+              onClick={() => { dismissed.current = true; setOpen(false) }}
               aria-label="Close"
               style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b6b8a', fontSize: 14, padding: 2, lineHeight: 1 }}
             >✕</button>

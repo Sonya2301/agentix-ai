@@ -4,7 +4,7 @@ import CookieBanner from "../components/CookieBanner";
 import AgentWidget from "../components/AgentWidget";
 
 export const metadata: Metadata = {
-  title: "Soňa Mášová — AI Web Studio",
+  title: "LYVECA AI — Websites built for humans. And for AI.",
   description:
     "We build websites that work in both worlds — for human visitors and for the AI agents replacing them. Three layers: AI-Built, AI-Powered, and Agent-Friendly. Based in Bratislava. Serving globally.",
   keywords: [
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://sona-masova.vercel.app",
-    siteName: "Soňa Mášová",
-    title: "Soňa Mášová — Websites built for humans. And for AI.",
+    siteName: "LYVECA AI",
+    title: "LYVECA AI — Websites built for humans. And for AI.",
     description:
       "60% of searches now end without a click. AI agents skip your homepage and go straight to the data layer. We build websites that work in both worlds.",
     images: [
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "Soňa Mášová — AI Web Studio",
+        alt: "LYVECA AI — AI Web Studio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Soňa Mášová — Websites built for humans. And for AI.",
+    title: "LYVECA AI — Websites built for humans. And for AI.",
     description:
       "60% of searches now end without a click. We build websites that work for human visitors and AI agents.",
     images: ["/og-image.svg"],
@@ -62,7 +62,7 @@ const schemaOrg = {
     {
       "@type": "Organization",
       "@id": "https://sona-masova.vercel.app/#organization",
-      name: "Soňa Mášová",
+      name: "LYVECA AI",
       url: "https://sona-masova.vercel.app",
       description:
         "AI web studio building three-layer websites: AI-Built, AI-Powered, and Agent-Friendly. Making businesses visible to both human visitors and AI search agents.",
@@ -108,7 +108,7 @@ const schemaOrg = {
       "@type": "WebSite",
       "@id": "https://sona-masova.vercel.app/#website",
       url: "https://sona-masova.vercel.app",
-      name: "Soňa Mášová",
+      name: "LYVECA AI",
       publisher: { "@id": "https://sona-masova.vercel.app/#organization" },
     },
     {
@@ -126,15 +126,15 @@ const schemaOrg = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "How much does a website from Soňa Mášová cost?",
+          name: "How much does a website from LYVECA AI cost?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Soňa Mášová has three tiers. Starter is €1,200–€1,500: an AI-built website with Layer 03 basics (llms.txt, schema.org, AI crawler permissions), delivered in 5–7 days. Studio is €2,500–€3,500: everything in Starter plus full AEO/GEO content optimization and a strategy call. Premium is €4,000–€6,000: everything in Studio plus custom design direction, two extra revision rounds, and one month of free maintenance. Add-ons: AI Agent (Layer 02) +€1,500–€2,500; MCP Server Integration (Layer 03 premium) +€2,000–€3,500; monthly maintenance €150–€300.",
+            text: "LYVECA AI has three tiers. Starter is €1,200–€1,500: an AI-built website with Layer 03 basics (llms.txt, schema.org, AI crawler permissions), delivered in 5–7 days. Studio is €2,500–€3,500: everything in Starter plus full AEO/GEO content optimization and a strategy call. Premium is €4,000–€6,000: everything in Studio plus custom design direction, two extra revision rounds, and one month of free maintenance. Add-ons: AI Agent (Layer 02) +€1,500–€2,500; MCP Server Integration (Layer 03 premium) +€2,000–€3,500; monthly maintenance €150–€300.",
           },
         },
         {
           "@type": "Question",
-          name: "How long does it take Soňa Mášová to build a website?",
+          name: "How long does it take LYVECA AI to build a website?",
           acceptedAnswer: {
             "@type": "Answer",
             text: "Layer 01 (AI-built website): 5–7 days from briefing to live. Layer 02 add-on (embedded AI agent): +3–5 days. Layer 03 basics are included in every Layer 01 build with no extra time. Full MCP Server integration: +2–4 weeks.",
@@ -166,10 +166,10 @@ const schemaOrg = {
         },
         {
           "@type": "Question",
-          name: "Does Soňa Mášová work with clients outside Slovakia?",
+          name: "Does LYVECA AI work with clients outside Slovakia?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. Soňa Mášová is based in Bratislava, Slovakia, and serves clients globally. All collaboration is remote. The founder, Soňa Mášová, has a background in security consulting at Deloitte, IBM, and Takeda, and works in English, Slovak, and Czech.",
+            text: "Yes. LYVECA AI is based in Bratislava, Slovakia, and serves clients globally. All collaboration is remote. The founder, Soňa Mášová, has a background in security consulting at Deloitte, IBM, and Takeda, and works in English, Slovak, and Czech.",
           },
         },
         {
@@ -177,7 +177,7 @@ const schemaOrg = {
           name: "What is MCP server integration?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "MCP (Model Context Protocol) is Anthropic's open standard for connecting AI agents to external tools and data. An MCP server on a website exposes its functionality as callable tools — so an AI agent like Claude can book a meeting, retrieve pricing, or check availability directly, without opening a browser. Soňa Mášová offers full MCP integration as a Layer 03 premium add-on starting at +€2,000.",
+            text: "MCP (Model Context Protocol) is Anthropic's open standard for connecting AI agents to external tools and data. An MCP server on a website exposes its functionality as callable tools — so an AI agent like Claude can book a meeting, retrieve pricing, or check availability directly, without opening a browser. LYVECA AI offers full MCP integration as a Layer 03 premium add-on starting at +€2,000.",
           },
         },
         {

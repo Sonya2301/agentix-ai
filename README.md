@@ -1,4 +1,4 @@
-# Soňa Mášová — AI Web Studio
+# LYVECA AI — AI Web Studio
 
 > Building websites that work for both human visitors and AI agents.
 
@@ -8,7 +8,7 @@ Live: [sona-masova.vercel.app](https://sona-masova.vercel.app) · Repo: [github.
 
 ## What This Is
 
-Portfolio and business website for Soňa Mášová — a solo AI web studio based in Bratislava, Slovakia. The site itself is a live demonstration of all three service layers:
+Portfolio and business website for LYVECA AI — a solo AI web studio founded by Soňa Mášová, based in Bratislava, Slovakia. The site itself is a live demonstration of all three service layers:
 
 - **Layer 01** — Built with AI tools (Claude Code), delivered fast
 - **Layer 02** — Autonomous AI agent: lead qualification, booking, knowledge base *(live)*
