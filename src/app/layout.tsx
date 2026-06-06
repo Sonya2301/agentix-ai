@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Soňa Mášová" }],
   creator: "Soňa Mášová",
-  metadataBase: new URL("https://sona-masova.vercel.app"),
+  metadataBase: new URL("https://lyveca.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://sona-masova.vercel.app",
+    url: "https://lyveca.com",
     siteName: "LYVECA AI",
     title: "LYVECA AI — Websites built for humans. And for AI.",
     description:
@@ -48,11 +48,11 @@ export const metadata: Metadata = {
     images: ["/og-image.svg"],
   },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
   alternates: {
-    canonical: "https://sona-masova.vercel.app",
+    canonical: "https://lyveca.com",
   },
 };
 
@@ -61,9 +61,9 @@ const schemaOrg = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://sona-masova.vercel.app/#organization",
+      "@id": "https://lyveca.com/#organization",
       name: "LYVECA AI",
-      url: "https://sona-masova.vercel.app",
+      url: "https://lyveca.com",
       description:
         "AI web studio building three-layer websites: AI-Built, AI-Powered, and Agent-Friendly. Making businesses visible to both human visitors and AI search agents.",
       foundingDate: "2026",
@@ -106,15 +106,15 @@ const schemaOrg = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://sona-masova.vercel.app/#website",
-      url: "https://sona-masova.vercel.app",
+      "@id": "https://lyveca.com/#website",
+      url: "https://lyveca.com",
       name: "LYVECA AI",
-      publisher: { "@id": "https://sona-masova.vercel.app/#organization" },
+      publisher: { "@id": "https://lyveca.com/#organization" },
     },
     {
       "@type": "Service",
       name: "Three-Layer AI Website Service",
-      provider: { "@id": "https://sona-masova.vercel.app/#organization" },
+      provider: { "@id": "https://lyveca.com/#organization" },
       description:
         "Layer 01: AI-Built Websites in 5-7 days. Layer 02: AI-Powered with embedded agents. Layer 03: Agent-Friendly with llms.txt, Schema.org, MCP integration.",
       serviceType: "Web Design and Development",
@@ -122,7 +122,7 @@ const schemaOrg = {
     },
     {
       "@type": "FAQPage",
-      "@id": "https://sona-masova.vercel.app/#faq",
+      "@id": "https://lyveca.com/#faq",
       mainEntity: [
         {
           "@type": "Question",
@@ -169,7 +169,7 @@ const schemaOrg = {
           name: "Does LYVECA AI work with clients outside Slovakia?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. LYVECA AI is based in Bratislava, Slovakia, and serves clients globally. All collaboration is remote. The founder, Soňa Mášová, has a background in security consulting at Deloitte, IBM, and Takeda, and works in English, Slovak, and Czech.",
+            text: "Yes. LYVECA AI is based in Bratislava, Slovakia, and serves clients globally. All collaboration is remote. The founder, Soňa Mášová, has a background in security consulting at global enterprises, and works in English, Slovak, and Czech.",
           },
         },
         {
@@ -185,7 +185,7 @@ const schemaOrg = {
           name: "Who is Soňa Mášová?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Soňa Mášová is an AI web studio founder based in Bratislava, Slovakia. She is a former security consultant with experience at Deloitte, IBM, and Takeda, now building at the intersection of AI, web development, and design. Contact: sona.masova23@gmail.com. Book a call: calendly.com/sona-masova23.",
+            text: "Soňa Mášová is an AI web studio founder based in Bratislava, Slovakia. She is a former security consultant with experience at global enterprises, now building at the intersection of AI, web development, and design. Contact: sona.masova23@gmail.com. Book a call: calendly.com/sona-masova23.",
           },
         },
       ],
@@ -203,8 +203,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
         />
-        <link rel="mcp" href="https://sona-masova.vercel.app/api/mcp" />
-        <link rel="mcp-discovery" href="https://sona-masova.vercel.app/.well-known/mcp.json" />
+        <link rel="mcp" href="https://lyveca.com/api/mcp" />
+        <link rel="mcp-discovery" href="https://lyveca.com/.well-known/mcp.json" />
       </head>
       <body>
         {children}

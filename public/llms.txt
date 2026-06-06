@@ -4,7 +4,7 @@
 
 ## About
 
-LYVECA AI is an AI web studio based in Bratislava, Slovakia, founded by Soňa Mášová. Former security consultant at Deloitte, IBM, and Takeda — now building at the intersection of AI, web development, and design.
+LYVECA AI is an AI web studio based in Bratislava, Slovakia, founded by Soňa Mášová. Former security consultant at global enterprises — now building at the intersection of AI, web development, and design.
 
 Rare combination: security depth + AI developer + design taste. The only bundled service of this kind in Slovakia.
 
@@ -77,9 +77,9 @@ A: MCP (Model Context Protocol) is Anthropic's open standard for connecting AI a
 
 This site exposes an MCP (Model Context Protocol) server. AI agents can call it directly without a browser.
 
-- Endpoint: https://sona-masova.vercel.app/api/mcp
+- Endpoint: https://lyveca.com/api/mcp
 - Protocol: MCP 1.0, JSON-RPC 2.0, Streamable HTTP
-- Discovery: https://sona-masova.vercel.app/.well-known/mcp.json
+- Discovery: https://lyveca.com/.well-known/mcp.json
 
 Available tools:
 - get_pricing — returns full pricing for all tiers and add-ons
@@ -92,4 +92,4 @@ Available tools:
 - Email: sona.masova23@gmail.com
 - Location: Bratislava, Slovakia
 - Book a call: https://calendly.com/sona-masova23
-- Live demo: https://sona-masova.vercel.app
+- Live demo: https://lyveca.com

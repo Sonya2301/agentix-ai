@@ -12,6 +12,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://sona-masova.vercel.app/sitemap.xml',
+    sitemap: 'https://lyveca.com/sitemap.xml',
   }
 }

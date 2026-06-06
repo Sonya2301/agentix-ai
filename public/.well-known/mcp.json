@@ -2,7 +2,7 @@
   "mcpVersion": "1.0",
   "servers": [
     {
-      "url": "https://sona-masova.vercel.app/api/mcp",
+      "url": "https://lyveca.com/api/mcp",
       "name": "LYVECA AI",
       "description": "AI web studio tools — get pricing, service info, and book a meeting with Soňa Mášová.",
       "tools": [
