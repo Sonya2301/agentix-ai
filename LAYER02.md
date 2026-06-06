@@ -157,6 +157,7 @@ The architecture stays identical. Only the content changes.
 | `864305a` | Update domain to sona-masova.vercel.app, fix knowledge base about text |
 | `440b5d4` | Add Notion CRM integration — leads now save to Notion database |
 | `d8b16b2` | Rebrand to LYVECA AI — studio name updated across all files, auto-open agent on scroll |
+| `363e414` | Update all URLs to lyveca.com, enable indexing, remove company names from schema |
 
 Branch: `dev` → deployed to Vercel via `main`
 
