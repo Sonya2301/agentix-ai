@@ -156,7 +156,7 @@ The architecture stays identical. Only the content changes.
 | `5d3ba99` | Rebrand from AGENSO to Soňa Mášová across all files |
 | `864305a` | Update domain to sona-masova.vercel.app, fix knowledge base about text |
 | `440b5d4` | Add Notion CRM integration — leads now save to Notion database |
-| `next` | Rebrand to LYVECA AI — studio name updated across all files, auto-open agent on scroll |
+| `d8b16b2` | Rebrand to LYVECA AI — studio name updated across all files, auto-open agent on scroll |
 
 Branch: `dev` → deployed to Vercel via `main`
 
