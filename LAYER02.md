@@ -159,6 +159,19 @@ The architecture stays identical. Only the content changes.
 | `d8b16b2` | Rebrand to LYVECA AI — studio name updated across all files, auto-open agent on scroll |
 | `363e414` | Update all URLs to lyveca.com, enable indexing, remove company names from schema |
 
+## Infrastructure Setup (post-deploy, no code commits)
+
+| Date | What |
+|------|------|
+| 2026-06-06 | Registered lyveca.com on Namecheap (€9.86/yr) |
+| 2026-06-06 | Connected lyveca.com to Vercel — A Record @ → 216.198.79.1, CNAME www → cname.vercel-dns.com |
+| 2026-06-06 | Added lyvecaai.vercel.app → lyveca.com 307 redirect in Vercel |
+| 2026-06-07 | Google Search Console — domain verified via DNS TXT record, sitemap submitted |
+| 2026-06-07 | Added www.lyveca.com to Vercel domains |
+| 2026-06-07 | Resend domain setup — DKIM + SPF records added to Namecheap for lyveca.com (eu-west-1) |
+| 2026-06-07 | Email forwarding: agent@lyveca.com → sona.masova23@gmail.com (Namecheap) |
+| 2026-06-07 | RESEND_FROM=agent@lyveca.com set in Vercel environment variables |
+
 Branch: `dev` → deployed to Vercel via `main`
 
 ---
