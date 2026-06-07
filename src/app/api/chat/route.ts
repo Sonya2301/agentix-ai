@@ -131,6 +131,12 @@ export async function POST(req: Request) {
     content,
   }))
 
+  // Don't offer capture_lead if the lead was already captured in this conversation
+  const leadAlreadyCaptured = messages.some(msg =>
+    msg.role === 'assistant' && msg.actions?.some(a => a.type === 'lead_captured')
+  )
+  const activeTools = leadAlreadyCaptured ? TOOLS.filter(t => t.name !== 'capture_lead') : TOOLS
+
   const actions: AgentAction[] = []
   const agentMessages: Anthropic.MessageParam[] = [...apiMessages]
 
@@ -140,7 +146,7 @@ export async function POST(req: Request) {
       model: 'claude-sonnet-4-6',
       max_tokens: 512,
       system: [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }],
-      tools: TOOLS,
+      tools: activeTools,
       messages: agentMessages,
     })
 
