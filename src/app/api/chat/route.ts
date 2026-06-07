@@ -34,7 +34,7 @@ CONVERSATION RULES:
 const TOOLS: Anthropic.Tool[] = [
   {
     name: 'capture_lead',
-    description: 'Save a qualified lead. Call when you have: name, email, project type. Autonomously decide timing — do not wait to be asked.',
+    description: 'Save a qualified lead. Call when you have: name, email, project type, AND any company/business context they have mentioned. Do not call before you have their email. Gather context naturally first — do not rush.',
     input_schema: {
       type: 'object' as const,
       properties: {
