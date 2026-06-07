@@ -83,7 +83,7 @@ In `.env.local` (never commit this file):
 ```
 ANTHROPIC_API_KEY=sk-ant-...       # Required — Claude API
 RESEND_API_KEY=re_...              # Required for email — lead notifications to Soňa
-RESEND_FROM=agent@yourdomain.com   # Optional — defaults to onboarding@resend.dev
+RESEND_FROM=agent@lyveca.com       # Optional — defaults to onboarding@resend.dev
 NOTION_API_KEY=ntn_...             # Required — saves leads to Notion CRM
 NOTION_DATABASE_ID=...             # Required — Notion leads database ID
 ```
@@ -171,6 +171,8 @@ The architecture stays identical. Only the content changes.
 | 2026-06-07 | Resend domain setup — DKIM + SPF records added to Namecheap for lyveca.com (eu-west-1) |
 | 2026-06-07 | Email forwarding: agent@lyveca.com → sona.masova23@gmail.com (Namecheap) |
 | 2026-06-07 | RESEND_FROM=agent@lyveca.com set in Vercel environment variables |
+| 2026-06-07 | Switched DNS to Cloudflare — added send MX record (feedback-smtp.eu-west-1.amazonses.com), CNAME www → cname.vercel-dns.com |
+| 2026-06-07 | Updated Namecheap nameservers to cesar.ns.cloudflare.com + dahlia.ns.cloudflare.com |
 
 Branch: `dev` → deployed to Vercel via `main`
 

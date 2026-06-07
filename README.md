@@ -2,7 +2,7 @@
 
 > Building websites that work for both human visitors and AI agents.
 
-Live: [sona-masova.vercel.app](https://sona-masova.vercel.app) · Repo: [github.com/Sonya2301/agentix-ai](https://github.com/Sonya2301/agentix-ai)
+Live: [lyveca.com](https://lyveca.com) · Repo: [github.com/Sonya2301/agentix-ai](https://github.com/Sonya2301/agentix-ai)
 
 ---
 
@@ -156,7 +156,7 @@ Three tools to try: `get_pricing`, `book_meeting`, `get_service_info` (with topi
 
 This makes the invisible MCP mechanism visible — visitors experience exactly what an AI agent does when it calls the site.
 
-> **Note:** `noindex` is currently active — site will not be indexed by search engines until ready for public launch.
+> **Note:** Indexing is enabled. Google Search Console verified and sitemap submitted.
 
 ---
 
