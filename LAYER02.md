@@ -185,6 +185,8 @@ The architecture stays identical. Only the content changes.
 | 2026-06-08 | Deleted 5 dead Namecheap MX records (eforward1-5.registrar-servers.com) from Cloudflare |
 | 2026-06-08 | Cloudflare Email Routing set up — `sonamasova@lyveca.com` forwards to `sona.masova23@gmail.com` |
 | 2026-06-08 | Bing Webmaster Tools — lyveca.com imported from Google Search Console, sitemap submitted, indexing requested |
+| 2026-06-08 | sonamasova@lyveca.com email forwarding confirmed working — Gmail filter set to never spam |
+| 2026-06-08 | LinkedIn account created with sonamasova@lyveca.com — company page creation blocked by LinkedIn 24h new account limit, retry 2026-06-09 |
 
 Branch: `dev` → deployed to Vercel via `main`
 
@@ -195,6 +197,7 @@ Branch: `dev` → deployed to Vercel via `main`
 | ~~OG image PNG~~ | ~~High~~ | Done — `og-image.png` generated (1200×630), layout.tsx updated |
 | ~~DMARC record~~ | ~~Medium~~ | Done — `_dmarc.lyveca.com` TXT live, verified with `dig` |
 | AI search audit | Medium | Google indexed ✓, Bing submitted ✓ — retest in 3–5 days: "do you know lyveca ai" in Perplexity + ChatGPT |
+| LinkedIn company page | High | Account ready (sonamasova@lyveca.com) — retry creating page 2026-06-09 (LinkedIn 24h new account limit) |
 | LinkedIn content | High | Primary lead gen channel — 3 posts/week, screen recording of site + agent demo |
 
 ---
