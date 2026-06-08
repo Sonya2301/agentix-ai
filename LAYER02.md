@@ -182,6 +182,9 @@ The architecture stays identical. Only the content changes.
 | 2026-06-07 | Resend domain verified ✓ — agent@lyveca.com live and sending (eu-west-1) |
 | 2026-06-07 | End-to-end email flow tested — lead captured, Notion entry created, email received at sona.masova23@gmail.com from agent@lyveca.com |
 | 2026-06-08 | DMARC record added — `_dmarc.lyveca.com` TXT `v=DMARC1; p=none; rua=mailto:sona.masova23@gmail.com` verified with dig |
+| 2026-06-08 | Deleted 5 dead Namecheap MX records (eforward1-5.registrar-servers.com) from Cloudflare |
+| 2026-06-08 | Cloudflare Email Routing set up — `sonamasova@lyveca.com` forwards to `sona.masova23@gmail.com` |
+| 2026-06-08 | Bing Webmaster Tools — lyveca.com imported from Google Search Console, sitemap submitted, indexing requested |
 
 Branch: `dev` → deployed to Vercel via `main`
 
@@ -191,7 +194,7 @@ Branch: `dev` → deployed to Vercel via `main`
 |------|----------|-------|
 | ~~OG image PNG~~ | ~~High~~ | Done — `og-image.png` generated (1200×630), layout.tsx updated |
 | ~~DMARC record~~ | ~~Medium~~ | Done — `_dmarc.lyveca.com` TXT live, verified with `dig` |
-| AI search audit | Medium | Test lyveca.com visibility in Perplexity and ChatGPT — "what is LYVECA AI" |
+| AI search audit | Medium | Google indexed ✓, Bing submitted ✓ — retest in 3–5 days: "do you know lyveca ai" in Perplexity + ChatGPT |
 | LinkedIn content | High | Primary lead gen channel — 3 posts/week, screen recording of site + agent demo |
 
 ---
