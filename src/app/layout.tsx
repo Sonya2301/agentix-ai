@@ -33,7 +33,7 @@ export const metadata: Metadata = {
       "60% of searches now end without a click. AI agents skip your homepage and go straight to the data layer. We build websites that work in both worlds.",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "LYVECA AI — AI Web Studio",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "LYVECA AI — Websites built for humans. And for AI.",
     description:
       "60% of searches now end without a click. We build websites that work for human visitors and AI agents.",
-    images: ["/og-image.svg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

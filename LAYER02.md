@@ -188,7 +188,7 @@ Branch: `dev` → deployed to Vercel via `main`
 
 | Item | Priority | Notes |
 |------|----------|-------|
-| OG image PNG | High | Current `og-image.svg` won't render on LinkedIn/Twitter — needs PNG conversion |
+| ~~OG image PNG~~ | ~~High~~ | Done — `og-image.png` generated (1200×630), layout.tsx updated |
 | DMARC record | Medium | Add TXT `_dmarc` → `v=DMARC1; p=none; rua=mailto:sonamasova@gmail.com` in Cloudflare |
 | AI search audit | Medium | Test lyveca.com visibility in Perplexity and ChatGPT — "what is LYVECA AI" |
 | LinkedIn content | High | Primary lead gen channel — 3 posts/week, screen recording of site + agent demo |

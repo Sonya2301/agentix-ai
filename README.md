@@ -111,7 +111,8 @@ src/
     └── agent.ts                # Layer 02: shared types
 public/
 ├── llms.txt                    # AI agent sitemap (Layer 03)
-└── og-image.svg                # Social sharing preview image
+├── og-image.png                # Social sharing preview image (LinkedIn/Twitter/Facebook)
+└── og-image.svg                # Source SVG (keep for re-generation)
 data/
 └── leads.json                  # Local lead storage (dev only)
 ```
@@ -137,7 +138,7 @@ To go live: merge `dev` into `main` and push.
 | `src/app/robots.ts` | Explicitly allows GPTBot, ClaudeBot, PerplexityBot | `/robots.txt` |
 | `src/app/sitemap.ts` | Auto-generated XML sitemap | `/sitemap.xml` |
 | Schema.org JSON-LD | Organization + Service + FAQPage structured data | In `<head>` |
-| `og-image.svg` | Social preview image for LinkedIn/Twitter | `/og-image.svg` |
+| `og-image.png` | Social preview image for LinkedIn/Twitter (1200×630 PNG) | `/og-image.png` |
 | `src/app/api/mcp/route.ts` | MCP Server — 3 callable tools for AI agents | `/api/mcp` |
 | `public/.well-known/mcp.json` | MCP discovery endpoint — lists tools and server URL | `/.well-known/mcp.json` |
 | `<link rel="mcp">` in `<head>` | HTML discovery for agents that parse pages | In every page |
