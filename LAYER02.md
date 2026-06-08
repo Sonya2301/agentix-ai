@@ -158,6 +158,10 @@ The architecture stays identical. Only the content changes.
 | `440b5d4` | Add Notion CRM integration — leads now save to Notion database |
 | `d8b16b2` | Rebrand to LYVECA AI — studio name updated across all files, auto-open agent on scroll |
 | `363e414` | Update all URLs to lyveca.com, enable indexing, remove company names from schema |
+| `3f459eb` | Update docs — Cloudflare DNS migration, correct live URL and indexing status |
+| `f75eec0` | Fix duplicate lead capture — remove capture_lead tool once lead is saved |
+| `41ad81d` | Fix agent silent after lead capture — require text response in same turn |
+| `8b0b6cf` | Improve lead capture timing — wait for company context before capturing |
 
 ## Infrastructure Setup (post-deploy, no code commits)
 
@@ -173,8 +177,21 @@ The architecture stays identical. Only the content changes.
 | 2026-06-07 | RESEND_FROM=agent@lyveca.com set in Vercel environment variables |
 | 2026-06-07 | Switched DNS to Cloudflare — added send MX record (feedback-smtp.eu-west-1.amazonses.com), CNAME www → cname.vercel-dns.com |
 | 2026-06-07 | Updated Namecheap nameservers to cesar.ns.cloudflare.com + dahlia.ns.cloudflare.com |
+| 2026-06-07 | Cloudflare DNS propagated and active — all 11 records verified DNS-only |
+| 2026-06-07 | Cloudflare AI crawler setting: "Do not block (allow crawlers)" + robots.txt mode confirmed |
+| 2026-06-07 | Resend domain verified ✓ — agent@lyveca.com live and sending (eu-west-1) |
+| 2026-06-07 | End-to-end email flow tested — lead captured, Notion entry created, email received at sona.masova23@gmail.com from agent@lyveca.com |
 
 Branch: `dev` → deployed to Vercel via `main`
+
+## Outstanding (not yet done)
+
+| Item | Priority | Notes |
+|------|----------|-------|
+| OG image PNG | High | Current `og-image.svg` won't render on LinkedIn/Twitter — needs PNG conversion |
+| DMARC record | Medium | Add TXT `_dmarc` → `v=DMARC1; p=none; rua=mailto:sonamasova@gmail.com` in Cloudflare |
+| AI search audit | Medium | Test lyveca.com visibility in Perplexity and ChatGPT — "what is LYVECA AI" |
+| LinkedIn content | High | Primary lead gen channel — 3 posts/week, screen recording of site + agent demo |
 
 ---
 

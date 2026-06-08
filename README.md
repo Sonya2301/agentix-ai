@@ -172,5 +172,6 @@ This makes the invisible MCP mechanism visible — visitors experience exactly w
 ## Contact
 
 - Email: sona.masova23@gmail.com
+- Agent email: agent@lyveca.com (Resend, eu-west-1 — lead notifications sent from here)
 - Book a call: [calendly.com/sona-masova23](https://calendly.com/sona-masova23)
 - Location: Bratislava, Slovakia
