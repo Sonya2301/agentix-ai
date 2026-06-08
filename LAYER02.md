@@ -181,6 +181,7 @@ The architecture stays identical. Only the content changes.
 | 2026-06-07 | Cloudflare AI crawler setting: "Do not block (allow crawlers)" + robots.txt mode confirmed |
 | 2026-06-07 | Resend domain verified ✓ — agent@lyveca.com live and sending (eu-west-1) |
 | 2026-06-07 | End-to-end email flow tested — lead captured, Notion entry created, email received at sona.masova23@gmail.com from agent@lyveca.com |
+| 2026-06-08 | DMARC record added — `_dmarc.lyveca.com` TXT `v=DMARC1; p=none; rua=mailto:sona.masova23@gmail.com` verified with dig |
 
 Branch: `dev` → deployed to Vercel via `main`
 
@@ -189,7 +190,7 @@ Branch: `dev` → deployed to Vercel via `main`
 | Item | Priority | Notes |
 |------|----------|-------|
 | ~~OG image PNG~~ | ~~High~~ | Done — `og-image.png` generated (1200×630), layout.tsx updated |
-| DMARC record | Medium | Add TXT `_dmarc` → `v=DMARC1; p=none; rua=mailto:sonamasova@gmail.com` in Cloudflare |
+| ~~DMARC record~~ | ~~Medium~~ | Done — `_dmarc.lyveca.com` TXT live, verified with `dig` |
 | AI search audit | Medium | Test lyveca.com visibility in Perplexity and ChatGPT — "what is LYVECA AI" |
 | LinkedIn content | High | Primary lead gen channel — 3 posts/week, screen recording of site + agent demo |
 
