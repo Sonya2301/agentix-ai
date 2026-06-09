@@ -67,6 +67,7 @@ const schemaOrg = {
       description:
         "AI web studio building three-layer websites: AI-Built, AI-Powered, and Agent-Friendly. Making businesses visible to both human visitors and AI search agents.",
       foundingDate: "2026",
+      founder: { "@id": "https://lyveca.com/#sona" },
       areaServed: "Worldwide",
       knowsAbout: [
         "AI website development",
@@ -119,6 +120,22 @@ const schemaOrg = {
         "Layer 01: AI-Built Websites in 5-7 days. Layer 02: AI-Powered with embedded agents. Layer 03: Agent-Friendly with llms.txt, Schema.org, MCP integration.",
       serviceType: "Web Design and Development",
       areaServed: "Worldwide",
+    },
+    {
+      "@type": "Person",
+      "@id": "https://lyveca.com/#sona",
+      name: "Soňa Mášová",
+      jobTitle: "Founder",
+      worksFor: { "@id": "https://lyveca.com/#organization" },
+      email: "sonamasova@lyveca.com",
+      url: "https://lyveca.com",
+      knowsAbout: [
+        "AI website development",
+        "Agent-friendly web design",
+        "AEO optimization",
+        "GEO optimization",
+        "Cybersecurity consulting",
+      ],
     },
     {
       "@type": "FAQPage",
