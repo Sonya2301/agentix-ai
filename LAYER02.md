@@ -187,6 +187,11 @@ The architecture stays identical. Only the content changes.
 | 2026-06-08 | Bing Webmaster Tools — lyveca.com imported from Google Search Console, sitemap submitted, indexing requested |
 | 2026-06-08 | sonamasova@lyveca.com email forwarding confirmed working — Gmail filter set to never spam |
 | 2026-06-08 | LinkedIn account created with sonamasova@lyveca.com — company page creation blocked by LinkedIn 24h new account limit, retry 2026-06-09 |
+| 2026-06-09 | X (Twitter) account created @LyvecaAI — profile set up with avatar, bio, lyveca.com link, first posts published |
+| 2026-06-09 | Person schema added to layout.tsx — Soňa Mášová as named entity linked to Organization via founder/worksFor |
+| 2026-06-09 | llms.txt contact email updated to sonamasova@lyveca.com |
+| 2026-06-09 | avatar.png created (400×400 square) for social profile pictures — matches OG image style |
+| 2026-06-09 | LinkedIn company page still blocked — LinkedIn requires 48h+ for new accounts, retry 2026-06-10 |
 
 Branch: `dev` → deployed to Vercel via `main`
 
@@ -197,8 +202,12 @@ Branch: `dev` → deployed to Vercel via `main`
 | ~~OG image PNG~~ | ~~High~~ | Done — `og-image.png` generated (1200×630), layout.tsx updated |
 | ~~DMARC record~~ | ~~Medium~~ | Done — `_dmarc.lyveca.com` TXT live, verified with `dig` |
 | AI search audit | Medium | Google indexed ✓, Bing submitted ✓ — retest in 3–5 days: "do you know lyveca ai" in Perplexity + ChatGPT |
-| LinkedIn company page | High | Account ready (sonamasova@lyveca.com) — retry creating page 2026-06-09 (LinkedIn 24h new account limit) |
+| ~~X account~~ | ~~High~~ | Done — @LyvecaAI live, profile complete, first posts published |
+| ~~Person schema~~ | ~~Medium~~ | Done — Soňa Mášová as named entity in JSON-LD, linked to Organization |
+| LinkedIn company page | High | Account + work experience added, still blocked — retry 2026-06-10 |
 | LinkedIn content | High | Primary lead gen channel — 3 posts/week, screen recording of site + agent demo |
+| Indie Hackers post | Medium | Can't post yet — need 3–5 genuine comments first to earn access (takes 3–7 days) |
+| dev.to post | Medium | Open posting, fast indexing — draft ready, publish as backlink while IH access pending |
 
 ---
 

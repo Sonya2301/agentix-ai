@@ -112,7 +112,9 @@ src/
 public/
 ├── llms.txt                    # AI agent sitemap (Layer 03)
 ├── og-image.png                # Social sharing preview image (LinkedIn/Twitter/Facebook)
-└── og-image.svg                # Source SVG (keep for re-generation)
+├── og-image.svg                # Source SVG (keep for re-generation)
+├── avatar.png                  # Square profile picture (400×400) for X, LinkedIn
+└── avatar.svg                  # Source SVG for avatar
 data/
 └── leads.json                  # Local lead storage (dev only)
 ```
@@ -174,5 +176,6 @@ This makes the invisible MCP mechanism visible — visitors experience exactly w
 
 - Email: sonamasova@lyveca.com (forwards to sona.masova23@gmail.com via Cloudflare Email Routing)
 - Agent email: agent@lyveca.com (Resend, eu-west-1 — lead notifications sent from here)
+- X: [@LyvecaAI](https://x.com/LyvecaAI)
 - Book a call: [calendly.com/sona-masova23](https://calendly.com/sona-masova23)
 - Location: Bratislava, Slovakia
