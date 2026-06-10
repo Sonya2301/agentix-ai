@@ -192,6 +192,9 @@ The architecture stays identical. Only the content changes.
 | 2026-06-09 | llms.txt contact email updated to sonamasova@lyveca.com |
 | 2026-06-09 | avatar.png created (400×400 square) for social profile pictures — matches OG image style |
 | 2026-06-09 | LinkedIn company page still blocked — LinkedIn requires 48h+ for new accounts, retry 2026-06-10 |
+| 2026-06-10 | sameAs links added to Organization + Person schema — X (@LyvecaAI) and GitHub linked for entity graph corroboration |
+| 2026-06-10 | FAQPage email corrected — sonamasova@lyveca.com replaces old sona.masova23@gmail.com in Soňa Mášová Q&A |
+| 2026-06-10 | dev.to post published — first external backlink to lyveca.com from DA~90 domain (LyvecaAI account) |
 
 Branch: `dev` → deployed to Vercel via `main`
 
@@ -204,10 +207,12 @@ Branch: `dev` → deployed to Vercel via `main`
 | AI search audit | Medium | Google indexed ✓, Bing submitted ✓ — retest in 3–5 days: "do you know lyveca ai" in Perplexity + ChatGPT |
 | ~~X account~~ | ~~High~~ | Done — @LyvecaAI live, profile complete, first posts published |
 | ~~Person schema~~ | ~~Medium~~ | Done — Soňa Mášová as named entity in JSON-LD, linked to Organization |
-| LinkedIn company page | High | Account + work experience added, still blocked — retry 2026-06-10 |
+| LinkedIn company page | High | Account + work experience added, 48h+ passed — retry 2026-06-10 |
 | LinkedIn content | High | Primary lead gen channel — 3 posts/week, screen recording of site + agent demo |
+| X post — share dev.to article | Medium | Post dev.to link on @LyvecaAI to drive early engagement signals |
 | Indie Hackers post | Medium | Can't post yet — need 3–5 genuine comments first to earn access (takes 3–7 days) |
-| dev.to post | Medium | Open posting, fast indexing — draft ready, publish as backlink while IH access pending |
+| ~~dev.to post~~ | ~~Medium~~ | Done — published 2026-06-10, first external backlink live |
+| AI search audit | Medium | Retest in 3–5 days: "do you know lyveca ai" in Perplexity + ChatGPT Browse |
 
 ---
 
