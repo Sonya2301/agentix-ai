@@ -64,6 +64,10 @@ const schemaOrg = {
       "@id": "https://lyveca.com/#organization",
       name: "LYVECA AI",
       url: "https://lyveca.com",
+      sameAs: [
+        "https://x.com/LyvecaAI",
+        "https://github.com/Sonya2301/agentix-ai",
+      ],
       description:
         "AI web studio building three-layer websites: AI-Built, AI-Powered, and Agent-Friendly. Making businesses visible to both human visitors and AI search agents.",
       foundingDate: "2026",
@@ -129,6 +133,10 @@ const schemaOrg = {
       worksFor: { "@id": "https://lyveca.com/#organization" },
       email: "sonamasova@lyveca.com",
       url: "https://lyveca.com",
+      sameAs: [
+        "https://x.com/LyvecaAI",
+        "https://github.com/Sonya2301",
+      ],
       knowsAbout: [
         "AI website development",
         "Agent-friendly web design",
@@ -202,7 +210,7 @@ const schemaOrg = {
           name: "Who is Soňa Mášová?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Soňa Mášová is an AI web studio founder based in Bratislava, Slovakia. She is a former security consultant with experience at global enterprises, now building at the intersection of AI, web development, and design. Contact: sona.masova23@gmail.com. Book a call: calendly.com/sona-masova23.",
+            text: "Soňa Mášová is an AI web studio founder based in Bratislava, Slovakia. She is a former security consultant with experience at global enterprises, now building at the intersection of AI, web development, and design. Contact: sonamasova@lyveca.com. Book a call: calendly.com/sona-masova23.",
           },
         },
       ],
