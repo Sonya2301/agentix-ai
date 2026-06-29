@@ -198,21 +198,7 @@ The architecture stays identical. Only the content changes.
 
 Branch: `dev` → deployed to Vercel via `main`
 
-## Outstanding (not yet done)
-
-| Item | Priority | Notes |
-|------|----------|-------|
-| ~~OG image PNG~~ | ~~High~~ | Done — `og-image.png` generated (1200×630), layout.tsx updated |
-| ~~DMARC record~~ | ~~Medium~~ | Done — `_dmarc.lyveca.com` TXT live, verified with `dig` |
-| AI search audit | Medium | Google indexed ✓, Bing submitted ✓ — retest in 3–5 days: "do you know lyveca ai" in Perplexity + ChatGPT |
-| ~~X account~~ | ~~High~~ | Done — @LyvecaAI live, profile complete, first posts published |
-| ~~Person schema~~ | ~~Medium~~ | Done — Soňa Mášová as named entity in JSON-LD, linked to Organization |
-| LinkedIn company page | High | Account + work experience added, 48h+ passed — retry 2026-06-10 |
-| LinkedIn content | High | Primary lead gen channel — 3 posts/week, screen recording of site + agent demo |
-| X post — share dev.to article | Medium | Post dev.to link on @LyvecaAI to drive early engagement signals |
-| Indie Hackers post | Medium | Can't post yet — need 3–5 genuine comments first to earn access (takes 3–7 days) |
-| ~~dev.to post~~ | ~~Medium~~ | Done — published 2026-06-10, first external backlink live |
-| AI search audit | Medium | Retest in 3–5 days: "do you know lyveca ai" in Perplexity + ChatGPT Browse |
+> **Status & outstanding tasks now live in PLAN.md** (single source of truth). This file is technical/implementation reference only.
 
 ---
 
