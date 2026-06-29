@@ -470,10 +470,10 @@ export default function GalaxyExperience() {
           LYVECA AI
         </span>
         <div style={{ display: 'flex', gap: isMobile ? 12 : 28, alignItems: 'center' }}>
-          {!isMobile && ['Services', 'Pricing', 'About'].map(item => (
-            <span key={item} style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.1em', color: '#6b6b8a', textTransform: 'uppercase', cursor: 'default' }}>
+          {!isMobile && [['Services', '/services'], ['Pricing', '/pricing'], ['About', '/about']].map(([item, href]) => (
+            <a key={item} href={href} style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.1em', color: '#6b6b8a', textTransform: 'uppercase', textDecoration: 'none' }}>
               {item}
-            </span>
+            </a>
           ))}
           <a
             href="https://calendly.com/sona-masova23"

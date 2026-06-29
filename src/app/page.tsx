@@ -13,6 +13,14 @@ export default function Home() {
           that work for both human visitors and AI search agents.
         </p>
 
+        <nav aria-label="Site pages">
+          <ul>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </nav>
+
         <section aria-label="The problem">
           <h2>ChatGPT can&apos;t find your website.</h2>
           <p>
