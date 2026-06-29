@@ -595,26 +595,12 @@ export default function GalaxyExperience() {
         <h2 style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontSize: 'clamp(28px,4vw,48px)', color: '#e8e8f0', marginBottom: 32 }}>
           Simple. Honest. No surprises.
         </h2>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
-          {[
-            { tier: 'AI Visibility Upgrade', price: '€890',  desc: 'Make your existing site AI-readable — no rebuild' },
-            { tier: 'Studio',   price: '€1,490',  desc: 'AI-built website + AI-readable layer + strategy' },
-            { tier: 'Premium',  price: '€2,990',  desc: 'Studio + embedded AI Agent + custom design' },
-            { tier: 'Care', price: '€99/mo', desc: 'Uptime, updates, security, AI-visibility monitoring' },
-          ].map(({ tier, price, desc }) => (
-            <div key={tier} style={{
-              padding: '20px 24px', minWidth: 180,
-              border: '1px solid rgba(59,130,246,0.2)',
-              background: 'rgba(10,10,15,0.75)',
-              backdropFilter: 'blur(12px)',
-              textAlign: 'left',
-            }}>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6b6b8a', marginBottom: 6 }}>{tier}</div>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 22, color: '#e8e8f0', marginBottom: 8 }}>{price}</div>
-              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 12, color: '#9898b4', lineHeight: 1.5 }}>{desc}</div>
-            </div>
-          ))}
-        </div>
+        <a href="/pricing" style={{
+          fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase',
+          color: '#0a0a0f', background: '#3b82f6', padding: '13px 26px', textDecoration: 'none',
+        }}>
+          See full pricing →
+        </a>
       </div>
 
       {/* ── Chapter 5: MCP Live Demo ── */}

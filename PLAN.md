@@ -95,6 +95,10 @@
 | AI search audit (weekly) | Med | Perplexity/ChatGPT: "do you know lyveca ai" |
 | Product Hunt launch | Med | High-DA backlink + discovery; prepare listing |
 | MCP registry listing | Low | Submit to Anthropic MCP directory when available |
+| **Full design overhaul** | High | Current site/subpages look "vibe-coded" — redesign the whole visual system (homepage + /services /pricing /about + footer). Next session. |
+| **Security audit of the site** | High | Audit the page for vulnerabilities before going live (deps, headers, API routes /api/chat + /api/mcp, input handling, secrets, CSP). Next session. |
+| Fill legal footer | High | IČO, registered address, živnostenský register no., VAT status — blocks `main` deploy |
+| Personalize About founder story | Med | TODO marker in about/page.tsx |
 
 ---
 

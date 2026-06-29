@@ -83,25 +83,6 @@ export default function AboutPage() {
           </p>
         </section>
 
-        {/* The person + credibility + security angle */}
-        <section style={{ marginTop: 40 }}>
-          <h2 style={sectionTitle}>The person behind it</h2>
-          <p style={para}>
-            {/* TODO: personalize this in Soňa's own voice — the genuine reason you moved from
-                security into AI web is the most memorable part of this page. */}
-            Soňa Mášová spent years as a security consultant working with global enterprises — including
-            engagements connected to Deloitte, IBM, and Takeda — before turning to where the web is
-            heading: AI, agents, and the tooling around them. That mix is rare: security depth, hands-on
-            AI development, and design taste in one person.
-          </p>
-          <p style={para}>
-            For security- and compliance-minded clients, it means someone who speaks their language —
-            GDPR, data handling, trust requirements — without translation. For technical clients, it
-            means working with someone who understands the stack and doesn&apos;t need hand-holding. Work
-            is remote, in English, Slovak, or Czech.
-          </p>
-        </section>
-
         {/* This site is the proof */}
         <section style={{ marginTop: 40, padding: '28px', border: '1px solid var(--accent-dim)', borderRadius: 12, background: 'rgba(59,130,246,0.05)' }}>
           <h2 style={{ ...sectionTitle, marginBottom: 10 }}>This site is the proof</h2>
