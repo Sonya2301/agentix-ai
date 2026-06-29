@@ -6,7 +6,7 @@ import AgentWidget from "../components/AgentWidget";
 export const metadata: Metadata = {
   title: "LYVECA AI — Websites built for humans. And for AI.",
   description:
-    "We build websites that work in both worlds — for human visitors and for the AI agents replacing them. Three layers: AI-Built, AI-Powered, and Agent-Friendly. Based in Bratislava. Serving globally.",
+    "We build websites that work in both worlds — for human visitors and for the AI agents replacing them. Four layers: AI-Built, AI-Powered, AI-Readable, and AI-Actionable. Based in Bratislava. Serving globally.",
   keywords: [
     "AI web design",
     "AI website builder",
@@ -69,7 +69,7 @@ const schemaOrg = {
         "https://github.com/Sonya2301/agentix-ai",
       ],
       description:
-        "AI web studio building three-layer websites: AI-Built, AI-Powered, and Agent-Friendly. Making businesses visible to both human visitors and AI search agents.",
+        "AI web studio building four-layer websites: AI-Built, AI-Powered, AI-Readable, and AI-Actionable. Making businesses visible to and usable by both human visitors and AI search agents.",
       foundingDate: "2026",
       founder: { "@id": "https://lyveca.com/#sona" },
       areaServed: "Worldwide",
@@ -85,27 +85,43 @@ const schemaOrg = {
       offers: [
         {
           "@type": "Offer",
-          name: "Starter — AI-Built Website",
-          price: "1200",
+          name: "AI Visibility Upgrade",
+          price: "890",
           priceCurrency: "EUR",
           description:
-            "Full website build with AI tools including Layer 03 basics: llms.txt, schema.org, AI crawler permissions.",
+            "One-week upgrade making an existing website readable and citable by AI search engines (schema, AI-readable content, crawler access). No rebuild.",
         },
         {
           "@type": "Offer",
-          name: "Studio — AI-Built + AEO/GEO",
-          price: "2500",
+          name: "Studio — AI-Built Website",
+          price: "1490",
           priceCurrency: "EUR",
           description:
-            "Premium website with full AI search optimization and strategy session.",
+            "AI-built website with the AI-readable layer (llms.txt, schema.org, AI crawler permissions), strategy call, and AEO content optimization.",
+        },
+        {
+          "@type": "Offer",
+          name: "Premium — Studio + AI Agent",
+          price: "2990",
+          priceCurrency: "EUR",
+          description:
+            "Studio plus an embedded AI Agent, custom design direction, two extra revision rounds, and one month free maintenance.",
         },
         {
           "@type": "Offer",
           name: "AI Agent Add-on",
-          price: "1500",
+          price: "1490",
           priceCurrency: "EUR",
           description:
-            "Embedded AI lead qualification agent with CRM integration.",
+            "Embedded AI lead-qualification and booking agent. Included in Premium.",
+        },
+        {
+          "@type": "Offer",
+          name: "MCP Integration",
+          price: "1890",
+          priceCurrency: "EUR",
+          description:
+            "Layer 04 — makes the site actionable by outside AI agents via an MCP server. For tech/SaaS clients.",
         },
       ],
     },
@@ -118,10 +134,10 @@ const schemaOrg = {
     },
     {
       "@type": "Service",
-      name: "Three-Layer AI Website Service",
+      name: "Four-Layer AI Website Service",
       provider: { "@id": "https://lyveca.com/#organization" },
       description:
-        "Layer 01: AI-Built Websites in 5-7 days. Layer 02: AI-Powered with embedded agents. Layer 03: Agent-Friendly with llms.txt, Schema.org, MCP integration.",
+        "Layer 01: AI-Built Websites in 5-7 days. Layer 02: AI-Powered with embedded agents. Layer 03: AI-Readable with llms.txt and Schema.org. Layer 04: AI-Actionable with MCP server integration.",
       serviceType: "Web Design and Development",
       areaServed: "Worldwide",
     },
@@ -154,7 +170,7 @@ const schemaOrg = {
           name: "How much does a website from LYVECA AI cost?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "LYVECA AI has three tiers. Starter is €1,200–€1,500: an AI-built website with Layer 03 basics (llms.txt, schema.org, AI crawler permissions), delivered in 5–7 days. Studio is €2,500–€3,500: everything in Starter plus full AEO/GEO content optimization and a strategy call. Premium is €4,000–€6,000: everything in Studio plus custom design direction, two extra revision rounds, and one month of free maintenance. Add-ons: AI Agent (Layer 02) +€1,500–€2,500; MCP Server Integration (Layer 03 premium) +€2,000–€3,500; monthly maintenance €150–€300.",
+            text: "LYVECA AI has two website tiers plus standalone services. Studio is €1,490: an AI-built website with the AI-readable layer (llms.txt, schema.org, AI crawler permissions), a strategy call, and AEO content optimization, delivered in 5–7 days. Premium is €2,990: everything in Studio plus an embedded AI Agent, custom design direction, two extra revision rounds, and one month of free maintenance. For existing websites: AI Visibility Audit €90 and AI Visibility Upgrade €890. Add-ons: AI Agent (Layer 02) €1,490 setup; MCP Integration (Layer 04) €1,890. Monthly care plans from €99.",
           },
         },
         {
@@ -202,7 +218,7 @@ const schemaOrg = {
           name: "What is MCP server integration?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "MCP (Model Context Protocol) is Anthropic's open standard for connecting AI agents to external tools and data. An MCP server on a website exposes its functionality as callable tools — so an AI agent like Claude can book a meeting, retrieve pricing, or check availability directly, without opening a browser. LYVECA AI offers full MCP integration as a Layer 03 premium add-on starting at +€2,000.",
+            text: "MCP (Model Context Protocol) is Anthropic's open standard for connecting AI agents to external tools and data. An MCP server on a website exposes its functionality as callable tools — so an AI agent like Claude can book a meeting, retrieve pricing, or check availability directly, without opening a browser. LYVECA AI offers full MCP integration as Layer 04 (AI-actionable) for €1,890.",
           },
         },
         {

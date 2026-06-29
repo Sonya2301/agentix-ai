@@ -71,7 +71,7 @@ export default function CookiesPolicy() {
           },
           {
             title: 'Contact',
-            body: 'If you have any questions about our use of cookies, please contact us at sona.masova23@gmail.com.',
+            body: 'If you have any questions about our use of cookies, please contact us at sonamasova@lyveca.com.',
           },
         ].map(({ title, body, list }) => (
           <div key={title} style={{ marginBottom: 40 }}>

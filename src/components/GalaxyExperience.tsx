@@ -554,29 +554,35 @@ export default function GalaxyExperience() {
         </div>
       </div>
 
-      {/* ── Chapter 3: Three Layers ── */}
+      {/* ── Chapter 3: Four Layers ── */}
       <div style={panelStyle(chapter === 3)}>
         <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#3b82f6', marginBottom: 20 }}>
-          Three layers. One studio.
+          Four layers. One studio.
         </span>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center', maxWidth: 920 }}>
           <LayerBadge
-            num="01 — Now"
+            num="01 — Built"
             label="AI-Built Websites"
             color="#10b981"
             desc="Fast, beautiful, custom sites built with AI tools. Delivered in 5–7 days."
           />
           <LayerBadge
-            num="02 — Upsell"
+            num="02 — Powered"
             label="AI-Powered Websites"
             color="#f59e0b"
             desc="Embedded lead agents that qualify, book, and support 24/7 without a human in the loop."
           />
           <LayerBadge
-            num="03 — Premium"
-            label="Agent-Friendly Websites"
+            num="03 — Found"
+            label="AI-Readable Websites"
             color="#3b82f6"
-            desc="llms.txt, Schema.org, AEO/GEO, MCP integration. Visible to AI search."
+            desc="llms.txt, Schema.org, AEO/GEO content. Visible to ChatGPT, Perplexity, and Claude."
+          />
+          <LayerBadge
+            num="04 — Used"
+            label="AI-Actionable Websites"
+            color="#a855f7"
+            desc="An MCP server so outside AI agents can operate the site — get pricing, book meetings."
           />
         </div>
       </div>
@@ -591,10 +597,10 @@ export default function GalaxyExperience() {
         </h2>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
           {[
-            { tier: 'Starter',  price: '€1,200',  desc: 'AI-Built + Layer 03 basics' },
-            { tier: 'Studio',   price: '€2,500',  desc: 'Starter + AEO/GEO + strategy' },
-            { tier: 'Premium',  price: '€4,000',  desc: 'Studio + custom design + 1mo free maintenance' },
-            { tier: 'Maintenance', price: '€150/mo', desc: 'Security, updates, AI visibility monitoring' },
+            { tier: 'AI Visibility Upgrade', price: '€890',  desc: 'Make your existing site AI-readable — no rebuild' },
+            { tier: 'Studio',   price: '€1,490',  desc: 'AI-built website + AI-readable layer + strategy' },
+            { tier: 'Premium',  price: '€2,990',  desc: 'Studio + embedded AI Agent + custom design' },
+            { tier: 'Care', price: '€99/mo', desc: 'Uptime, updates, security, AI-visibility monitoring' },
           ].map(({ tier, price, desc }) => (
             <div key={tier} style={{
               padding: '20px 24px', minWidth: 180,
@@ -642,7 +648,7 @@ export default function GalaxyExperience() {
           Book a Free 30-min Call
         </a>
         <p style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: '#6b6b8a', marginTop: 16, letterSpacing: '0.08em' }}>
-          sona.masova23@gmail.com · Bratislava, Slovakia
+          sonamasova@lyveca.com · Bratislava, Slovakia
         </p>
       </div>
     </>

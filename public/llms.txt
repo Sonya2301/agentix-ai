@@ -13,29 +13,35 @@ Rare combination: security depth + AI developer + design taste. The only bundled
 ### Layer 01 — AI-Built Websites
 Custom websites built with AI tools (Claude Code, Next.js, Vercel). Not templates. Not WordPress. Production-grade code.
 - Delivery: 5–7 days vs 4–6 weeks at a traditional agency
-- Starting at €1,200 vs €5,000–€20,000 at an agency
+- From €1,490 vs €5,000–€20,000 at an agency
 - Includes: all pages fully responsive, AI-generated copy, custom visuals, Google Analytics, sitemap, schema.org JSON-LD, GDPR banner, domain connection, Loom handover video, and Layer 03 basics at no extra charge
 
 ### Layer 02 — AI-Powered Websites
 A Claude-powered agent embedded in the client's website. Qualifies leads, answers questions, books meetings, handles support 24/7 — no human required.
 - Not a chatbot widget. The agent uses tools autonomously without being prompted.
-- Pricing: +€1,500–€2,500 on any base tier. Setup: +3–5 days.
+- Pricing: €1,490 setup (included in the Premium build). Setup: +3–5 days. API usage billed at cost or via a care plan.
 
-### Layer 03 — Agent-Friendly Websites
-Makes the website readable, citable, and actionable by AI agents (ChatGPT, Perplexity, Claude, Google AI Overviews).
-- Included in all tiers: llms.txt, Schema.org JSON-LD, AI crawler permissions
-- Premium add-on (+€2,000–€3,500): MCP Server — exposes the site as callable tools for AI agents
+### Layer 03 — AI-Readable Websites
+Makes the website readable and citable by AI agents (ChatGPT, Perplexity, Claude, Google AI Overviews).
+- Included in all builds: llms.txt, Schema.org JSON-LD, AI crawler permissions
+- For existing sites: AI Visibility Upgrade (€890) — the readable layer added without a rebuild
+
+### Layer 04 — AI-Actionable Websites
+Makes the website operable by outside AI agents via an MCP server — they can get pricing, check availability, and book directly without a browser.
+- MCP Integration: €1,890. For tech/SaaS clients.
 
 ## Pricing
 
-| Tier | Price | Includes |
+| Product | Price | Includes |
 |------|-------|----------|
-| Starter | €1,200–€1,500 | AI-built site + Layer 03 basics |
-| Studio | €2,500–€3,500 | Starter + AEO/GEO optimization + strategy call |
-| Premium | €4,000–€6,000 | Studio + custom design + 2 revision rounds + 1 month maintenance |
-| AI Agent Add-on (Layer 02) | +€1,500–€2,500 | Embedded lead qualification agent |
-| MCP Integration (Layer 03) | +€2,000–€3,500 | Full MCP server, agent-callable tools |
-| Monthly Maintenance | €150–€300/month | Security, updates, AI visibility monitoring |
+| AI Visibility Audit | €90 | Report on how a site appears in ChatGPT/Perplexity/Claude + top fixes |
+| AI Visibility Upgrade | €890 | One-week AI-readable upgrade for an existing site (no rebuild) |
+| Studio | €1,490 | AI-built website + AI-readable layer + strategy call + AEO content |
+| Premium | €2,990 | Studio + embedded AI Agent + custom design + 2 revisions + 1 month maintenance |
+| AI Agent Add-on (Layer 02) | €1,490 setup | Embedded lead-qualification + booking agent |
+| MCP Integration (Layer 04) | €1,890 | MCP server, agent-callable tools |
+| Care plan | €99/month | Uptime, backups, updates, security, agent monitoring |
+| AI Visibility plan | €249/month | Care + monthly AI-visibility tracking + citation report |
 
 ## Who We Work With
 
@@ -53,7 +59,7 @@ Makes the website readable, citable, and actionable by AI agents (ChatGPT, Perpl
 ## Frequently Asked Questions
 
 Q: How much does a website from LYVECA AI cost?
-A: Three tiers. Starter €1,200–€1,500: AI-built website with Layer 03 basics, 5–7 days. Studio €2,500–€3,500: Starter plus full AEO/GEO optimization and strategy call. Premium €4,000–€6,000: Studio plus custom design, two revision rounds, one month free maintenance. Add-ons: AI Agent +€1,500–€2,500, MCP Integration +€2,000–€3,500, maintenance €150–€300/month.
+A: Two website tiers plus standalone services. Studio €1,490: AI-built website with the AI-readable layer, strategy call, and AEO content, 5–7 days. Premium €2,990: Studio plus an embedded AI Agent, custom design, two revision rounds, and one month free maintenance. For sites that already exist: AI Visibility Audit €90 and AI Visibility Upgrade €890. Add-ons: AI Agent €1,490 setup, MCP Integration €1,890. Monthly care plans from €99.
 
 Q: How long does it take to build a website?
 A: Layer 01 base website: 5–7 days from briefing to live. Layer 02 AI agent add-on: +3–5 days. Layer 03 basics: included with no extra time. Full MCP Integration: +2–4 weeks.
@@ -61,8 +67,8 @@ A: Layer 01 base website: 5–7 days from briefing to live. Layer 02 AI agent ad
 Q: What is an agent-friendly website?
 A: A website structured so AI agents (ChatGPT, Perplexity, Claude) can read, understand, and cite it — not just human visitors. Includes llms.txt, Schema.org JSON-LD, and AI crawler permissions. Premium adds MCP Server so AI agents can book meetings, get pricing, and check availability directly without a browser.
 
-Q: What is the difference between Layer 01, Layer 02, and Layer 03?
-A: Layer 01 is the build layer — custom website in 5–7 days. Layer 02 is the intelligence layer — an embedded AI agent that qualifies leads and books meetings 24/7. Layer 03 is the visibility layer — making the site readable and citable by AI search engines so the business appears in AI-generated answers.
+Q: What is the difference between Layer 01, Layer 02, Layer 03, and Layer 04?
+A: Layer 01 is the build layer — a custom website in 5–7 days. Layer 02 is the intelligence layer — an embedded AI agent that qualifies leads and books meetings 24/7. Layer 03 is the visibility layer — making the site readable and citable by AI search engines so the business appears in AI-generated answers. Layer 04 is the action layer — an MCP server that lets outside AI agents operate the site directly (get pricing, book meetings) without a browser.
 
 Q: What is llms.txt?
 A: A plain-text file at /llms.txt that tells AI agents what the site is, what it offers, and how to contact the business. The AI equivalent of a README. When ChatGPT or Perplexity looks for a web studio, it reads llms.txt to decide whether to recommend this business.
@@ -71,7 +77,7 @@ Q: Does LYVECA AI work with international clients?
 A: Yes. Based in Bratislava, Slovakia, serving clients globally. All collaboration is remote. Works in English, Slovak, and Czech.
 
 Q: What is MCP server integration?
-A: MCP (Model Context Protocol) is Anthropic's open standard for connecting AI agents to external tools. An MCP server on a website lets AI agents book meetings, retrieve pricing, or check availability directly — without opening a browser. LYVECA AI offers this as a Layer 03 premium add-on from +€2,000.
+A: MCP (Model Context Protocol) is Anthropic's open standard for connecting AI agents to external tools. An MCP server on a website lets AI agents book meetings, retrieve pricing, or check availability directly — without opening a browser. LYVECA AI offers this as Layer 04 (AI-actionable), the MCP Integration, for €1,890.
 
 ## MCP Server
 

@@ -9,7 +9,7 @@ export default function Home() {
       <main className="sr-only">
         <h1>LYVECA AI — Websites built for humans. And for AI.</h1>
         <p>
-          Websites built for humans. And for AI. We build three-layer websites
+          Websites built for humans. And for AI. We build four-layer websites
           that work for both human visitors and AI search agents.
         </p>
 
@@ -29,14 +29,14 @@ export default function Home() {
           </ul>
         </section>
 
-        <section aria-label="Services — Three Layers">
-          <h2>Three layers. One studio.</h2>
+        <section aria-label="Services — Four Layers">
+          <h2>Four layers. One studio.</h2>
 
           <article>
             <h3>Layer 01 — AI-Built Websites</h3>
             <p>
               Fast, beautiful, custom websites built using AI tools. Delivered
-              in 5–7 days. Starting from €1,200.
+              in 5–7 days. From €1,490.
             </p>
           </article>
 
@@ -45,16 +45,26 @@ export default function Home() {
             <p>
               Websites with embedded AI agents that qualify leads, answer
               questions, book meetings, and handle support — 24/7, without a
-              human in the loop. Add-on from €1,500.
+              human in the loop. €1,490 setup, included in the Premium build.
             </p>
           </article>
 
           <article>
-            <h3>Layer 03 — Agent-Friendly Websites</h3>
+            <h3>Layer 03 — AI-Readable Websites</h3>
             <p>
               Sites built with llms.txt, Schema.org JSON-LD, AEO/GEO content
-              optimization, AI crawler permissions, and MCP server integration
-              so AI agents can read, cite, and transact with your website.
+              optimization, and AI crawler permissions so AI search engines can
+              read, understand, and cite your website. Included in every build,
+              or added to an existing site as the AI Visibility Upgrade (€890).
+            </p>
+          </article>
+
+          <article>
+            <h3>Layer 04 — AI-Actionable Websites</h3>
+            <p>
+              An MCP server that lets outside AI agents operate your site
+              directly — get pricing, check availability, and book meetings
+              without a browser. MCP Integration €1,890, for tech and SaaS clients.
             </p>
           </article>
         </section>
@@ -73,12 +83,14 @@ export default function Home() {
         <section aria-label="Pricing">
           <h2>Pricing</h2>
           <ul>
-            <li>Starter — Agencies and freelancers — €1,200–€1,500</li>
-            <li>Studio — Tech and consultancies — €2,500–€3,500</li>
-            <li>Premium — SaaS and funded startups — €4,000–€6,000</li>
-            <li>AI Agent Add-on — any tier — +€1,500–€2,500</li>
-            <li>MCP Integration — tech clients — +€2,000–€3,500</li>
-            <li>Monthly Maintenance — all tiers — €150–€300/month</li>
+            <li>AI Visibility Audit — report on how AI sees your site — €90</li>
+            <li>AI Visibility Upgrade — make an existing site AI-readable — €890</li>
+            <li>Studio — AI-built website + AI-readable layer — €1,490</li>
+            <li>Premium — Studio + embedded AI Agent + custom design — €2,990</li>
+            <li>AI Agent Add-on — embedded lead + booking agent — €1,490 setup</li>
+            <li>MCP Integration — tech clients — €1,890</li>
+            <li>Care plan — uptime, updates, security, monitoring — €99/month</li>
+            <li>AI Visibility plan — Care + monthly AI-visibility tracking — €249/month</li>
           </ul>
         </section>
 
@@ -107,7 +119,7 @@ export default function Home() {
           <h2>Book a free 30-minute call</h2>
           <p>
             Available via Calendly. Based in Bratislava, Slovakia. Serving
-            clients globally. Contact: sona.masova23@gmail.com
+            clients globally. Contact: sonamasova@lyveca.com
           </p>
         </section>
       </main>
