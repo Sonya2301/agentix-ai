@@ -42,7 +42,7 @@
 - [ ] **A6 (optional, later) — Demo upgrades:** Cal.com direct booking (agent *books* the slot) + Stripe payment-link tool. Strong differentiators; do after A1–A5.
 
 ### TRACK B — Become legally & operationally sellable (USER; days 1–3)
-- [ ] **B1 — Confirm/create živnosť** so you can invoice (blocks every close).
+- [ ] **B1 — živnosť (deferred by decision):** not registering yet — will arrange when the first client goes *hot*. Takes ~1 week, so trigger the paperwork at "deal looks like closing," NOT after signing (50% deposit is due on start). Site is live as marketing until then; required before invoicing anyone. Add real IČO/address/register to the footer once registered (NOTE marker in SiteFooter.tsx).
 - [ ] **B2 — 1-page contract + invoice template** (50/50 terms).
 - [ ] **B3 — Notion proposal 1-pager + briefing/intake form.**
 - [ ] **B4 — Stripe account** (Slovak sole trader; unblocks A6).
