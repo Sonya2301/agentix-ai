@@ -8,11 +8,14 @@ Live: [lyveca.com](https://lyveca.com) · Repo: [github.com/Sonya2301/agentix-ai
 
 ## What This Is
 
-Portfolio and business website for LYVECA AI — a solo AI web studio founded by Soňa Mášová, based in Bratislava, Slovakia. The site itself is a live demonstration of all three service layers:
+Portfolio and business website for LYVECA AI — a solo AI web studio founded by Soňa Mášová, based in Bratislava, Slovakia. The site itself is a live demonstration of all four service layers:
 
-- **Layer 01** — Built with AI tools (Claude Code), delivered fast
-- **Layer 02** — Autonomous AI agent: lead qualification, booking, knowledge base *(live)*
-- **Layer 03** — Agent-friendly: `llms.txt`, Schema.org JSON-LD, FAQPage schema, AI crawler permissions, sitemap, MCP Server *(live)*
+- **Layer 01 — AI-Built** — Built with AI tools (Claude Code), delivered fast
+- **Layer 02 — AI-Powered** — Autonomous AI agent: lead qualification, booking, knowledge base *(live)*
+- **Layer 03 — AI-Readable** — `llms.txt`, Schema.org JSON-LD, FAQPage schema, AI crawler permissions, sitemap *(live)*
+- **Layer 04 — AI-Actionable** — MCP server exposing the site as callable tools for outside AI agents *(live)*
+
+> One-line pitch: **Built by AI · Powered by AI · Found by AI · Used by AI.** Pricing and strategy live in `PRICING.md`; status and roadmap in `PLAN.md`.
 
 ---
 
@@ -25,10 +28,12 @@ A Three.js scroll-driven galaxy animation with 7 content chapters:
 | 0–13% | Loading circle → galaxy spiral forms |
 | 13–27% | Brand reveal — *Soňa Mášová* |
 | 27–43% | The Shift — market stats |
-| 43–58% | Three Layers — the service |
-| 58–72% | Pricing |
+| 43–58% | Four Layers — the service |
+| 58–72% | Pricing — teaser + "See full pricing →" link to `/pricing` |
 | 72–86% | MCP Live Demo — interactive playground |
 | 86–100% | CTA — Book a call |
+
+Plus standalone content pages (static, each with own metadata + JSON-LD): **`/services`**, **`/pricing`**, **`/about`**, and `/cookies-policy`.
 
 ---
 
@@ -45,7 +50,7 @@ A Three.js scroll-driven galaxy animation with 7 content chapters:
 | Anthropic Claude API | AI agent (Layer 02) |
 | Resend | Lead email notifications (Layer 02) |
 | Notion API | Lead CRM storage (Layer 02) |
-| MCP SDK (`@modelcontextprotocol/sdk`) | MCP Server (Layer 03) |
+| MCP SDK (`@modelcontextprotocol/sdk`) | MCP Server (Layer 04) |
 
 ---
 
@@ -83,40 +88,41 @@ Open [http://localhost:3000](http://localhost:3000)
 ## Project Structure
 
 ```
+next.config.ts                  # Security headers (HSTS, X-Frame-Options, nosniff, etc.) — CSP pending redesign
 src/
 ├── app/
-│   ├── layout.tsx              # Metadata, Schema.org JSON-LD, fonts, AgentWidget mount
-│   ├── page.tsx                # Main page + SEO semantic HTML layer
+│   ├── layout.tsx              # Metadata, Schema.org JSON-LD (Org/Person/Service/Offers/FAQ), fonts, AgentWidget mount
+│   ├── page.tsx                # Homepage + SEO semantic HTML layer (crawlable subpage links)
 │   ├── globals.css             # CSS variables, fonts, animations
-│   ├── sitemap.ts              # Auto-generated sitemap (Layer 03)
+│   ├── sitemap.ts              # Sitemap incl. /services /pricing /about (Layer 03)
 │   ├── robots.ts               # AI crawler permissions (Layer 03)
+│   ├── services/page.tsx       # Subpage: the 4 layers in depth (+ Service JSON-LD)
+│   ├── pricing/page.tsx        # Subpage: full pricing table (+ OfferCatalog JSON-LD)
+│   ├── about/page.tsx          # Subpage: studio story, manifesto, proof (+ AboutPage JSON-LD)
 │   ├── api/
-│   │   ├── chat/
-│   │   │   └── route.ts        # Layer 02: agentic loop, tool execution
-│   │   └── mcp/
-│   │       └── route.ts        # Layer 03: MCP Server (get_pricing, get_service_info, book_meeting)
-│   └── cookies-policy/
-│       └── page.tsx            # GDPR cookies policy page
+│   │   ├── chat/route.ts       # Layer 02: agentic loop, tool execution
+│   │   └── mcp/route.ts        # Layer 04: MCP Server (get_pricing, get_service_info, book_meeting)
+│   └── cookies-policy/page.tsx # GDPR cookies policy page
 ├── components/
-│   ├── GalaxyExperience.tsx    # Three.js galaxy + all scroll chapters
+│   ├── GalaxyExperience.tsx    # Three.js galaxy + all scroll chapters + nav
 │   ├── GalaxyWrapper.tsx       # Next.js dynamic import wrapper (ssr: false)
 │   ├── CookieBanner.tsx        # GDPR cookie banner + Google Analytics
 │   ├── AgentWidget.tsx         # Layer 02: floating chat UI + action cards
-│   └── MCPPlayground.tsx       # Layer 03: interactive MCP demo (Chapter 5)
+│   ├── MCPPlayground.tsx       # Layer 04: interactive MCP demo (Chapter 5)
+│   ├── SubNav.tsx              # Top nav for content subpages
+│   └── SiteFooter.tsx          # Shared footer + legal note (imprint TODO at živnosť)
 ├── data/
-│   └── agentix-knowledge.ts    # Layer 02: knowledge base (pricing, layers, process)
+│   └── agentix-knowledge.ts    # Layer 02: knowledge base — SINGLE SOURCE OF TRUTH for pricing
 ├── lib/
 │   └── leads.ts                # Layer 02: saveLead() — file + Resend email
 └── types/
     └── agent.ts                # Layer 02: shared types
 public/
-├── llms.txt                    # AI agent sitemap (Layer 03)
-├── og-image.png                # Social sharing preview image (LinkedIn/Twitter/Facebook)
-├── og-image.svg                # Source SVG (keep for re-generation)
-├── avatar.png                  # Square profile picture (400×400) for X, LinkedIn
-└── avatar.svg                  # Source SVG for avatar
+├── llms.txt                    # AI agent README (Layer 03) — pricing kept in sync with knowledge base
+├── og-image.png / og-image.svg # Social sharing preview image (+ source)
+└── avatar.png / avatar.svg     # Square profile picture (400×400) for X, LinkedIn, About page
 data/
-└── leads.json                  # Local lead storage (dev only)
+└── leads.json                  # Local lead storage (dev only; all entries are test data)
 ```
 
 ---
@@ -132,20 +138,23 @@ To go live: merge `dev` into `main` and push.
 
 ---
 
-## Layer 03 — AEO/SEO Setup
+## Layers 03 & 04 — AEO/SEO + MCP Setup
 
 | File | Purpose | URL |
 |------|---------|-----|
 | `public/llms.txt` | Describes the site for AI agents (Q&A format, MCP section) | `/llms.txt` |
 | `src/app/robots.ts` | Explicitly allows GPTBot, ClaudeBot, PerplexityBot | `/robots.txt` |
-| `src/app/sitemap.ts` | Auto-generated XML sitemap | `/sitemap.xml` |
-| Schema.org JSON-LD | Organization + Service + FAQPage structured data | In `<head>` |
+| `src/app/sitemap.ts` | XML sitemap incl. `/services` `/pricing` `/about` | `/sitemap.xml` |
+| Schema.org JSON-LD | Organization + Person + Service + Offers + FAQPage; per-page schema on subpages | In `<head>` |
+| `next.config.ts` | HTTP security headers (HSTS, X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy) | All routes |
 | `og-image.png` | Social preview image for LinkedIn/Twitter (1200×630 PNG) | `/og-image.png` |
-| `src/app/api/mcp/route.ts` | MCP Server — 3 callable tools for AI agents | `/api/mcp` |
+| `src/app/api/mcp/route.ts` | **Layer 04** — MCP Server, 3 callable tools for AI agents | `/api/mcp` |
 | `public/.well-known/mcp.json` | MCP discovery endpoint — lists tools and server URL | `/.well-known/mcp.json` |
 | `<link rel="mcp">` in `<head>` | HTML discovery for agents that parse pages | In every page |
 
 **AI crawlers explicitly allowed:** GPTBot, ClaudeBot, PerplexityBot, GoogleExtendedBot, Applebot-Extended, cohere-ai
+
+> **Security headers:** 5 design-independent headers are live (see `next.config.ts`). Content-Security-Policy (CSP) is intentionally deferred until after the planned design overhaul, since it depends on exactly what the final site loads.
 
 ### MCP Live Demo (Chapter 5)
 

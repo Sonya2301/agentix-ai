@@ -195,7 +195,7 @@ Pricing lives in several places that must stay in sync — single source of trut
 - [x] JSON-LD schema (Offers + FAQPage) + SEO HTML layer — `src/app/layout.tsx`, `src/app/page.tsx`
 - [x] Add Audit + AI Visibility Upgrade as products: site, knowledge base, llms.txt
 - [x] 4-layer framing (MCP = Layer 04) propagated across site copy, meta, schema
+- [x] `/services`, `/pricing`, `/about` subpages + working nav *(2026-06-29, live)*
+- [x] **Deployed to `main` / lyveca.com** — all of the above is live *(2026-06-30, verified)*
 - [ ] Proposal template (Notion) — same numbers *(user task)*
 - [ ] Add "3 pilot slots" section to site while Phase A is open *(pending decision)*
-- [ ] `/services`, `/pricing`, `/about` subpages + working nav (Track A4) *(not started)*
-- [ ] **Deploy to `main`** to make all the above live *(needs user confirmation)*

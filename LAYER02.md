@@ -195,6 +195,13 @@ The architecture stays identical. Only the content changes.
 | 2026-06-10 | sameAs links added to Organization + Person schema — X (@LyvecaAI) and GitHub linked for entity graph corroboration |
 | 2026-06-10 | FAQPage email corrected — sonamasova@lyveca.com replaces old sona.masova23@gmail.com in Soňa Mášová Q&A |
 | 2026-06-10 | dev.to post published — first external backlink to lyveca.com from DA~90 domain (LyvecaAI account) |
+| 2026-06-29 | Pricing restructured (CEE) + synced across knowledge base, MCP `get_pricing`, system prompt, llms.txt, JSON-LD, SEO layer — see PRICING.md |
+| 2026-06-29 | 4-layer model adopted (01 Built · 02 Powered · 03 Found · 04 Used); MCP = Layer 04 |
+| 2026-06-29 | Subpages added: `/services`, `/pricing`, `/about` (each own metadata + JSON-LD); dead nav fixed; sitemap updated; SubNav + SiteFooter components |
+| 2026-06-29 | Docs consolidated: PLAN.md = single source of truth (Fable 5 + handoff as appendices); CONVERSATION.md + FABLE5_CONVO.md removed |
+| 2026-06-30 | Deployed to production (lyveca.com) — new pricing, 4-layer model, subpages all live & verified |
+| 2026-06-30 | Security headers added in `next.config.ts` (HSTS, X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy) — live, ~A- grade. CSP deferred to post-redesign |
+| 2026-06-30 | Footer set to honest pre-živnosť note (no business-registration claim); imprint TODO until živnosť registered |
 
 Branch: `dev` → deployed to Vercel via `main`
 

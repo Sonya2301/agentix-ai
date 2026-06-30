@@ -1,19 +1,22 @@
 # LYVECA AI — Master Plan & Go-Forward
-*Updated 2026-06-29. The single source of truth for status, strategy, and next steps. Pricing lives in PRICING.md; agent/technical details in LAYER02.md; site overview & how-to-run in README.md. The Fable 5 strategy session and prior session handoff are preserved as appendices at the bottom.*
+*Updated 2026-06-30. The single source of truth for status, strategy, and next steps. Pricing lives in PRICING.md; agent/technical details in LAYER02.md; site overview & how-to-run in README.md. The Fable 5 strategy session and prior session handoff are preserved as appendices at the bottom.*
 
 ---
 
 ## 0. Where things actually stand
 
-**The product is built and ahead of schedule. The business has not started.**
+**The product is built, polished, and LIVE in production. The business has not started.**
 
-- **Built & live (verified):** Layer 01 (AI-built site), Layer 02 (autonomous agent — lead capture, Notion CRM, Resend email, booking), Layer 03 (llms.txt, schema, robots, sitemap, **MCP server with 3 working tools**). Infrastructure complete (domain, DNS, email, analytics, GSC, Bing). lyveca.com is a strong live demo of all layers.
+- **Live on lyveca.com (verified 2026-06-30):** Layer 01 (AI-built site), Layer 02 (autonomous agent — lead capture, Notion CRM, Resend email, booking), Layer 03 (llms.txt, schema, robots, sitemap, **MCP server with 3 working tools**), Layer 04 (MCP / AI-actionable). Infrastructure complete (domain, DNS, email, analytics, GSC, Bing).
+- **Shipped 2026-06-29/30 (all live):**
+  1. ✅ **New CEE pricing synced everywhere** — knowledge base, MCP `get_pricing`, agent system prompt, llms.txt, JSON-LD Offers/FAQ, SEO HTML layer, visible pricing chapter. Old €1,200–1,500 ranges fully gone.
+  2. ✅ **4-layer model** (01 Built · 02 Powered · 03 Found · 04 Used) propagated across site, meta, schema.
+  3. ✅ **Subpages built & live:** `/services`, `/pricing`, `/about` (each with own metadata + JSON-LD). Dead nav buttons fixed; sitemap updated.
+  4. ✅ **Legal-safe footer** (honest pre-živnosť note; no false business-registration claim).
+  5. ✅ **Security headers live** (HSTS, X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy) — securityheaders.com grade ~A-. CSP deferred until after redesign.
+  6. ✅ **Stale email fixed** → `sonamasova@lyveca.com` everywhere public-facing.
 - **Not started:** the other two business pillars — **Lead Generation** (zero outbound ever sent) and **Monetization** (€0 revenue, every lead in `leads.json` is a test). No case studies, no testimonials, no signed clients.
-- **Known gaps in the code/docs (June 29):**
-  1. **Pricing strategy not implemented.** Live site (knowledge base + MCP `get_pricing` + agent system prompt + llms.txt) still serves OLD ranges (€1,200–1,500 etc.). The new CEE structure in PRICING.md — merged Studio, AI Visibility Upgrade, MCP, 2 retainers — exists only on paper.
-  2. **Nav buttons dead** (`GalaxyExperience.tsx` — Services/Pricing/About are non-clickable `<span>`s) and the site is **one indexable page** (bad for the AEO story we sell).
-  3. **Stale email** `sona.masova23@gmail.com` still in the agent's `about` knowledge.
-  4. Pricing is a **researched hypothesis, not validated** — never price-tested on a real buyer.
+- **Caveats:** pricing is a **researched hypothesis, not validated** (never price-tested on a real buyer). Design is functional but **looks "vibe-coded"** — slated for a full overhaul.
 
 **The one sentence that matters:** the product cannot get more ready; everything from here is selling. The critical path is **one paying client → one case study → that case study makes all other channels (LinkedIn, dev.to, Product Hunt) actually convert.**
 
@@ -31,15 +34,15 @@
 
 ## 2. The plan — three tracks, run in parallel
 
-### TRACK A — Make the product match the strategy (buildable now; ~1 day; Claude can do)
-*Stop the live site quoting abandoned prices and missing your best entry product, before any prospect sees it.*
+### TRACK A — Make the product match the strategy ✅ DONE (2026-06-29/30, live in production)
 
-- [ ] **A1 — Confirm final pricing** (USER — blocks A2). PRICING.md numbers are now locked pending your go-ahead.
-- [ ] **A2 — Sync pricing to all 4 places:** `agentix-knowledge.ts`, MCP `get_pricing`, agent system prompt, `public/llms.txt`. Single source of truth = `agentix-knowledge.ts`.
-- [ ] **A3 — Add Audit + AI Visibility Upgrade as real products** the agent and MCP can describe/sell (today they don't exist live).
-- [ ] **A4 — Fix nav + build subpages** `/services`, `/pricing`, `/about` — fixes dead buttons AND multiplies indexable surface for AEO. Each page gets its own schema + llms.txt entry.
-- [ ] **A5 — Fix stale email** in `agentix-knowledge.ts` (`about`) → `sonamasova@lyveca.com`.
-- [ ] **A6 (optional, later) — Demo upgrades:** Cal.com direct booking (agent *books* the slot) + Stripe payment-link tool. Strong differentiators; do after A1–A5.
+- [x] **A1 — Pricing confirmed & locked** (validated against CEE + international market).
+- [x] **A2 — Pricing synced everywhere** — knowledge base, MCP `get_pricing`, system prompt, llms.txt, JSON-LD, SEO layer.
+- [x] **A3 — Audit + AI Visibility Upgrade added** as real products the agent/MCP describe.
+- [x] **A4 — Nav fixed + `/services` `/pricing` `/about` subpages built** (own metadata + schema; sitemap updated).
+- [x] **A5 — Stale email fixed.**
+- [x] **(bonus) Security headers added** (5 design-independent; CSP deferred).
+- [ ] **A6 (optional, later) — Demo upgrades:** Cal.com direct booking (agent *books* the slot) + Stripe payment-link tool. Strong differentiators; pairs with B4 (Stripe account).
 
 ### TRACK B — Become legally & operationally sellable (USER; days 1–3)
 - [ ] **B1 — živnosť (deferred by decision):** not registering yet — will arrange when the first client goes *hot*. Takes ~1 week, so trigger the paperwork at "deal looks like closing," NOT after signing (50% deposit is due on start). Site is live as marketing until then; required before invoicing anyone. Add real IČO/address/register to the footer once registered (NOTE marker in SiteFooter.tsx).
@@ -75,9 +78,9 @@
 
 ## 4. Open decisions needed from you
 
-1. **Green-light Track A** — sync the locked PRICING.md numbers into the live code? (Needs a `main` deploy eventually — I'll ask before pushing.)
-2. **Track A6 now or later** — build Cal.com + Stripe demo upgrades before or after outreach starts?
-3. **Adopt the new slogan** ("Websites built for humans — and for AI") + propagate the 4-layer naming to README/LAYER02/site copy?
+1. **Design overhaul scope** — how far to take the redesign (homepage + 3 subpages + footer). The next big product item; cap it so it doesn't crowd out selling.
+2. **When to start outreach (Track C)** — the actual goal. Recommendation: right after the redesign makes the demo credible, not later.
+3. **Track A6 (Cal.com + Stripe)** — build the booking/payment demo upgrades now, or after the first conversations show demand?
 
 ---
 
@@ -85,19 +88,22 @@
 
 | Item | Priority | Notes |
 |---|---|---|
-| **Sync new pricing live** (Track A2/A3) | High | Live site still on old numbers |
-| **Nav fix + subpages** (Track A4) | High | Dead buttons; one indexable page |
-| **Fix stale email** (Track A5) | Med | `about` knowledge still old gmail |
-| LinkedIn company page | High | Account exists; was blocked by new-account limit — retry |
-| LinkedIn content | High | 3 posts/week; screen recording of site + agent |
+| ✅ Sync new pricing live (A2/A3) | — | Done 2026-06-29, live |
+| ✅ Nav fix + subpages (A4) | — | Done; /services /pricing /about live |
+| ✅ Fix stale email (A5) | — | Done |
+| ✅ Security headers | — | Done 2026-06-30, live (CSP still pending, below) |
+| **Full design overhaul** | High | Site/subpages look "vibe-coded" — redesign the whole visual system (homepage + /services /pricing /about + footer). **Next big item.** |
+| **Full security audit + CSP** | High | After redesign: deps scan, API routes /api/chat + /api/mcp, input handling, secrets, and add Content-Security-Policy (content-dependent, so do it on final code). |
+| Demo recording (B5) | High | 60–90s Claude-connector → MCP → lead in Notion. Universal sales asset. |
+| Outreach engine (Track C) | High | Prospect list, DMs, content, free-audit → pilots. **The actual goal.** |
+| Personalize About founder story | Med | TODO marker in about/page.tsx |
+| LinkedIn company page + content | High | Account exists; 3 posts/week once active |
 | Share dev.to post on X | Med | Drives early engagement signals |
 | Indie Hackers post | Med | Need 3–5 genuine comments first to earn access |
-| AI search audit (weekly) | Med | Perplexity/ChatGPT: "do you know lyveca ai" |
+| AI search audit (weekly) | Med | Perplexity/ChatGPT: "do you know lyveca ai" — clock started at go-live |
 | Product Hunt launch | Med | High-DA backlink + discovery; prepare listing |
 | MCP registry listing | Low | Submit to Anthropic MCP directory when available |
-| **Full design overhaul** | High | Current site/subpages look "vibe-coded" — redesign the whole visual system (homepage + /services /pricing /about + footer). Next session. |
-| **Security audit of the site** | High | Audit the page for vulnerabilities before going live (deps, headers, API routes /api/chat + /api/mcp, input handling, secrets, CSP). Next session. |
-| Fill legal footer | High | IČO, registered address, živnostenský register no., VAT status — blocks `main` deploy |
+| Fill legal footer | — | Deferred with živnosť (see B1) — at first hot lead |
 | Personalize About founder story | Med | TODO marker in about/page.tsx |
 
 ---
