@@ -55,16 +55,15 @@ export default function SiteFooter() {
         </div>
       </div>
 
-      {/* Legal / imprint — required by Slovak & EU law for a business website */}
+      {/* Footer note. NOTE: add full business identification (IČO, address, register)
+          here once the živnosť is registered — required before invoicing clients. */}
       <div style={{
         maxWidth: 1100, margin: '40px auto 0', paddingTop: 24, borderTop: '1px solid var(--border)',
         fontFamily: 'var(--font-sans)', fontSize: 12.5, color: 'var(--text-muted)', lineHeight: 1.7,
       }}>
         <p style={{ marginBottom: 10 }}>
-          LYVECA AI is operated by <strong style={{ color: 'var(--text-dim)' }}>Soňa Mášová</strong>, self-employed
-          (živnosť). Registered office: [STREET + NUMBER], Bratislava, Slovakia.
-          IČO: [BUSINESS&nbsp;ID]. Registered in the Trade Register of the District Office
-          Bratislava, reg. no. [REG&nbsp;NO]. Not a VAT payer.
+          LYVECA AI is an independent web studio by <strong style={{ color: 'var(--text-dim)' }}>Soňa Mášová</strong>,
+          based in Bratislava, Slovakia. Contact: sonamasova@lyveca.com.
         </p>
         <p>© {year} LYVECA AI · Soňa Mášová. All rights reserved.</p>
       </div>
