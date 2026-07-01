@@ -1,19 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600&family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 :root {
-  --bg: #0a0a0f;
-  --accent: #3b82f6;
-  --accent-dim: rgba(59, 130, 246, 0.15);
-  --text: #e8e8f0;
-  --text-dim: #9898b4;
-  --text-muted: #6b6b8a;
-  --green: #10b981;
-  --amber: #f59e0b;
-  --border: #1e1e2e;
-  --font-serif: 'Instrument Serif', Georgia, serif;
-  --font-sans: 'DM Sans', -apple-system, sans-serif;
+  /* Blue aurora — dark editorial palette */
+  --bg: #0a0809;            /* near-black base */
+  --text: #f4f1f5;          /* primary heading white */
+  --text-strong: #f7f4f8;   /* hero white */
+  --text-body: #c3c6cf;     /* body copy */
+  --text-dim: #a5a2ad;      /* dim body */
+  --text-muted: #8f8c98;    /* muted */
+  --text-faint: #6b6770;    /* faint labels */
+
+  --blue: #4a9eff;          /* lead accent */
+  --blue-bright: #6fb6ff;   /* gradient light */
+  --blue-deep: #2a7fe6;     /* gradient deep */
+  --blue-soft: #cfe8ff;     /* light-on-dark */
+  --ink: #03101f;           /* text on blue */
+  --yellow: #eedb7a;        /* spark accent, sparing */
+
+  --grad-blue: linear-gradient(140deg, #6fb6ff, #2a7fe6);
+
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --hairline: rgba(255, 255, 255, 0.07);
+
+  /* light "bubble" cards */
+  --bubble: #ffffff;
+  --bubble-tint: linear-gradient(160deg, #eef4ff, #dbe8ff);
+  --bubble-ink: #182430;
+  --bubble-muted: #5a6675;
+
+  --font-display: 'Space Grotesk', -apple-system, sans-serif;
+  --font-sans: 'Hanken Grotesk', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-accent: 'Playfair Display', Georgia, serif;
+  /* legacy alias */
+  --font-serif: 'Playfair Display', Georgia, serif;
 }
 
 *, *::before, *::after {
@@ -29,35 +51,90 @@ html {
 }
 
 body {
+  position: relative;
   background: var(--bg);
+  color: var(--text);
   font-family: var(--font-sans);
   overflow-x: hidden;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
+/* ambient top glow, present on every page */
+body::before {
+  content: "";
+  position: fixed;
+  top: -280px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1100px;
+  height: 680px;
+  background: radial-gradient(ellipse at center, rgba(90, 120, 255, 0.16), transparent 62%);
+  pointer-events: none;
+  z-index: 0;
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
+::selection { background: var(--blue); color: var(--bg); }
 
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.1); }
-  50%       { box-shadow: 0 0 40px rgba(59, 130, 246, 0.8), 0 0 100px rgba(59, 130, 246, 0.2); }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; }
+
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.12); border-radius: 6px; }
+
+/* ── Aurora drift ── */
+@keyframes drift1 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(9%, 7%) scale(1.22); } }
+@keyframes drift2 { 0%, 100% { transform: translate(0, 0) scale(1.06); } 50% { transform: translate(-10%, 4%) scale(0.9); } }
+@keyframes drift3 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-7%, -9%) scale(1.16); } }
+@keyframes drift4 { 0%, 100% { transform: translate(0, 0) scale(1.1); } 50% { transform: translate(6%, -6%) scale(0.94); } }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
+.reveal { opacity: 0; animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+/* ── Scroll-reveal (driven by ScrollReveal.tsx) ── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+[data-reveal].is-visible { opacity: 1; transform: none; }
+
+/* ── Card hover lift ── */
+.lift { transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease; }
+.lift:hover { transform: translateY(-4px); }
+
+/* ── CTA radial glow pulse (element is centered via translateX(-50%)) ── */
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+  50%      { opacity: 1;   transform: translateX(-50%) scale(1.08); }
+}
+.cta-glow { animation: glowPulse 6s ease-in-out infinite; }
+
+/* nav + interactive hovers */
+.navlink { transition: color 0.18s ease; }
+.navlink:hover { color: var(--text-strong); }
 
 .sr-only {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
 }
 
-::-webkit-scrollbar { width: 0; background: transparent; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

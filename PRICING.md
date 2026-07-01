@@ -190,7 +190,7 @@ Pricing lives in several places that must stay in sync — single source of trut
 - [x] `src/data/agentix-knowledge.ts` — agent's `pricing` topic + fixed stale email in `about` *(2026-06-29)*
 - [x] MCP `get_pricing` tool — `src/app/api/mcp/route.ts` *(auto — reads from knowledge base)*
 - [x] Agent system prompt — `src/app/api/chat/route.ts`
-- [x] Pricing chapter on site — `src/components/GalaxyExperience.tsx` (Chapter 4 + Chapter 3 layers)
+- [x] Pricing on site — `/pricing` page (full list) + homepage "05 — Pricing" teaser *(redesigned 2026-07-01; old GalaxyExperience chapters removed)*
 - [x] `public/llms.txt` pricing section + FAQ
 - [x] JSON-LD schema (Offers + FAQPage) + SEO HTML layer — `src/app/layout.tsx`, `src/app/page.tsx`
 - [x] Add Audit + AI Visibility Upgrade as products: site, knowledge base, llms.txt
@@ -198,4 +198,4 @@ Pricing lives in several places that must stay in sync — single source of trut
 - [x] `/services`, `/pricing`, `/about` subpages + working nav *(2026-06-29, live)*
 - [x] **Deployed to `main` / lyveca.com** — all of the above is live *(2026-06-30, verified)*
 - [ ] Proposal template (Notion) — same numbers *(user task)*
-- [ ] Add "3 pilot slots" section to site while Phase A is open *(pending decision)*
+- [x] Add "3 pilot slots" section to site while Phase A is open *(live on `/pricing` 2026-07-01 — Upgrade €490 / Studio €990 / Premium €1,790, −40%, scarcity)*

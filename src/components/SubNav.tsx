@@ -1,32 +1,56 @@
+'use client'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import Logo from './Logo'
 
-// Top navigation for content subpages (/services, /pricing, /about).
+const links = [
+  { href: '/services', label: 'Services' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/about', label: 'About' },
+]
+
+// Sticky top navigation, shared across the homepage and content subpages.
 export default function SubNav() {
-  const link: React.CSSProperties = {
-    fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.1em',
-    color: 'var(--text-muted)', textTransform: 'uppercase', textDecoration: 'none',
-  }
+  const pathname = usePathname()
+
   return (
     <nav style={{
-      position: 'sticky', top: 0, zIndex: 50, backdropFilter: 'blur(12px)',
-      background: 'rgba(10,10,15,0.7)', borderBottom: '1px solid var(--border)',
-      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-      padding: '16px 24px',
+      position: 'sticky', top: 0, zIndex: 60,
+      backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)',
+      background: 'rgba(10,8,9,0.62)',
+      borderBottom: '1px solid var(--hairline)',
     }}>
-      <Link href="/" style={{ fontFamily: 'var(--font-mono)', fontSize: 13, letterSpacing: '0.06em', color: 'var(--text)', fontWeight: 500, textDecoration: 'none' }}>
-        LYVECA AI
-      </Link>
-      <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>
-        <Link href="/services" style={link}>Services</Link>
-        <Link href="/pricing" style={link}>Pricing</Link>
-        <Link href="/about" style={link}>About</Link>
-        <a href="https://calendly.com/sona-masova23" style={{
-          fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.1em',
-          color: '#0a0a0f', background: 'var(--accent)', padding: '9px 18px',
-          textTransform: 'uppercase', textDecoration: 'none',
-        }}>
-          Book a Call
-        </a>
+      <div style={{
+        maxWidth: 1200, margin: '0 auto', padding: '16px 28px',
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      }}>
+        <Logo />
+        <div style={{ display: 'flex', alignItems: 'center', gap: 26, fontFamily: 'var(--font-sans)', fontSize: 14 }}>
+          {links.map(({ href, label }) => {
+            const active = pathname === href
+            return (
+              <Link
+                key={href}
+                href={href}
+                className={active ? undefined : 'navlink'}
+                style={{
+                  color: active ? 'var(--text-strong)' : 'var(--text-body)',
+                  borderBottom: active ? '1px solid var(--blue-deep)' : '1px solid transparent',
+                  paddingBottom: 2,
+                }}
+              >
+                {label}
+              </Link>
+            )
+          })}
+          <a href="https://calendly.com/sona-masova23" target="_blank" rel="noopener noreferrer" style={{
+            fontWeight: 600, color: 'var(--ink)', background: 'var(--grad-blue)',
+            padding: '9px 17px', borderRadius: 10,
+            boxShadow: '0 8px 22px -8px rgba(74,158,255,0.7)',
+          }}>
+            Book a call
+          </a>
+        </div>
       </div>
     </nav>
   )

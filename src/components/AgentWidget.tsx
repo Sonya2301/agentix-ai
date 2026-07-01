@@ -324,27 +324,27 @@ export default function AgentWidget() {
         </div>
       </div>
 
-      {/* ── Floating button ── */}
+      {/* ── Floating launcher pill ── */}
       <button
         onClick={() => setOpen(o => !o)}
         aria-label={open ? 'Close agent' : 'Talk to AI agent'}
         aria-expanded={open}
         style={{
-          position: 'fixed', bottom: 28, right: 28,
-          width: 52, height: 52, borderRadius: '50%',
-          background: open ? 'rgba(7,7,12,0.97)' : '#3b82f6',
-          border: `1px solid ${open ? 'rgba(59,130,246,0.35)' : '#3b82f6'}`,
-          cursor: 'pointer', zIndex: 300,
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          boxShadow: open ? 'none' : '0 0 28px rgba(59,130,246,0.55), 0 0 64px rgba(59,130,246,0.15)',
-          opacity: visible ? 1 : 0,
-          transform: visible ? 'scale(1)' : 'scale(0.75)',
-          transition: 'opacity 0.4s ease, transform 0.4s ease, background 0.2s, box-shadow 0.2s',
+          position: 'fixed', bottom: 24, right: 24, zIndex: 300,
+          display: 'flex', alignItems: 'center', gap: 10,
+          padding: '13px 20px', borderRadius: 100, border: 'none',
+          background: 'linear-gradient(140deg,#6fb6ff,#2a7fe6)', color: '#03101f',
+          fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 14,
+          cursor: 'pointer',
+          boxShadow: '0 16px 40px -10px rgba(74,158,255,0.7)',
+          opacity: visible && !open ? 1 : 0,
+          transform: visible && !open ? 'scale(1)' : 'scale(0.9)',
+          pointerEvents: open ? 'none' : 'auto',
+          transition: 'opacity 0.35s ease, transform 0.35s ease, filter 0.2s',
         }}
       >
-        <span style={{ fontSize: open ? 17 : 20, color: open ? '#6b6b8a' : '#fff', transition: 'font-size 0.15s' }}>
-          {open ? '✕' : '◈'}
-        </span>
+        <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#03101f', opacity: 0.7 }} />
+        Ask the agent
       </button>
 
       <style>{`

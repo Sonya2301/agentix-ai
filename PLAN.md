@@ -1,5 +1,7 @@
 # LYVECA AI — Master Plan & Go-Forward
-*Updated 2026-06-30. The single source of truth for status, strategy, and next steps. Pricing lives in PRICING.md; agent/technical details in LAYER02.md; site overview & how-to-run in README.md. The Fable 5 strategy session and prior session handoff are preserved as appendices at the bottom.*
+*Updated 2026-07-01. The single source of truth for status, strategy, and next steps. Pricing lives in PRICING.md; agent/technical details in LAYER02.md; site overview & how-to-run in README.md. The Fable 5 strategy session and prior session handoff are preserved as appendices at the bottom.*
+
+> **Latest session handoff (2026-07-01):** Full **design overhaul shipped & deployed** — the old Three.js "galaxy" homepage is replaced by a dark "blue aurora" editorial design (from a design handoff zip), built natively in Next.js across homepage + `/services` + `/pricing` + `/about`. Added scroll-reveal, stat count-up, card hover-lift, CTA glow (all `prefers-reduced-motion` safe). All backend/AEO verified intact (llms.txt, robots, sitemap, JSON-LD, MCP server, live agent). `/pricing` now shows the **"3 pilot slots" launch offer** (Upgrade €490 / Studio €990 / Premium €1,790). Also completed: a competitor analysis vs 4 Slovak studios (takeaway: they win on *distribution* — Google Ads + domain age + local SEO — not product; Lyveca's edge is custom Next.js + the L02/L04 AI stack none of them have). **Deleted** unused `GalaxyExperience.tsx` / `GalaxyWrapper.tsx`. Three.js deps remain in `package.json` but are now unused (safe to remove later). **Next up:** CSP + full security audit, demo recording (B5), and starting outreach (Track C).
 
 ---
 
@@ -15,8 +17,10 @@
   4. ✅ **Legal-safe footer** (honest pre-živnosť note; no false business-registration claim).
   5. ✅ **Security headers live** (HSTS, X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy) — securityheaders.com grade ~A-. CSP deferred until after redesign.
   6. ✅ **Stale email fixed** → `sonamasova@lyveca.com` everywhere public-facing.
+- **Shipped 2026-07-01 (live):**
+  7. ✅ **Full design overhaul** — dark "blue aurora" editorial redesign (homepage + 3 subpages + nav/footer), built from a design handoff. Motion added (reveal, count-up, hover-lift, glow), all reduced-motion safe. Backend/AEO verified untouched. `/pricing` shows the "3 pilot slots" launch offer.
 - **Not started:** the other two business pillars — **Lead Generation** (zero outbound ever sent) and **Monetization** (€0 revenue, every lead in `leads.json` is a test). No case studies, no testimonials, no signed clients.
-- **Caveats:** pricing is a **researched hypothesis, not validated** (never price-tested on a real buyer). Design is functional but **looks "vibe-coded"** — slated for a full overhaul.
+- **Caveats:** pricing is a **researched hypothesis, not validated** (never price-tested on a real buyer). Design overhaul is now **done** (2026-07-01, blue aurora); remaining product debt is CSP + a full security audit.
 
 **The one sentence that matters:** the product cannot get more ready; everything from here is selling. The critical path is **one paying client → one case study → that case study makes all other channels (LinkedIn, dev.to, Product Hunt) actually convert.**
 
@@ -42,6 +46,7 @@
 - [x] **A4 — Nav fixed + `/services` `/pricing` `/about` subpages built** (own metadata + schema; sitemap updated).
 - [x] **A5 — Stale email fixed.**
 - [x] **(bonus) Security headers added** (5 design-independent; CSP deferred).
+- [x] **A7 — Full design overhaul (blue aurora)** — shipped & deployed 2026-07-01: homepage + `/services` `/pricing` `/about` + nav/footer rebuilt from a design handoff; motion added (reveal, count-up, hover-lift, glow); "3 pilot slots" launch offer live on `/pricing`.
 - [ ] **A6 (optional, later) — Demo upgrades:** Cal.com direct booking (agent *books* the slot) + Stripe payment-link tool. Strong differentiators; pairs with B4 (Stripe account).
 
 ### TRACK B — Become legally & operationally sellable (USER; days 1–3)
@@ -78,8 +83,8 @@
 
 ## 4. Open decisions needed from you
 
-1. **Design overhaul scope** — how far to take the redesign (homepage + 3 subpages + footer). The next big product item; cap it so it doesn't crowd out selling.
-2. **When to start outreach (Track C)** — the actual goal. Recommendation: right after the redesign makes the demo credible, not later.
+1. ~~Design overhaul scope~~ — **RESOLVED 2026-07-01**: full blue-aurora redesign shipped (homepage + 3 subpages + footer + motion). Product is now credible; further polish should stay capped.
+2. **When to start outreach (Track C)** — the actual goal. The redesign that was gating this is now done, so **this is the immediate next move.**
 3. **Track A6 (Cal.com + Stripe)** — build the booking/payment demo upgrades now, or after the first conversations show demand?
 
 ---
@@ -92,8 +97,8 @@
 | ✅ Nav fix + subpages (A4) | — | Done; /services /pricing /about live |
 | ✅ Fix stale email (A5) | — | Done |
 | ✅ Security headers | — | Done 2026-06-30, live (CSP still pending, below) |
-| **Full design overhaul** | High | Site/subpages look "vibe-coded" — redesign the whole visual system (homepage + /services /pricing /about + footer). **Next big item.** |
-| **Full security audit + CSP** | High | After redesign: deps scan, API routes /api/chat + /api/mcp, input handling, secrets, and add Content-Security-Policy (content-dependent, so do it on final code). |
+| ✅ Full design overhaul | — | Done 2026-07-01 — blue aurora redesign live (homepage + subpages + nav/footer + motion + pilot slots). |
+| **Full security audit + CSP** | High | **Now the next big item** (redesign shipped): deps scan, API routes /api/chat + /api/mcp, input handling, secrets, and add Content-Security-Policy on the final code (must allow Google Fonts import + GA). |
 | Demo recording (B5) | High | 60–90s Claude-connector → MCP → lead in Notion. Universal sales asset. |
 | Outreach engine (Track C) | High | Prospect list, DMs, content, free-audit → pilots. **The actual goal.** |
 | Personalize About founder story | Med | TODO marker in about/page.tsx |

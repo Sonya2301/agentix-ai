@@ -21,19 +21,22 @@ Portfolio and business website for LYVECA AI — a solo AI web studio founded by
 
 ## The Experience
 
-A Three.js scroll-driven galaxy animation with 7 content chapters:
+A dark, editorial homepage in the "blue aurora" design system (redesigned 2026-07-01 from a design handoff). Sections, top to bottom:
 
-| Scroll | Chapter |
-|--------|---------|
-| 0–13% | Loading circle → galaxy spiral forms |
-| 13–27% | Brand reveal — *Soňa Mášová* |
-| 27–43% | The Shift — market stats |
-| 43–58% | Four Layers — the service |
-| 58–72% | Pricing — teaser + "See full pricing →" link to `/pricing` |
-| 72–86% | MCP Live Demo — interactive playground |
-| 86–100% | CTA — Book a call |
+| Section | Content |
+|---------|---------|
+| Hero | Animated aurora (5 drifting radial blobs + scrim), "Websites built for humans. And for AI." — Playfair Display italic accents |
+| Trust line | Built for Tech & SaaS / Cybersecurity / Agencies |
+| 01 — The shift | Market stats (count-up on scroll: 60.3%, 59%, 2×, 18%) |
+| 02 — The system | The four layers as cards (light "bubble" cards + one featured blue) |
+| 03 — Layer 04, live | Interactive MCP playground — a real call to `/api/mcp` |
+| 04 — Process | Brief-to-live in 5–7 days, 5 steps |
+| 05 — Pricing | Teaser cards → link to `/pricing` |
+| CTA | Book a call (pulsing blue glow) |
 
-Plus standalone content pages (static, each with own metadata + JSON-LD): **`/services`**, **`/pricing`**, **`/about`**, and `/cookies-policy`.
+**Motion:** scroll-reveal on sections/cards, stat count-up, card hover-lift, CTA glow pulse — all gated behind `prefers-reduced-motion`. Content is always in the DOM (reveal is visual only), so it stays crawlable.
+
+Plus standalone content pages (static, each with own metadata + JSON-LD): **`/services`**, **`/pricing`** (incl. a live "3 pilot slots" launch offer), **`/about`**, and `/cookies-policy`.
 
 ---
 
@@ -43,8 +46,9 @@ Plus standalone content pages (static, each with own metadata + JSON-LD): **`/se
 |------|---------|
 | Next.js 16 (App Router) | Framework |
 | React 19 | UI |
-| Three.js | Galaxy particle animation |
 | Tailwind CSS v4 | Styling |
+| CSS-in-JS (inline) + globals.css tokens | Design system (blue aurora palette) |
+| Fonts | Space Grotesk (display) · Hanken Grotesk (body) · JetBrains Mono (labels) · Playfair Display (accent) |
 | TypeScript | Type safety |
 | Vercel | Hosting + auto-deploy from main branch |
 | Anthropic Claude API | AI agent (Layer 02) |
@@ -88,12 +92,12 @@ Open [http://localhost:3000](http://localhost:3000)
 ## Project Structure
 
 ```
-next.config.ts                  # Security headers (HSTS, X-Frame-Options, nosniff, etc.) — CSP pending redesign
+next.config.ts                  # Security headers (HSTS, X-Frame-Options, nosniff, etc.) — CSP still pending (next security item)
 src/
 ├── app/
-│   ├── layout.tsx              # Metadata, Schema.org JSON-LD (Org/Person/Service/Offers/FAQ), fonts, AgentWidget mount
-│   ├── page.tsx                # Homepage + SEO semantic HTML layer (crawlable subpage links)
-│   ├── globals.css             # CSS variables, fonts, animations
+│   ├── layout.tsx              # Metadata, Schema.org JSON-LD (Org/Person/Service/Offers/FAQ), AgentWidget + ScrollReveal mount
+│   ├── page.tsx                # Homepage — blue aurora editorial design (hero, stats, layers, MCP, process, pricing, CTA)
+│   ├── globals.css             # CSS design tokens (blue aurora palette), fonts (@import), animations (aurora drift, reveal, lift, glow)
 │   ├── sitemap.ts              # Sitemap incl. /services /pricing /about (Layer 03)
 │   ├── robots.ts               # AI crawler permissions (Layer 03)
 │   ├── services/page.tsx       # Subpage: the 4 layers in depth (+ Service JSON-LD)
@@ -104,13 +108,16 @@ src/
 │   │   └── mcp/route.ts        # Layer 04: MCP Server (get_pricing, get_service_info, book_meeting)
 │   └── cookies-policy/page.tsx # GDPR cookies policy page
 ├── components/
-│   ├── GalaxyExperience.tsx    # Three.js galaxy + all scroll chapters + nav
-│   ├── GalaxyWrapper.tsx       # Next.js dynamic import wrapper (ssr: false)
+│   ├── Aurora.tsx              # Homepage hero aurora (5 drifting blobs + scrim; reduced-motion safe)
+│   ├── Logo.tsx                # "L" gradient mark + LYVECA AI wordmark (nav + footer)
+│   ├── SubNav.tsx              # Sticky top nav, active-link highlight (client — usePathname)
+│   ├── SiteFooter.tsx          # Shared footer + legal note (imprint TODO at živnosť)
+│   ├── CTABand.tsx             # Reusable closing CTA band (blue glow) for subpages
+│   ├── ScrollReveal.tsx        # Global [data-reveal] scroll-reveal driver (client)
+│   ├── CountUp.tsx             # Count-up-on-scroll numbers (client; reduced-motion safe)
 │   ├── CookieBanner.tsx        # GDPR cookie banner + Google Analytics
-│   ├── AgentWidget.tsx         # Layer 02: floating chat UI + action cards
-│   ├── MCPPlayground.tsx       # Layer 04: interactive MCP demo (Chapter 5)
-│   ├── SubNav.tsx              # Top nav for content subpages
-│   └── SiteFooter.tsx          # Shared footer + legal note (imprint TODO at živnosť)
+│   ├── AgentWidget.tsx         # Layer 02: floating chat UI + action cards (blue pill launcher)
+│   └── MCPPlayground.tsx       # Layer 04: interactive MCP demo (real /api/mcp call, two-panel)
 ├── data/
 │   └── agentix-knowledge.ts    # Layer 02: knowledge base — SINGLE SOURCE OF TRUTH for pricing
 ├── lib/
@@ -154,11 +161,11 @@ To go live: merge `dev` into `main` and push.
 
 **AI crawlers explicitly allowed:** GPTBot, ClaudeBot, PerplexityBot, GoogleExtendedBot, Applebot-Extended, cohere-ai
 
-> **Security headers:** 5 design-independent headers are live (see `next.config.ts`). Content-Security-Policy (CSP) is intentionally deferred until after the planned design overhaul, since it depends on exactly what the final site loads.
+> **Security headers:** 5 design-independent headers are live (see `next.config.ts`). Content-Security-Policy (CSP) is still pending — now that the redesign has shipped, it's the next security item (CSP depends on exactly what the final site loads, e.g. the Google Fonts import and GA).
 
-### MCP Live Demo (Chapter 5)
+### MCP Live Demo (homepage section "03 — Layer 04, live")
 
-`src/components/MCPPlayground.tsx` — interactive demo embedded in the scroll experience.
+`src/components/MCPPlayground.tsx` — interactive demo embedded on the homepage.
 
 Visitors click a tool button and watch two panels update in real time:
 - **Left (REQUEST)** — the JSON message the AI sent to the server, typed out character by character

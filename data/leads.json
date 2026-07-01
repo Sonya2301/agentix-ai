@@ -58,5 +58,22 @@
     "tier": "starter",
     "notes": "Nail salon owner. Wants a new website with animations, brand identity, and logo design. No budget mentioned yet.",
     "timestamp": "2026-06-03T13:29:44.642Z"
+  },
+  {
+    "name": "Soňa",
+    "email": "sonickamasova@gmail.com",
+    "project_type": "new-site",
+    "tier": "starter",
+    "notes": "New website for a flower shop, starting from scratch with no existing online presence.",
+    "timestamp": "2026-06-04T20:02:01.414Z"
+  },
+  {
+    "name": "Ella",
+    "email": "ella234@gmail.com",
+    "project_type": "full-stack",
+    "tier": "premium",
+    "notes": "Wants an e-commerce website to sell premium chairs online, plus an AI agent to track sales. Interested in full setup: custom site + Layer 02 AI agent add-on. Budget range discussed: €5,500–€8,500.",
+    "budget": "€5,500–€8,500",
+    "timestamp": "2026-06-04T20:10:06.507Z"
   }
 ]

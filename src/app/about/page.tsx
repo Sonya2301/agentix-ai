@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import SubNav from '../../components/SubNav'
 import SiteFooter from '../../components/SiteFooter'
+import CTABand from '../../components/CTABand'
 
 export const metadata: Metadata = {
   title: 'About — LYVECA AI',
@@ -23,123 +23,116 @@ const aboutSchema = {
   },
 }
 
-const sectionTitle: React.CSSProperties = {
-  fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontSize: 'clamp(22px,3vw,30px)',
-  color: 'var(--text)', marginBottom: 14,
+const wrap: React.CSSProperties = { maxWidth: 1200, margin: '0 auto', padding: '0 28px' }
+const eyebrow: React.CSSProperties = {
+  fontFamily: 'var(--font-mono)', fontSize: 11.5, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--blue-bright)',
 }
-const para: React.CSSProperties = {
-  fontFamily: 'var(--font-sans)', fontSize: 15.5, color: 'var(--text-dim)', lineHeight: 1.8, marginBottom: 16,
-}
-const stat: React.CSSProperties = {
-  fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--text-dim)', lineHeight: 1.7,
-}
+
+const principles: { no: string; title: string; body: string; tint: boolean }[] = [
+  { no: '01', title: 'Built for both audiences', tint: false, body: 'Every page is designed for the human reading it and the agent parsing it. Neither is an afterthought.' },
+  { no: '02', title: 'Fast, fixed, finished', tint: true, body: 'Clear scope, fixed price, live in 5–7 days. No open-ended retainers, no hourly surprises.' },
+  { no: '03', title: 'No stock, no templates', tint: false, body: 'Custom design and custom visuals generated in your brand. Your site shouldn’t look like anyone else’s.' },
+]
 
 export default function AboutPage() {
   return (
-    <>
+    <div style={{ position: 'relative', zIndex: 1 }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }} />
       <SubNav />
-      <main style={{ maxWidth: 780, margin: '0 auto', padding: '64px 24px 0' }}>
-        {/* Hero with brand avatar */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 28 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/avatar.png" alt="LYVECA AI" width={72} height={72}
-            style={{ borderRadius: '50%', border: '1px solid var(--border)', flexShrink: 0 }}
-          />
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--accent)' }}>
-            About LYVECA AI
-          </span>
+
+      <header style={{ ...wrap, padding: '72px 28px 48px' }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 9, ...eyebrow, fontSize: 11.5, color: 'var(--blue)', background: 'rgba(74,158,255,0.10)', border: '1px solid rgba(74,158,255,0.22)', padding: '7px 13px', borderRadius: 100, marginBottom: 26 }}>
+          <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--blue)', animation: 'pulse 2s infinite' }} />
+          About · one studio, one operator
         </div>
-        <h1 style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontSize: 'clamp(32px,5vw,56px)', color: 'var(--text)', margin: '0 0 24px' }}>
-          A studio for the age of AI agents.
+        <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(40px,5.6vw,80px)', lineHeight: 1.0, letterSpacing: '-0.03em', margin: 0, maxWidth: '15ch', color: 'var(--text-strong)' }}>
+          Security rigor, AI craft,{' '}
+          <span style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontWeight: 600, background: 'linear-gradient(110deg,#cfe8ff,#2a7fe6 55%,#2a7fe6)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>design taste.</span>
         </h1>
-
-        <p style={para}>
-          LYVECA AI is a one-person AI web studio founded by Soňa Mášová in Bratislava, Slovakia,
-          serving clients globally. It builds websites that work for two audiences at once: the humans
-          who read them, and the AI agents that increasingly read them on people&apos;s behalf.
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 'clamp(15px,1.5vw,18px)', lineHeight: 1.65, color: 'var(--text-dim)', maxWidth: '58ch', margin: '24px 0 0' }}>
+          A rare combination in any market — and, bundled into one web studio in Slovakia, one that didn&apos;t exist until now.
         </p>
+      </header>
 
-        {/* Manifesto + stats */}
-        <section style={{ marginTop: 40 }}>
-          <h2 style={sectionTitle}>Why LYVECA exists</h2>
-          <p style={para}>
-            Search is changing faster than most websites are. A growing share of queries are answered
-            by ChatGPT, Perplexity, Claude, and Google&apos;s AI Overviews — the visitor never reaches a
-            homepage. At the same time, AI agents are starting to act on people&apos;s behalf: comparing,
-            booking, buying. Most websites are built only for human eyes, and are effectively invisible
-            and unusable to this new layer of the internet.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 16, margin: '24px 0' }}>
-            <div style={stat}><span style={{ color: 'var(--accent)', fontSize: 22 }}>60%</span><br />of searches now end without a click</div>
-            <div style={stat}><span style={{ color: 'var(--accent)', fontSize: 22 }}>59%</span><br />of retail traffic is already bots & agents</div>
-            <div style={stat}><span style={{ color: 'var(--accent)', fontSize: 22 }}>2×</span><br />AI search traffic converts vs. organic</div>
-            <div style={stat}><span style={{ color: 'var(--accent)', fontSize: 22 }}>18%</span><br />of organic referrals now come from AI search</div>
+      {/* Bio: terminal card + prose */}
+      <section style={{ ...wrap, padding: '16px 28px 56px' }}>
+        <div data-reveal style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 32, alignItems: 'start' }} className="about-bio">
+          <div style={{ background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 18, overflow: 'hidden' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '13px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-faint)' }}>
+              <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#2a7fe6', opacity: 0.8 }} />
+              <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#3a3740' }} />
+              <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#3a3740' }} />
+              <span style={{ marginLeft: 8 }}>~ / whoami</span>
+            </div>
+            <pre style={{ margin: 0, padding: 22, fontFamily: 'var(--font-mono)', fontSize: 13, lineHeight: 1.85, color: 'var(--text-body)', overflowX: 'auto' }}>
+<span style={{ color: 'var(--text-faint)' }}>$</span> whoami{'\n'}
+<span style={{ color: 'var(--blue)' }}>Soňa Mášová</span> — founder &amp; operator{'\n\n'}
+<span style={{ color: 'var(--text-faint)' }}>$</span> cat background.log{'\n'}
+[ex] security consultant{'\n'}
+[ex] enterprise &amp; pharma{'\n'}
+[now] AI builder &amp; web studio{'\n\n'}
+<span style={{ color: 'var(--text-faint)' }}>$</span> cat obsession.txt{'\n'}
+AI, agents, and where the web is going.{'\n\n'}
+<span style={{ color: 'var(--text-faint)' }}>$</span> location --now{'\n'}
+Bratislava, SK · serving globally<span style={{ color: '#2a7fe6', animation: 'blink 1.1s step-end infinite' }}>_</span>
+            </pre>
           </div>
-          <p style={para}>
-            LYVECA builds for both worlds — fast, beautiful sites for people, and a machine-readable,
-            machine-actionable layer for AI.
-          </p>
-        </section>
-
-        {/* This site is the proof */}
-        <section style={{ marginTop: 40, padding: '28px', border: '1px solid var(--accent-dim)', borderRadius: 12, background: 'rgba(59,130,246,0.05)' }}>
-          <h2 style={{ ...sectionTitle, marginBottom: 10 }}>This site is the proof</h2>
-          <p style={{ ...para, marginBottom: 14 }}>
-            You don&apos;t have to take the pitch on faith. This website runs all four layers live: an AI
-            agent is embedded on it right now, and its data is callable by other AIs through a public
-            MCP server. Open the agent in the corner, or watch the MCP playground on the home page do a
-            real call.
-          </p>
-          <Link href="/" style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.1em', color: 'var(--accent)', textDecoration: 'none', textTransform: 'uppercase' }}>
-            See it live →
-          </Link>
-        </section>
-
-        {/* How I work */}
-        <section style={{ marginTop: 40 }}>
-          <h2 style={sectionTitle}>How I work</h2>
-          <ul style={{ ...para, paddingLeft: 20, listStyle: 'disc' }}>
-            <li>Fixed, transparent pricing — no hidden fees, no surprise quotes.</li>
-            <li>Fast delivery — most sites live in 5–7 days, not weeks.</li>
-            <li>Honest about AI visibility — it&apos;s setup plus measurement over time, never an overnight promise.</li>
-            <li>Direct — you work with the person building your site, start to finish.</li>
-            <li>Security-first — GDPR, data handling, and trust built in, not bolted on.</li>
-          </ul>
-        </section>
-
-        {/* Testimonials / founding clients — reserved section */}
-        <section style={{ marginTop: 40, paddingTop: 40, borderTop: '1px solid var(--border)' }}>
-          <h2 style={sectionTitle}>Clients</h2>
-          <p style={para}>
-            LYVECA is taking on its first founding clients now. Early projects come at a founding rate in
-            exchange for a case study and testimonial — so this section is about to fill up. Want your
-            name here?
-          </p>
-          {/* TODO: replace with real testimonial cards once founding clients are delivered:
-              { quote, name, role, company } */}
-          <a href="https://calendly.com/sona-masova23" style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.1em', color: 'var(--accent)', textDecoration: 'none', textTransform: 'uppercase' }}>
-            Become a founding client →
-          </a>
-        </section>
-
-        <div style={{ marginTop: 48, display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center' }}>
-          <Link href="/services" style={{
-            fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.1em',
-            color: 'var(--text)', border: '1px solid var(--border)', padding: '13px 26px', textTransform: 'uppercase', textDecoration: 'none',
-          }}>
-            What I build
-          </Link>
-          <a href="https://calendly.com/sona-masova23" style={{
-            fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.1em',
-            color: '#0a0a0f', background: 'var(--accent)', padding: '14px 28px', textTransform: 'uppercase', textDecoration: 'none',
-          }}>
-            Book a Call
-          </a>
+          <div>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 'clamp(26px,3.2vw,40px)', lineHeight: 1.05, letterSpacing: '-0.02em', margin: '0 0 22px', color: 'var(--text)' }}>
+              Run by one person who&apos;s done the hard parts.
+            </h2>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: 16, lineHeight: 1.8, color: 'var(--text-dim)', margin: '0 0 18px' }}>
+              LYVECA AI is run by Soňa Mášová — a former security consultant who worked with global enterprises
+              before becoming obsessed with AI, agents, and where the web is heading.
+            </p>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: 16, lineHeight: 1.8, color: 'var(--text-dim)', margin: 0 }}>
+              That mix — security discipline, hands-on AI development, and real design taste — is what makes a
+              LYVECA site fast, findable, and built to be trusted by both people and machines.
+            </p>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* How we think: light bubbles */}
+      <section style={{ ...wrap, padding: '16px 28px 56px' }}>
+        <div style={{ ...eyebrow, marginBottom: 24 }}>How we think</div>
+        <div data-reveal style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 16 }}>
+          {principles.map((p) => (
+            <div key={p.no} className="lift" style={p.tint
+              ? { background: 'linear-gradient(160deg,#eef4ff,#dbe8ff)', border: '1px solid #bcd8ff', borderRadius: 20, padding: '28px 26px' }
+              : { background: '#ffffff', border: '1px solid #dbe6f2', borderRadius: 20, padding: '28px 26px', boxShadow: '0 18px 40px -24px rgba(40,90,150,0.4)' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: p.tint ? '#3a6fae' : '#2f6fb5', marginBottom: 18 }}>{p.no}</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 19, color: '#182430', marginBottom: 12 }}>{p.title}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 14, lineHeight: 1.65, color: '#5a6675' }}>{p.body}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Who we work with: dark glass */}
+      <section style={{ ...wrap, padding: '16px 28px 72px' }}>
+        <div style={{ ...eyebrow, marginBottom: 24 }}>Who we work with</div>
+        <div data-reveal style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 16 }}>
+          {[
+            { t: 'Agencies & freelancers', d: 'Marketing agencies and freelancers who need a fast, reliable white-label web partner they can put in front of clients without worrying.' },
+            { t: 'Tech, security & SaaS', d: 'Cybersecurity startups and SaaS businesses with €500K–€5M ARR who need a site that matches the quality of their product — and is visible to AI search.' },
+          ].map((c) => (
+            <div key={c.t} className="lift" style={{ background: 'var(--glass)', backdropFilter: 'blur(22px)', border: '1px solid var(--glass-border)', borderRadius: 20, padding: '32px 28px' }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 22, letterSpacing: '-0.01em', color: 'var(--text)', marginBottom: 14 }}>{c.t}</div>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.7, color: 'var(--text-dim)', margin: 0 }}>{c.d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <CTABand
+        title="Let's talk about your site."
+        copy="Free 30-minute call. No pitch deck, just a clear plan for both your visitors and the agents."
+        email
+      />
       <SiteFooter />
-    </>
+
+      <style>{`@media (max-width: 760px){ .about-bio{ grid-template-columns:1fr !important; } }`}</style>
+    </div>
   )
 }

@@ -1,18 +1,23 @@
 'use client'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 const TOPICS = ['layer01', 'layer02', 'layer03', 'process', 'about'] as const
 type Topic = typeof TOPICS[number]
 
-const mono: React.CSSProperties = { fontFamily: 'var(--font-mono)' }
+const tools = [
+  { name: 'get_pricing', label: 'get_pricing()', desc: 'Return the full price list' },
+  { name: 'get_service_info', label: 'get_service_info()', desc: 'Describe the four layers' },
+  { name: 'book_meeting', label: 'book_meeting()', desc: 'Return a booking link' },
+] as const
 
-export function MCPPlayground({ isMobile = false }: { isMobile?: boolean }) {
-  const [activeTool, setActiveTool] = useState<string | null>(null)
+export function MCPPlayground() {
+  const [activeTool, setActiveTool] = useState<string>('get_pricing')
   const [topic, setTopic] = useState<Topic>('layer01')
   const [requestText, setRequestText] = useState('')
   const [responseText, setResponseText] = useState('')
   const [phase, setPhase] = useState<'idle' | 'typing' | 'calling' | 'streaming' | 'done'>('idle')
   const abortRef = useRef(false)
+  const started = useRef(false)
 
   async function runTool(toolName: string, args: Record<string, unknown>) {
     abortRef.current = true
@@ -57,101 +62,100 @@ export function MCPPlayground({ isMobile = false }: { isMobile?: boolean }) {
     setPhase('done')
   }
 
+  // Auto-play get_pricing shortly after mount (matches the design brief).
+  useEffect(() => {
+    if (started.current) return
+    started.current = true
+    const t = setTimeout(() => runTool('get_pricing', {}), 700)
+    return () => clearTimeout(t)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  function handleTool(name: string) {
+    if (name === 'get_service_info') runTool(name, { topic })
+    else runTool(name, {})
+  }
+
   return (
-    <div style={{ width: '100%', maxWidth: 860, display: 'flex', flexDirection: 'column', gap: 20, alignItems: 'center' }}>
-      <span style={{ ...mono, fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#3b82f6' }}>
-        Live Demo · MCP Server
-      </span>
-      <p style={{ ...mono, fontSize: 12, color: '#6b6b8a', letterSpacing: '0.06em', textAlign: 'center' }}>
-        Click a tool — watch an AI call your site in real time
-      </p>
+    <div style={{ display: 'grid', gridTemplateColumns: 'minmax(240px, 0.85fr) 1.15fr', gap: 36, alignItems: 'start' }} className="mcp-grid">
+      {/* Left — heading + tool buttons */}
+      <div>
+        <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 'clamp(26px,3.4vw,42px)', lineHeight: 1.06, letterSpacing: '-0.02em', margin: '0 0 16px', color: 'var(--text)' }}>
+          Be the AI for a second.
+        </h2>
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15, lineHeight: 1.7, color: 'var(--text-dim)', margin: '0 0 24px', maxWidth: '42ch' }}>
+          This site runs a real MCP server. Outside AI agents can call it to get pricing, read services,
+          and book a meeting — no browser needed. Pick a tool and watch the call happen.
+        </p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          {tools.map(t => {
+            const active = activeTool === t.name
+            const busy = active && phase !== 'idle' && phase !== 'done'
+            return (
+              <button key={t.name} onClick={() => handleTool(t.name)} style={{
+                display: 'flex', flexDirection: 'column', gap: 3, textAlign: 'left',
+                padding: '14px 16px', borderRadius: 13, cursor: busy ? 'wait' : 'pointer',
+                border: `1px solid ${active ? 'rgba(74,158,255,0.45)' : 'rgba(255,255,255,0.1)'}`,
+                background: active ? 'rgba(74,158,255,0.10)' : 'rgba(255,255,255,0.03)',
+                color: 'var(--text)', transition: 'all 0.15s',
+              }}>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13.5 }}>{t.label}</span>
+                <span style={{ fontFamily: 'var(--font-sans)', fontSize: 12.5, color: 'var(--text-muted)' }}>{t.desc}</span>
+              </button>
+            )
+          })}
+        </div>
 
-      {/* Tool buttons */}
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
-        <ToolButton label="get_pricing" active={activeTool === 'get_pricing'} phase={phase}
-          onClick={() => runTool('get_pricing', {})} />
-        <ToolButton label="book_meeting" active={activeTool === 'book_meeting'} phase={phase}
-          onClick={() => runTool('book_meeting', {})} />
+        {/* get_service_info topic pills */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7, alignItems: 'center', marginTop: 14 }}>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--text-faint)', letterSpacing: '0.1em', textTransform: 'uppercase', marginRight: 2 }}>topic:</span>
+          {TOPICS.map(tp => {
+            const on = activeTool === 'get_service_info' && topic === tp
+            return (
+              <button key={tp} onClick={() => { setTopic(tp); runTool('get_service_info', { topic: tp }) }} style={{
+                fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.06em',
+                padding: '5px 10px', borderRadius: 100, cursor: 'pointer', transition: 'all 0.15s',
+                background: on ? 'rgba(74,158,255,0.18)' : 'rgba(255,255,255,0.04)',
+                border: `1px solid ${on ? 'rgba(74,158,255,0.5)' : 'rgba(255,255,255,0.1)'}`,
+                color: on ? 'var(--text)' : 'var(--text-muted)',
+              }}>{tp}</button>
+            )
+          })}
+        </div>
       </div>
 
-      {/* get_service_info — topic pills */}
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, alignItems: 'center', justifyContent: 'center' }}>
-        <span style={{ ...mono, fontSize: 10, color: '#6b6b8a', letterSpacing: '0.1em', textTransform: 'uppercase', marginRight: 4 }}>
-          get_service_info:
-        </span>
-        {TOPICS.map(t => (
-          <button key={t} onClick={() => { setTopic(t); runTool('get_service_info', { topic: t }) }}
-            style={{
-              ...mono, fontSize: 10, letterSpacing: '0.08em',
-              padding: '5px 10px',
-              background: activeTool === 'get_service_info' && topic === t
-                ? 'rgba(59,130,246,0.2)' : 'rgba(59,130,246,0.05)',
-              border: `1px solid ${activeTool === 'get_service_info' && topic === t ? '#3b82f6' : 'rgba(59,130,246,0.2)'}`,
-              color: activeTool === 'get_service_info' && topic === t ? '#e8e8f0' : '#6b6b8a',
-              cursor: 'pointer',
-              transition: 'all 0.15s',
-            }}>
-            {t}
-          </button>
-        ))}
+      {/* Right — REQUEST / RESPONSE panels */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }} className="mcp-panels">
+        <Panel label="▸ REQUEST" labelColor="var(--blue-bright)" text={requestText} phase={phase} side="left" />
+        <Panel label="◂ RESPONSE" labelColor="#6fd0a8" text={responseText} phase={phase} side="right" />
       </div>
 
-      {/* Two panels */}
-      <div style={{ display: 'flex', gap: 12, width: '100%', flexWrap: 'wrap' }}>
-        <Panel label="REQUEST" text={requestText} phase={phase} side="left" minHeight={isMobile ? 130 : 200} />
-        <Panel label="RESPONSE" text={responseText} phase={phase} side="right" minHeight={isMobile ? 130 : 200} />
-      </div>
+      <style>{`
+        @media (max-width: 860px) {
+          .mcp-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+          .mcp-panels { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </div>
   )
 }
 
-function ToolButton({ label, active, phase, onClick }: { label: string; active: boolean; phase: string; onClick: () => void }) {
-  const busy = active && phase !== 'idle' && phase !== 'done'
-  return (
-    <button onClick={onClick} style={{
-      fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.1em', textTransform: 'lowercase',
-      padding: '8px 18px',
-      background: active ? 'rgba(59,130,246,0.15)' : 'rgba(59,130,246,0.05)',
-      border: `1px solid ${active ? '#3b82f6' : 'rgba(59,130,246,0.2)'}`,
-      color: active ? '#e8e8f0' : '#6b6b8a',
-      cursor: busy ? 'wait' : 'pointer',
-      transition: 'all 0.15s',
-    }}>
-      {busy ? '...' : label}
-    </button>
-  )
-}
-
-function Panel({ label, text, phase, side, minHeight = 200 }: { label: string; text: string; phase: string; side: 'left' | 'right'; minHeight?: number }) {
+function Panel({ label, labelColor, text, phase, side }: { label: string; labelColor: string; text: string; phase: string; side: 'left' | 'right' }) {
   const isLeft = side === 'left'
-  const showCursor = isLeft
-    ? phase === 'typing'
-    : phase === 'streaming'
-
-  const placeholder = isLeft
-    ? '// click a tool above'
-    : '// response will appear here'
-
+  const showCursor = isLeft ? phase === 'typing' : phase === 'streaming'
   return (
-    <div style={{
-      flex: '1 1 300px', minHeight,
-      background: 'rgba(10,10,15,0.85)',
-      border: '1px solid rgba(59,130,246,0.15)',
-      backdropFilter: 'blur(12px)',
-      padding: 16,
-      display: 'flex', flexDirection: 'column', gap: 8,
-    }}>
-      <span style={{ fontFamily: 'var(--font-mono)', fontSize: 9, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#3b82f6' }}>
+    <div style={{ background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 16, overflow: 'hidden' }}>
+      <div style={{ padding: '11px 15px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontFamily: 'var(--font-mono)', fontSize: 10.5, letterSpacing: '0.1em', color: labelColor }}>
         {label}
-        {phase === 'calling' && isLeft && <span style={{ color: '#f59e0b', marginLeft: 8 }}>● sending</span>}
-      </span>
+        {phase === 'calling' && isLeft && <span style={{ color: 'var(--yellow)', marginLeft: 8 }}>● sending</span>}
+      </div>
       <pre style={{
-        fontFamily: 'var(--font-mono)', fontSize: 11, lineHeight: 1.7,
-        color: text ? (isLeft ? '#9898b4' : '#10b981') : '#3b3b5a',
-        margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word', flex: 1,
+        margin: 0, padding: 16, fontFamily: 'var(--font-mono)', fontSize: 11.5, lineHeight: 1.65,
+        color: text ? (isLeft ? '#cfccd6' : '#a8e6c8') : '#3b3b5a',
+        whiteSpace: 'pre-wrap', wordBreak: 'break-word', minHeight: 200,
       }}>
-        {text || placeholder}
-        {showCursor && <span style={{ animation: 'blink 1s step-end infinite', color: '#3b82f6' }}>▌</span>}
+        {text || (isLeft ? '// pick a tool' : '// response appears here')}
+        {showCursor && <span style={{ animation: 'blink 1s step-end infinite', color: 'var(--blue-bright)' }}>▋</span>}
       </pre>
     </div>
   )

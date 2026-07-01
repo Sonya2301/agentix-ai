@@ -202,6 +202,10 @@ The architecture stays identical. Only the content changes.
 | 2026-06-30 | Deployed to production (lyveca.com) — new pricing, 4-layer model, subpages all live & verified |
 | 2026-06-30 | Security headers added in `next.config.ts` (HSTS, X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy) — live, ~A- grade. CSP deferred to post-redesign |
 | 2026-06-30 | Footer set to honest pre-živnosť note (no business-registration claim); imprint TODO until živnosť registered |
+| 2026-07-01 | **Full design overhaul (blue aurora)** — homepage + `/services` `/pricing` `/about` + nav/footer rebuilt from a design handoff; new fonts (Space Grotesk / Hanken Grotesk / JetBrains Mono / Playfair Display) + design tokens in globals.css. New components: Aurora, Logo, CTABand, ScrollReveal, CountUp. Deleted unused GalaxyExperience / GalaxyWrapper (Three.js). Backend/AEO (llms.txt, robots, sitemap, JSON-LD, MCP, agent) verified untouched. |
+| 2026-07-01 | Motion added: scroll-reveal, stat count-up, card hover-lift, CTA glow — all gated behind `prefers-reduced-motion`; content stays in DOM (crawlable). AgentWidget relaunched as a blue gradient "Ask the agent" pill; MCPPlayground restyled to two-panel blue (still calls real `/api/mcp`, auto-plays get_pricing on mount). |
+| 2026-07-01 | `/pricing` now shows the "3 pilot slots" launch offer (Upgrade €490 / Studio €990 / Premium €1,790, −40%). |
+| 2026-07-01 | Deployed redesign to production (lyveca.com) via `main`. |
 
 Branch: `dev` → deployed to Vercel via `main`
 
@@ -219,9 +223,9 @@ The gap between this and a chatbot widget:
 
 ---
 
-## MCP Live Demo (Layer 03 — Chapter 5)
+## MCP Live Demo (homepage section "03 — Layer 04, live")
 
-`src/components/MCPPlayground.tsx` — interactive demo built into the scroll experience to show visitors how the MCP server works.
+`src/components/MCPPlayground.tsx` — interactive demo on the homepage showing visitors how the MCP server works.
 
 When a visitor clicks a tool button:
 - **Left panel** shows the JSON request being sent to the server (typed out live)

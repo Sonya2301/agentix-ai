@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import CookieBanner from "../components/CookieBanner";
 import AgentWidget from "../components/AgentWidget";
+import ScrollReveal from "../components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "LYVECA AI — Websites built for humans. And for AI.",
@@ -249,6 +250,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <ScrollReveal />
         <CookieBanner />
         <AgentWidget />
       </body>
