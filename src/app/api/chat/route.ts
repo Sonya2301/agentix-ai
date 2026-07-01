@@ -116,15 +116,48 @@ function executeTool(
 
   if (name === 'answer_service_question') {
     const topic = String(input.topic)
-    return knowledge[topic] ?? 'No information available for this topic.'
+    // Own-key check so unexpected values can't reach Object.prototype members
+    return Object.hasOwn(knowledge, topic)
+      ? knowledge[topic]
+      : 'No information available for this topic.'
   }
 
   return 'Unknown tool.'
 }
 
 // ── Route handler ────────────────────────────────────────────────
+// Caps keep a hostile client from feeding oversized conversations into the
+// Anthropic API (each request runs up to 6 model calls with full history).
+const MAX_MESSAGES = 40
+const MAX_CONTENT_CHARS = 4000
+
+function isValidMessage(m: unknown): m is ChatMessage {
+  if (typeof m !== 'object' || m === null) return false
+  const msg = m as Record<string, unknown>
+  return (
+    (msg.role === 'user' || msg.role === 'assistant') &&
+    typeof msg.content === 'string' &&
+    msg.content.length > 0 &&
+    msg.content.length <= MAX_CONTENT_CHARS
+  )
+}
+
 export async function POST(req: Request) {
-  const { messages } = (await req.json()) as { messages: ChatMessage[] }
+  let messages: ChatMessage[]
+  try {
+    const body = (await req.json()) as { messages?: unknown }
+    if (
+      !Array.isArray(body.messages) ||
+      body.messages.length === 0 ||
+      body.messages.length > MAX_MESSAGES ||
+      !body.messages.every(isValidMessage)
+    ) {
+      return Response.json({ error: 'Invalid request.' }, { status: 400 })
+    }
+    messages = body.messages
+  } catch {
+    return Response.json({ error: 'Invalid request.' }, { status: 400 })
+  }
 
   // Strip client-only fields before sending to Anthropic
   const apiMessages: Anthropic.MessageParam[] = messages.map(({ role, content }) => ({

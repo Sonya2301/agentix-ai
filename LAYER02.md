@@ -206,6 +206,7 @@ The architecture stays identical. Only the content changes.
 | 2026-07-01 | Motion added: scroll-reveal, stat count-up, card hover-lift, CTA glow — all gated behind `prefers-reduced-motion`; content stays in DOM (crawlable). AgentWidget relaunched as a blue gradient "Ask the agent" pill; MCPPlayground restyled to two-panel blue (still calls real `/api/mcp`, auto-plays get_pricing on mount). |
 | 2026-07-01 | `/pricing` now shows the "3 pilot slots" launch offer (Upgrade €490 / Studio €990 / Premium €1,790, −40%). |
 | 2026-07-01 | Deployed redesign to production (lyveca.com) via `main`. |
+| 2026-07-01 | **Security audit + CSP** (on `dev`, deploy pending): Content-Security-Policy header added in `next.config.ts` (self + Google Fonts + consent-gated GA; no nonces — pages stay static). `/api/chat` input validation (400 on malformed bodies; caps 40 msgs × 4k chars). Lead-notification email HTML-escapes all visitor-supplied fields; subject guarded against newline injection. Knowledge lookups guarded with `Object.hasOwn`. `npm audit fix` (hono high + js-yaml patched); unused `three`/`@types/three` removed. Verified locally: build green, headers served, agent/MCP/llms.txt working. |
 
 Branch: `dev` → deployed to Vercel via `main`
 

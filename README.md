@@ -92,7 +92,7 @@ Open [http://localhost:3000](http://localhost:3000)
 ## Project Structure
 
 ```
-next.config.ts                  # Security headers (HSTS, X-Frame-Options, nosniff, etc.) — CSP still pending (next security item)
+next.config.ts                  # Security headers (CSP, HSTS, X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy)
 src/
 ├── app/
 │   ├── layout.tsx              # Metadata, Schema.org JSON-LD (Org/Person/Service/Offers/FAQ), AgentWidget + ScrollReveal mount
@@ -153,7 +153,7 @@ To go live: merge `dev` into `main` and push.
 | `src/app/robots.ts` | Explicitly allows GPTBot, ClaudeBot, PerplexityBot | `/robots.txt` |
 | `src/app/sitemap.ts` | XML sitemap incl. `/services` `/pricing` `/about` | `/sitemap.xml` |
 | Schema.org JSON-LD | Organization + Person + Service + Offers + FAQPage; per-page schema on subpages | In `<head>` |
-| `next.config.ts` | HTTP security headers (HSTS, X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy) | All routes |
+| `next.config.ts` | HTTP security headers (CSP, HSTS, X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy) | All routes |
 | `og-image.png` | Social preview image for LinkedIn/Twitter (1200×630 PNG) | `/og-image.png` |
 | `src/app/api/mcp/route.ts` | **Layer 04** — MCP Server, 3 callable tools for AI agents | `/api/mcp` |
 | `public/.well-known/mcp.json` | MCP discovery endpoint — lists tools and server URL | `/.well-known/mcp.json` |
@@ -161,7 +161,7 @@ To go live: merge `dev` into `main` and push.
 
 **AI crawlers explicitly allowed:** GPTBot, ClaudeBot, PerplexityBot, GoogleExtendedBot, Applebot-Extended, cohere-ai
 
-> **Security headers:** 5 design-independent headers are live (see `next.config.ts`). Content-Security-Policy (CSP) is still pending — now that the redesign has shipped, it's the next security item (CSP depends on exactly what the final site loads, e.g. the Google Fonts import and GA).
+> **Security:** all 6 headers are live including Content-Security-Policy (added 2026-07-01 after the redesign; allows only self + Google Fonts + consent-gated GA). Security audit done 2026-07-01: `/api/chat` input validation (400 on malformed/oversized bodies), lead-email HTML escaping, dependency fixes (hono high-severity patched, unused three.js removed). Known accepted risks: `'unsafe-inline'` in script-src (required by GA bootstrap without nonce-based CSP, which would force dynamic rendering), and a moderate postcss advisory inside Next.js itself (waiting on upstream patch). No rate limiting on API routes yet — recommended: Vercel WAF rate-limit rule on `/api/chat`.
 
 ### MCP Live Demo (homepage section "03 — Layer 04, live")
 

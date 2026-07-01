@@ -1,7 +1,9 @@
 # LYVECA AI — Master Plan & Go-Forward
 *Updated 2026-07-01. The single source of truth for status, strategy, and next steps. Pricing lives in PRICING.md; agent/technical details in LAYER02.md; site overview & how-to-run in README.md. The Fable 5 strategy session and prior session handoff are preserved as appendices at the bottom.*
 
-> **Latest session handoff (2026-07-01):** Full **design overhaul shipped & deployed** — the old Three.js "galaxy" homepage is replaced by a dark "blue aurora" editorial design (from a design handoff zip), built natively in Next.js across homepage + `/services` + `/pricing` + `/about`. Added scroll-reveal, stat count-up, card hover-lift, CTA glow (all `prefers-reduced-motion` safe). All backend/AEO verified intact (llms.txt, robots, sitemap, JSON-LD, MCP server, live agent). `/pricing` now shows the **"3 pilot slots" launch offer** (Upgrade €490 / Studio €990 / Premium €1,790). Also completed: a competitor analysis vs 4 Slovak studios (takeaway: they win on *distribution* — Google Ads + domain age + local SEO — not product; Lyveca's edge is custom Next.js + the L02/L04 AI stack none of them have). **Deleted** unused `GalaxyExperience.tsx` / `GalaxyWrapper.tsx`. Three.js deps remain in `package.json` but are now unused (safe to remove later). **Next up:** CSP + full security audit, demo recording (B5), and starting outreach (Track C).
+> **Latest session handoff (2026-07-01, session 2):** **CSP + full security audit done** (on `dev`, deploy pending user confirmation). Content-Security-Policy added in `next.config.ts` — no nonces (per the Next.js docs, nonce CSP would force every page dynamic; this keeps all pages static) — allowing only self + Google Fonts + consent-gated GA. Audit fixes: `/api/chat` now validates input (400 on malformed bodies; caps 40 messages × 4k chars — was an unguarded cost vector into the Anthropic API), lead-notification email HTML-escapes visitor-supplied fields (was an HTML-injection vector), knowledge lookups guarded with `Object.hasOwn`, `npm audit fix` applied (hono high-severity + js-yaml patched), unused `three`/`@types/three` removed. Verified locally: build green, all pages still static, all 6 headers served, agent + MCP + llms.txt working. Accepted risks in README (script-src `'unsafe-inline'` for GA; moderate postcss advisory inside Next itself, awaiting upstream). **Recommended user action: add a Vercel WAF rate-limit rule on `/api/chat`.** Product work is now fully done — **next: demo recording (B5) + outreach (Track C).**
+>
+> **Previous handoff (2026-07-01, session 1):** Full **design overhaul shipped & deployed** — the old Three.js "galaxy" homepage is replaced by a dark "blue aurora" editorial design (from a design handoff zip), built natively in Next.js across homepage + `/services` + `/pricing` + `/about`. Added scroll-reveal, stat count-up, card hover-lift, CTA glow (all `prefers-reduced-motion` safe). All backend/AEO verified intact (llms.txt, robots, sitemap, JSON-LD, MCP server, live agent). `/pricing` now shows the **"3 pilot slots" launch offer** (Upgrade €490 / Studio €990 / Premium €1,790). Also completed: a competitor analysis vs 4 Slovak studios (takeaway: they win on *distribution* — Google Ads + domain age + local SEO — not product; Lyveca's edge is custom Next.js + the L02/L04 AI stack none of them have). **Deleted** unused `GalaxyExperience.tsx` / `GalaxyWrapper.tsx`. Three.js deps remain in `package.json` but are now unused (safe to remove later). **Next up:** CSP + full security audit, demo recording (B5), and starting outreach (Track C).
 
 ---
 
@@ -20,7 +22,7 @@
 - **Shipped 2026-07-01 (live):**
   7. ✅ **Full design overhaul** — dark "blue aurora" editorial redesign (homepage + 3 subpages + nav/footer), built from a design handoff. Motion added (reveal, count-up, hover-lift, glow), all reduced-motion safe. Backend/AEO verified untouched. `/pricing` shows the "3 pilot slots" launch offer.
 - **Not started:** the other two business pillars — **Lead Generation** (zero outbound ever sent) and **Monetization** (€0 revenue, every lead in `leads.json` is a test). No case studies, no testimonials, no signed clients.
-- **Caveats:** pricing is a **researched hypothesis, not validated** (never price-tested on a real buyer). Design overhaul is now **done** (2026-07-01, blue aurora); remaining product debt is CSP + a full security audit.
+- **Caveats:** pricing is a **researched hypothesis, not validated** (never price-tested on a real buyer). Design overhaul **done** (2026-07-01, blue aurora). CSP + security audit **done** (2026-07-01, on `dev` — deploy pending). No product debt remains.
 
 **The one sentence that matters:** the product cannot get more ready; everything from here is selling. The critical path is **one paying client → one case study → that case study makes all other channels (LinkedIn, dev.to, Product Hunt) actually convert.**
 
@@ -98,7 +100,7 @@
 | ✅ Fix stale email (A5) | — | Done |
 | ✅ Security headers | — | Done 2026-06-30, live (CSP still pending, below) |
 | ✅ Full design overhaul | — | Done 2026-07-01 — blue aurora redesign live (homepage + subpages + nav/footer + motion + pilot slots). |
-| **Full security audit + CSP** | High | **Now the next big item** (redesign shipped): deps scan, API routes /api/chat + /api/mcp, input handling, secrets, and add Content-Security-Policy on the final code (must allow Google Fonts import + GA). |
+| ✅ Full security audit + CSP | — | Done 2026-07-01 on `dev` (deploy pending): CSP header, /api/chat input validation, lead-email HTML escaping, deps patched, three.js removed. Vercel WAF rate limit on /api/chat recommended (user task). |
 | Demo recording (B5) | High | 60–90s Claude-connector → MCP → lead in Notion. Universal sales asset. |
 | Outreach engine (Track C) | High | Prospect list, DMs, content, free-audit → pilots. **The actual goal.** |
 | Personalize About founder story | Med | TODO marker in about/page.tsx |
@@ -109,7 +111,6 @@
 | Product Hunt launch | Med | High-DA backlink + discovery; prepare listing |
 | MCP registry listing | Low | Submit to Anthropic MCP directory when available |
 | Fill legal footer | — | Deferred with živnosť (see B1) — at first hot lead |
-| Personalize About founder story | Med | TODO marker in about/page.tsx |
 
 ---
 
