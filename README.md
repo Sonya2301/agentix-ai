@@ -161,7 +161,7 @@ To go live: merge `dev` into `main` and push.
 
 **AI crawlers explicitly allowed:** GPTBot, ClaudeBot, PerplexityBot, GoogleExtendedBot, Applebot-Extended, cohere-ai
 
-> **Security:** all 6 headers are live including Content-Security-Policy (added 2026-07-01 after the redesign; allows only self + Google Fonts + consent-gated GA). Security audit done 2026-07-01: `/api/chat` input validation (400 on malformed/oversized bodies), lead-email HTML escaping, dependency fixes (hono high-severity patched, unused three.js removed). Known accepted risks: `'unsafe-inline'` in script-src (required by GA bootstrap without nonce-based CSP, which would force dynamic rendering), and a moderate postcss advisory inside Next.js itself (waiting on upstream patch). No rate limiting on API routes yet — recommended: Vercel WAF rate-limit rule on `/api/chat`.
+> **Security:** all 6 headers are live including Content-Security-Policy (added 2026-07-01 after the redesign; allows only self + Google Fonts + consent-gated GA). Security audit done 2026-07-01: `/api/chat` input validation (400 on malformed/oversized bodies), lead-email HTML escaping, dependency fixes (hono high-severity patched, unused three.js removed). Known accepted risks: `'unsafe-inline'` in script-src (required by GA bootstrap without nonce-based CSP, which would force dynamic rendering), and a moderate postcss advisory inside Next.js itself (waiting on upstream patch). Rate limiting: Vercel WAF rule live (2026-07-01) — max 20 req/min per IP on `/api/chat`, 429 above that (rule `rule_rate_limit_agent_chat_api_BMIjyE`, managed in Vercel dashboard → Firewall).
 
 ### MCP Live Demo (homepage section "03 — Layer 04, live")
 
